@@ -10,7 +10,6 @@ public class plate : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            puzzleConditions.openTheDoor.Invoke();
         }
     }
 }
