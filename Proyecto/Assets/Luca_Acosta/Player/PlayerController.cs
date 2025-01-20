@@ -20,13 +20,17 @@ public class PlayerMovement : MonoBehaviour
     private float rotationX = 0;
     private CharacterController characterController;
 
+    Animator animator;
+
     private bool canMove = true;
 
-    void Start()
+    void Awake()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        animator = GetComponent<Animator>();
     }
 
     void Update()
