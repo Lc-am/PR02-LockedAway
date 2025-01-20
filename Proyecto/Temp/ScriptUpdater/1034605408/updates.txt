@@ -1,1 +1,0 @@
-Temp/ScriptUpdater/1034605408\221628848_objPickup.cs => Assets/Luca_Acosta/InteractSystem/objPickup.cs
