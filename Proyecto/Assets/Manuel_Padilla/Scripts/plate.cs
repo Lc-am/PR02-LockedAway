@@ -4,12 +4,12 @@ public class plate : MonoBehaviour
 {
     [SerializeField] puzzleConditions puzzleConditions;
 
-    private bool activated = false;
-
+    //Llamada al evento de puzzleConditions
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
+            puzzleConditions.openTheDoor();
         }
     }
 }

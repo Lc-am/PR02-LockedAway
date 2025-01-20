@@ -2,21 +2,49 @@ using UnityEngine;
 
 public class doorSystem : MonoBehaviour
 {
-    private bool activated = false;
+    [SerializeField] private float rotationTime = 5f;
+    [SerializeField] private float doorOpened = 90f;
+    [SerializeField] private float doorClosed = 0f;
+
+    private Quaternion initialRotation;
+    private Quaternion finalRotation;
+    private float elapsedTime = 0f;
+    [SerializeField] private bool doorState = false;    //False es que esta cerrado y true abierto
+
     Rigidbody rb;
 
-    private void Start()
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
+        initialRotation = transform.rotation;
+        finalRotation = Quaternion.Euler(0, doorOpened, 0);
     }
 
-    private void iOpenTheDoor()
+    //Abre y cierra la puerta (funcion de interaccion)
+    public void iOpenTheDoor()
     {
-        if(!activated)
+        if(elapsedTime < rotationTime)
         {
-            activated = true;
+            elapsedTime = Time.deltaTime;
 
-            rb.transform.rotation = Quaternion.Euler(0, 0, transform.position.z * -90);
+            float completedPercent = elapsedTime / rotationTime;
+
+            if(doorState)
+            {
+                transform.rotation = Quaternion.Lerp(initialRotation, finalRotation, completedPercent);
+                doorState = false;
+            }
+            else
+            {
+                transform.rotation = Quaternion.Lerp(finalRotation, initialRotation, completedPercent);
+                doorState = true;
+            }
+        }
+        else
+        {
+            elapsedTime = 0f;
         }
     }
 }
