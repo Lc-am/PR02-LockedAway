@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a2f5fa751586e2d42afa025dd83c953e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Prefabs/HDRP/Props/ThroneBase.prefab
+  uploadId: 722373

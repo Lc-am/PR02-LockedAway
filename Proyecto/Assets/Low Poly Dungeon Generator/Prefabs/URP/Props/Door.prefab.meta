@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0f5242b5cb940c648afb19a54d5aea2b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Prefabs/URP/Props/Door.prefab
+  uploadId: 722373

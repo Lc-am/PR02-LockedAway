@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fd29b1171ea863c4a951393f7f94b949
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Prefabs/HDRP/Props/PillarTall.prefab
+  uploadId: 722373

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: df12246f4fbb6144b8cd91a90ec0db99
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Materials/URP/Pathbuilding/Ceiling1x1_URP.mat
+  uploadId: 722373

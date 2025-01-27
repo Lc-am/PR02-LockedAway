@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cf76da3a0bae9924b93b8d6cf6ed772d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Prefabs/SRP/Pathbuilding/Straight3.prefab
+  uploadId: 722373
