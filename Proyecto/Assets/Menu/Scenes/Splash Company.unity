@@ -728,8 +728,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 793.613, y: 583.756}
+  m_AnchoredPosition: {x: -34, y: 48}
+  m_SizeDelta: {x: 867.79, y: 544.793}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1507807535
 MonoBehaviour:
@@ -800,7 +800,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.036071777, y: 0.5144043}
+  m_AnchoredPosition: {x: -0.036132812, y: 0.5144043}
   m_SizeDelta: {x: 30.7942, y: 31.4141}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1743367640
@@ -871,7 +871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: Splash Game
-  waitTime: 5
+  waitTime: 3
   skipAction: {fileID: -4640253721891472349, guid: 6e46bbb5980fab1438eaaf4e70f76e70, type: 3}
 --- !u!4 &1779643987
 Transform:
