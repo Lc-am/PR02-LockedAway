@@ -1,0 +1,34 @@
+{
+    "name": "Screens",
+    "maps": [
+        {
+            "name": "ScrenControl",
+            "id": "ca4e096d-e8f8-4542-a993-b83f7e0ceec8",
+            "actions": [
+                {
+                    "name": "Continue",
+                    "type": "Button",
+                    "id": "a90627fb-2ac8-4d4d-9c8e-5b4d5a5ce5e3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5a3c0542-574a-464c-8f4e-c34e2bf74876",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Continue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
