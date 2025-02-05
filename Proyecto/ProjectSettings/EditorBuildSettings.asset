@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Menu/Scenes/Splash Company.unity
     guid: 34eae82b6e1f74345a025e7528b6c026
   - enabled: 1
-    path: Assets/Menu/Scenes/Splash Game.unity
+    path: Assets/Menu/Scenes/SplashGame.unity
     guid: 0f1ccbfd7b7862d42a4663f013d73b34
   - enabled: 1
     path: Assets/Manuel_Padilla/Scenes/Testing.unity

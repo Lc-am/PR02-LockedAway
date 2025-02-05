@@ -156,7 +156,7 @@ VideoPlayer:
   m_AspectRatio: 2
   m_DataSource: 0
   m_TimeUpdateMode: 2
-  m_PlaybackSpeed: 2
+  m_PlaybackSpeed: 1.5
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
@@ -916,7 +916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1779643987}
-  - component: {fileID: 1779643986}
+  - component: {fileID: 1779643988}
   m_Layer: 0
   m_Name: GameLogic
   m_TagString: Untagged
@@ -924,21 +924,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1779643986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1779643985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e59c4a1d9868124bb35262649e433f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextSceneName: Splash Game
-  waitTime: 5
-  skipAction: {fileID: -4640253721891472349, guid: 6e46bbb5980fab1438eaaf4e70f76e70, type: 3}
 --- !u!4 &1779643987
 Transform:
   m_ObjectHideFlags: 0
@@ -954,6 +939,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1779643988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779643985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed2cb32479f54542b71a2206f507414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 110500360}
+  nextSceneName: SplashGame
 --- !u!1 &1982675825
 GameObject:
   m_ObjectHideFlags: 0
