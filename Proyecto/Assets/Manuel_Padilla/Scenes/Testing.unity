@@ -759,6 +759,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2407871171582890470, guid: 10e05c59c1c409849b233afc61d1cc57, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2899536057
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407871171582890470, guid: 10e05c59c1c409849b233afc61d1cc57, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 3726075128
+      objectReference: {fileID: 0}
     - target: {fileID: 2749173015933097713, guid: 10e05c59c1c409849b233afc61d1cc57, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1264,10 +1272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b89718664a01694dae863de744eeb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationTime: 5
+  rotationTime: 0.6
   doorOpened: 90
   doorClosed: 0
-  doorState: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

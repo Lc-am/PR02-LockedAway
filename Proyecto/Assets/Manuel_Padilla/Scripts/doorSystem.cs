@@ -2,49 +2,62 @@ using UnityEngine;
 
 public class doorSystem : MonoBehaviour
 {
-    [SerializeField] private float rotationTime = 5f;
-    [SerializeField] private float doorOpened = 90f;
-    [SerializeField] private float doorClosed = 0f;
+    [SerializeField] private float rotationTime = 5f;   // Tiempo de transición
+    [SerializeField] private float doorOpened = 90f;    // Ángulo de puerta abierta
+    [SerializeField] private float doorClosed = 0f;     // Ángulo de puerta cerrada
 
-    private Quaternion initialRotation;
-    private Quaternion finalRotation;
-    private float elapsedTime = 0f;
-    [SerializeField] private bool doorState = false;    //False es que esta cerrado y true abierto
-
-    Rigidbody rb;
-
+    private Quaternion initialRotation;   // Rotación inicial (cerrada)
+    private Quaternion finalRotation;     // Rotación final (abierta)
+    private float elapsedTime = 0f;       // Tiempo transcurrido durante la transición
+    private bool doorState = false;       // Si la puerta está cerrada (false) o abierta (true)
+    private bool isAnimating = false;     // Para saber si la puerta está en proceso de abrir o cerrar
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
-
+        // Inicializar las rotaciones
         initialRotation = transform.rotation;
-        finalRotation = Quaternion.Euler(0, doorOpened, 0);
+        finalRotation = Quaternion.Euler(0, doorOpened, 0); // Rotación cuando la puerta está abierta
     }
 
-    //Abre y cierra la puerta (funcion de interaccion)
+    // Función para abrir o cerrar la puerta con transición
     public void iOpenTheDoor()
     {
-        if(elapsedTime < rotationTime)
+        // Si la puerta no está animándose, entonces comenzamos una animación
+        if (!isAnimating)
         {
-            elapsedTime = Time.deltaTime;
+            isAnimating = true;  // Iniciar animación
+            elapsedTime = 0f;    // Reiniciar el tiempo transcurrido
+        }
+    }
 
+    private void Update()
+    {
+        // Solo realizar la animación si estamos animando
+        if (isAnimating)
+        {
+            // Acumulamos el tiempo transcurrido
+            elapsedTime += Time.deltaTime;
+
+            // Calculamos el porcentaje completado de la animación
             float completedPercent = elapsedTime / rotationTime;
 
-            if(doorState)
+            // Si la puerta está cerrada, la abrimos
+            if (!doorState)
             {
                 transform.rotation = Quaternion.Lerp(initialRotation, finalRotation, completedPercent);
-                doorState = false;
             }
+            // Si la puerta está abierta, la cerramos
             else
             {
                 transform.rotation = Quaternion.Lerp(finalRotation, initialRotation, completedPercent);
-                doorState = true;
             }
-        }
-        else
-        {
-            elapsedTime = 0f;
+
+            // Si la animación ha terminado
+            if (elapsedTime >= rotationTime)
+            {
+                isAnimating = false;  // Deja de animar
+                doorState = !doorState;  // Cambia el estado de la puerta (abierta o cerrada)
+            }
         }
     }
 }
