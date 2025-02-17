@@ -3,9 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private InputActionReference skipAction;
+    [SerializeField] private GameObject buttonsPanel;
+    [SerializeField] private GameObject continueText;
+    private bool buttonsShown = false;
+
+    [SerializeField] private Canvas Canvas;
+    
     [SerializeField]  private Button playButton;
     [SerializeField]  private Button optionsButton;
     [SerializeField]  private Button exitButton;
@@ -13,8 +22,24 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private CanvasGroup mainMenuCanvasGroup;
     [SerializeField] private CanvasGroup optionsMenuCanvasGroup;
 
+    private void Update()
+    {
+        if (skipAction.action.triggered)
+        {
+            if (!buttonsShown && skipAction.action.triggered)
+            {
+                buttonsPanel.SetActive(true); // Muestra los botones
+                if (continueText != null) continueText.SetActive(false); // Oculta el texto
+                buttonsShown = true;
+            }
+
+            MainMenuCanvas();
+        }
+    }
     void OnEnable()
     {
+        skipAction.action.Enable();
+
         playButton.onClick.AddListener(playLevel);
         optionsButton.onClick.AddListener(OpenOptionsMenu);
         exitButton.onClick.AddListener(exitButtonClick);
@@ -22,9 +47,17 @@ public class MainMenu : MonoBehaviour
 
     void OnDisable()
     {
+        skipAction.action.Disable();
+
         playButton.onClick.RemoveListener(playLevel);
         optionsButton.onClick.RemoveListener(OpenOptionsMenu);
         exitButton.onClick.RemoveListener(exitButtonClick);
+    }
+
+    void MainMenuCanvas()
+    {
+        
+        ShowCanvasGroup(mainMenuCanvasGroup, true);
     }
 
     void playLevel() 
