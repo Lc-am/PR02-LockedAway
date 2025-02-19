@@ -663,6 +663,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ecddf7a88b8a204bb771581206abb5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skipAction: {fileID: -4640253721891472349, guid: 6e46bbb5980fab1438eaaf4e70f76e70, type: 3}
+  buttonsPanel: {fileID: 2048918480}
+  continueText: {fileID: 1559062099}
+  Canvas: {fileID: 97510668}
   playButton: {fileID: 329771917}
   optionsButton: {fileID: 1918439570}
   exitButton: {fileID: 1545398912}
