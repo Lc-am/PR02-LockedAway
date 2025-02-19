@@ -62,7 +62,7 @@ public class MainMenu : MonoBehaviour
 
     void playLevel() 
     {
-        SceneManager.LoadScene("Jugable1");
+        SceneManager.LoadScene("Testing");
     }
 
     void exitButtonClick()
