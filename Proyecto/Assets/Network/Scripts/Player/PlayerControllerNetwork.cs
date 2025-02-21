@@ -39,11 +39,24 @@ public class PlayerControllerNetwork : NetworkBehaviour
     float curSpeedX;
     float curSpeedY;
 
+    private GameObject cameraObject;
+
     private void Awake()
     {
+        cameraObject = playerCamera.gameObject;
+
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        if(IsLocalPlayer)
+        {
+            cameraObject.SetActive(true);
+        }
+        else
+        {
+            cameraObject.SetActive(false);
+        }
 
         animator = GetComponentInChildren<Animator>();
     }
@@ -84,21 +97,24 @@ public class PlayerControllerNetwork : NetworkBehaviour
 
     private void Update()
     {
-        characterMovement();
-
-        cameraRotation();
-
-        if (characterController.isGrounded)
+        if(IsLocalPlayer)
         {
-            gravity = 0f;  // Desactiva la gravedad cuando el personaje está en el suelo
-        }
-        else
-        {
-            gravity = 10f;  // Aplica gravedad cuando no está en el suelo
-        }
+            characterMovement();
 
-        animator.SetFloat("VelX", curSpeedY);
-        animator.SetFloat("VelY", curSpeedX);
+            cameraRotation();
+
+            if (characterController.isGrounded)
+            {
+                gravity = 0f;  // Desactiva la gravedad cuando el personaje está en el suelo
+            }
+            else
+            {
+                gravity = 10f;  // Aplica gravedad cuando no está en el suelo
+            }
+
+            animator.SetFloat("VelX", curSpeedY);
+            animator.SetFloat("VelY", curSpeedX);
+        }
     }
 
     private void FixedUpdate()
