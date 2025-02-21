@@ -1,8 +1,9 @@
 using System;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class pickUpItems : MonoBehaviour
+public class pickUpItems : NetworkBehaviour
 {
     [SerializeField] InputActionReference pickUp;
 
@@ -47,16 +48,20 @@ public class pickUpItems : MonoBehaviour
 
     private void OnPickUp(InputAction.CallbackContext context)
     {
-        if(heldObject == null)
+        if(IsLocalPlayer)
         {
-            RaycastHit hit;
-
-            //Cada vez que se da el click lanza un razo para ver si golpea con un tag de pcikeable para coger el objeto
-            if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange))
+            if (heldObject == null)
             {
-                if (hit.transform.CompareTag("Pickeable"))
+                RaycastHit hit;
+
+                //Cada vez que se da el click lanza un razo para ver si golpea con un tag de pcikeable para coger el objeto
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange))
                 {
-                    PickUpObject(hit.transform.gameObject);
+                    if (hit.transform.CompareTag("Pickeable"))
+                    {
+                        PickUpObject(hit.transform.gameObject);
+                    }
+
                 }
             }
         }
@@ -64,14 +69,17 @@ public class pickUpItems : MonoBehaviour
 
     private void OnDrop(InputAction.CallbackContext context)
     {
-        if(heldObject != null)
+        if(IsLocalPlayer)
         {
-            StopClipping();
+            if (heldObject != null)
+            {
+                StopClipping();
 
-            Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), false);
-            heldObjectRB.isKinematic = false;
-            heldObject.transform.parent = null;
-            heldObject = null;
+                Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), false);
+                heldObjectRB.isKinematic = false;
+                heldObject.transform.parent = null;
+                heldObject = null;
+            }
         }
     }
 
