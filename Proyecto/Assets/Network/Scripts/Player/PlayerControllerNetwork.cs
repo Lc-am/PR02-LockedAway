@@ -53,10 +53,6 @@ public class PlayerControllerNetwork : NetworkBehaviour
         {
             cameraObject.SetActive(true);
         }
-        else
-        {
-            cameraObject.SetActive(false);
-        }
 
         animator = GetComponentInChildren<Animator>();
     }
