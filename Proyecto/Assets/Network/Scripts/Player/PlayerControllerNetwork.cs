@@ -108,7 +108,10 @@ public class PlayerControllerNetwork : NetworkBehaviour
 
     private void onMove(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>();  // Actualiza el movimiento de acuerdo con la entrada
+        if(IsLocalPlayer)
+        {
+            moveInput = context.ReadValue<Vector2>();  // Actualiza el movimiento de acuerdo con la entrada
+        }
     }
 
     private void characterMovement()
