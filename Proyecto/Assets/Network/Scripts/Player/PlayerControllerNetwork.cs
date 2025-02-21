@@ -39,20 +39,26 @@ public class PlayerControllerNetwork : NetworkBehaviour
     float curSpeedX;
     float curSpeedY;
 
-    private GameObject cameraObject;
+    [SerializeField] private GameObject cameraObject;
+
+    private void Start()
+    {
+        // Solo activar la cámara si este objeto es el jugador local
+        if (IsLocalPlayer)
+        {
+            cameraObject.SetActive(true);  // Activamos la cámara del jugador local
+        }
+        else
+        {
+            cameraObject.SetActive(false);  // Desactivamos la cámara para los jugadores remotos
+        }
+    }
 
     private void Awake()
     {
-        cameraObject = playerCamera.gameObject;
-
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        if(IsLocalPlayer)
-        {
-            cameraObject.SetActive(true);
-        }
 
         animator = GetComponentInChildren<Animator>();
     }

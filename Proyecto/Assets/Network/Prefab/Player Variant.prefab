@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 205694780182894039, guid: 10e05c59c1c409849b233afc61d1cc57, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2150791199462680397, guid: 10e05c59c1c409849b233afc61d1cc57, type: 3}
       propertyPath: m_LocalPosition.x
@@ -112,6 +112,7 @@ MonoBehaviour:
   defaultHeight: 2
   crouchHeight: 1
   crouchSpeed: 3
+  cameraObject: {fileID: 5423869028890665374}
 --- !u!114 &8621369394692244475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,3 +179,8 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   TransitionStateInfoList: []
   m_Animator: {fileID: 3750914743142708336}
+--- !u!1 &5423869028890665374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 205694780182894039, guid: 10e05c59c1c409849b233afc61d1cc57, type: 3}
+  m_PrefabInstance: {fileID: 5305155101775721545}
+  m_PrefabAsset: {fileID: 0}
