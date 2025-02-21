@@ -133,40 +133,49 @@ public class PlayerControllerNetwork : NetworkBehaviour
 
     private void cameraRotation()
     {
-        Vector2 lookInput = look.action.ReadValue<Vector2>();  // Captura la entrada del ratón
+        if (IsLocalPlayer)
+        {
+            Vector2 lookInput = look.action.ReadValue<Vector2>();  // Captura la entrada del ratón
 
-        rotationX += -lookInput.y * lookSpeed;  // Rotación de la cámara en el eje X (arriba/abajo)
-        rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);  // Limita el rango de movimiento de la cámara
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+            rotationX += -lookInput.y * lookSpeed;  // Rotación de la cámara en el eje X (arriba/abajo)
+            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);  // Limita el rango de movimiento de la cámara
+            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
 
-        transform.rotation *= Quaternion.Euler(0, lookInput.x * lookSpeed, 0);  // Rotación del personaje en el eje Y (izquierda/derecha)
+            transform.rotation *= Quaternion.Euler(0, lookInput.x * lookSpeed, 0);  // Rotación del personaje en el eje Y (izquierda/derecha)
+        }
     }
 
     private void onJump(InputAction.CallbackContext context)
     {
-        if (characterController.isGrounded)  // Solo permitir salto si está en el suelo
+        if (IsLocalPlayer)
         {
-            moveDirection.y = jumpPower;
+            if (characterController.isGrounded)  // Solo permitir salto si está en el suelo
+            {
+                moveDirection.y = jumpPower;
+            }
         }
+         
     }
 
     private void onCrouch(InputAction.CallbackContext context)
     {
-        if (crouched)
+        if (IsLocalPlayer)
         {
-            characterController.height = defaultHeight;
-            walkSpeed = 6f;
-            runSpeed = 12f;
-        }
-        else
-        {
-            characterController.height = crouchHeight;
-            walkSpeed = crouchSpeed;
-            runSpeed = crouchSpeed;
-        }
+            if (crouched)
+            {
+                characterController.height = defaultHeight;
+                walkSpeed = 6f;
+                runSpeed = 12f;
+            }
+            else
+            {
+                characterController.height = crouchHeight;
+                walkSpeed = crouchSpeed;
+                runSpeed = crouchSpeed;
+            }
 
-        crouched = !crouched;
-
+            crouched = !crouched;
+        }
     }
 }
 
