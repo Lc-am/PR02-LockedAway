@@ -77,7 +77,7 @@ public class pickUpItems : NetworkBehaviour
 
             Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), false);
             heldObjectRB.isKinematic = false;
-            heldObject.transform.parent = null;
+            //heldObject.transform.parent = null;
             heldObject = null;
         }
     }
@@ -90,7 +90,7 @@ public class pickUpItems : NetworkBehaviour
             heldObject = gameObject;
             heldObjectRB = gameObject.transform.GetComponent<Rigidbody>();
             heldObjectRB.isKinematic = true;
-            heldObject.transform.parent = holdPos.transform;
+            //heldObject.transform.parent = holdPos.transform;
             Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), true);
         }
     }
