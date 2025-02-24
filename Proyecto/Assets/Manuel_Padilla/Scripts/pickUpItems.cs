@@ -71,17 +71,14 @@ public class pickUpItems : NetworkBehaviour
 
     private void OnDrop(InputAction.CallbackContext context)
     {
-        if(IsLocalPlayer)
+        if (heldObject != null)
         {
-            if (heldObject != null)
-            {
-                StopClipping();
+            StopClipping();
 
-                Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), false);
-                heldObjectRB.isKinematic = false;
-                heldObject.transform.parent = null;
-                heldObject = null;
-            }
+            Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), false);
+            heldObjectRB.isKinematic = false;
+            heldObject.transform.parent = null;
+            heldObject = null;
         }
     }
 
