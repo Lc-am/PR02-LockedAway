@@ -50,21 +50,18 @@ public class pickUpItems : NetworkBehaviour
 
     private void OnPickUp(InputAction.CallbackContext context)
     {
-        if(IsLocalPlayer)
+        if (heldObject == null)
         {
-            if (heldObject == null)
+            RaycastHit hit;
+
+            //Cada vez que se da el click lanza un razo para ver si golpea con un tag de pcikeable para coger el objeto
+            if (Physics.Raycast(camera.position, camera.TransformDirection(Vector3.forward), out hit, pickUpRange))
             {
-                RaycastHit hit;
-
-                //Cada vez que se da el click lanza un razo para ver si golpea con un tag de pcikeable para coger el objeto
-                if (Physics.Raycast(camera.position, camera.TransformDirection(Vector3.forward), out hit, pickUpRange))
+                if (hit.transform.CompareTag("Pickeable"))
                 {
-                    if (hit.transform.CompareTag("Pickeable"))
-                    {
-                        PickUpObject(hit.transform.gameObject);
-                    }
-
+                    PickUpObject(hit.transform.gameObject);
                 }
+
             }
         }
     }
