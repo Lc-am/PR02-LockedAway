@@ -50,6 +50,8 @@ public class pickUpItems : NetworkBehaviour
     {
         if(IsLocalPlayer)
         {
+            Debug.Log("pick up");
+
             if (heldObject == null)
             {
                 RaycastHit hit;
@@ -85,7 +87,6 @@ public class pickUpItems : NetworkBehaviour
 
     private void PickUpObject(GameObject gameObject)
     {
-
         //transforma el objeto cogible para que se mueva en el holdPos
         if(gameObject.transform.GetComponent<Rigidbody>())
         {
