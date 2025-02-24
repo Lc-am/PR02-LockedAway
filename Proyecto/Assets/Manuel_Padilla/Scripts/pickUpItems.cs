@@ -12,6 +12,8 @@ public class pickUpItems : NetworkBehaviour
 
     [SerializeField] private float pickUpRange = 5f;
 
+    [SerializeField] private Transform camera;
+
     private GameObject heldObject;  //Variable para saber que gameobject hemos cogido
     private Rigidbody heldObjectRB; //Su rigidbody
 
@@ -50,14 +52,12 @@ public class pickUpItems : NetworkBehaviour
     {
         if(IsLocalPlayer)
         {
-            Debug.Log("pick up");
-
             if (heldObject == null)
             {
                 RaycastHit hit;
 
                 //Cada vez que se da el click lanza un razo para ver si golpea con un tag de pcikeable para coger el objeto
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange))
+                if (Physics.Raycast(camera.position, camera.TransformDirection(Vector3.forward), out hit, pickUpRange))
                 {
                     if (hit.transform.CompareTag("Pickeable"))
                     {
@@ -106,11 +106,11 @@ public class pickUpItems : NetworkBehaviour
         var clipRange  = Vector3.Distance(heldObject.transform.position, transform.position);
 
         RaycastHit[] hits;
-        hits = Physics.RaycastAll(transform.position, transform.TransformDirection(Vector3.forward), clipRange);
+        hits = Physics.RaycastAll(camera.position, camera.TransformDirection(Vector3.forward), clipRange);
 
         if(hits.Length > 1)
         {
-            heldObject.transform.position = transform.position + new Vector3(0f, -0.5f, 0f);
+            heldObject.transform.position = camera.position + new Vector3(0f, -0.5f, 0f);
         }
     }
 }
