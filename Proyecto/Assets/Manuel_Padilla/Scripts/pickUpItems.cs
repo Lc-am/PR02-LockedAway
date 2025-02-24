@@ -12,6 +12,8 @@ public class pickUpItems : NetworkBehaviour
 
     [SerializeField] private float pickUpRange = 5f;
 
+    [SerializeField] private Transform camera;
+
     private GameObject heldObject;  //Variable para saber que gameobject hemos cogido
     private Rigidbody heldObjectRB; //Su rigidbody
 
@@ -55,7 +57,7 @@ public class pickUpItems : NetworkBehaviour
                 RaycastHit hit;
 
                 //Cada vez que se da el click lanza un razo para ver si golpea con un tag de pcikeable para coger el objeto
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange))
+                if (Physics.Raycast(camera.position, camera.TransformDirection(Vector3.forward), out hit, pickUpRange))
                 {
                     if (hit.transform.CompareTag("Pickeable"))
                     {
@@ -69,30 +71,26 @@ public class pickUpItems : NetworkBehaviour
 
     private void OnDrop(InputAction.CallbackContext context)
     {
-        if(IsLocalPlayer)
+        if (heldObject != null)
         {
-            if (heldObject != null)
-            {
-                StopClipping();
+            StopClipping();
 
-                Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), false);
-                heldObjectRB.isKinematic = false;
-                heldObject.transform.parent = null;
-                heldObject = null;
-            }
+            Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), false);
+            heldObjectRB.isKinematic = false;
+            //heldObject.transform.parent = null;
+            heldObject = null;
         }
     }
 
     private void PickUpObject(GameObject gameObject)
     {
-
         //transforma el objeto cogible para que se mueva en el holdPos
         if(gameObject.transform.GetComponent<Rigidbody>())
         {
             heldObject = gameObject;
             heldObjectRB = gameObject.transform.GetComponent<Rigidbody>();
             heldObjectRB.isKinematic = true;
-            heldObject.transform.parent = holdPos.transform;
+            //heldObject.transform.parent = holdPos.transform;
             Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), true);
         }
     }
@@ -105,11 +103,11 @@ public class pickUpItems : NetworkBehaviour
         var clipRange  = Vector3.Distance(heldObject.transform.position, transform.position);
 
         RaycastHit[] hits;
-        hits = Physics.RaycastAll(transform.position, transform.TransformDirection(Vector3.forward), clipRange);
+        hits = Physics.RaycastAll(camera.position, camera.TransformDirection(Vector3.forward), clipRange);
 
         if(hits.Length > 1)
         {
-            heldObject.transform.position = transform.position + new Vector3(0f, -0.5f, 0f);
+            heldObject.transform.position = camera.position + new Vector3(0f, -0.5f, 0f);
         }
     }
 }
