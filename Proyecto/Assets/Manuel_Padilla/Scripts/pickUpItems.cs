@@ -90,7 +90,15 @@ public class pickUpItems : NetworkBehaviour
 
             if (IsOwner) return;
             NetworkObject objectNetworkObject = GetComponent<NetworkObject>();
-            objectNetworkObject.ChangeOwnership(NetworkManager.LocalClientId);
+            try
+            {
+
+                objectNetworkObject.ChangeOwnership(NetworkManager.LocalClientId);
+            }
+            catch
+            {
+                Debug.Log("no cambia a cliente");
+            }
         }
     }
 
