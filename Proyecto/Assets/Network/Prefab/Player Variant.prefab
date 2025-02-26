@@ -127,6 +127,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6277263529608961025, guid: 10e05c59c1c409849b233afc61d1cc57, type: 3}
       insertIndex: -1
       addedObject: {fileID: 822522277073060547}
+    - targetCorrespondingSourceObject: {fileID: 6277263529608961025, guid: 10e05c59c1c409849b233afc61d1cc57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 103895571323414538}
     - targetCorrespondingSourceObject: {fileID: 8224204972508575023, guid: 10e05c59c1c409849b233afc61d1cc57, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7549837827512235020}
@@ -223,6 +226,21 @@ MonoBehaviour:
   player: {fileID: 2198569840089376840}
   holdPos: {fileID: 8993867012233226555}
   pickUpRange: 5
+  camera: {fileID: 1628234433468572434}
+--- !u!114 &103895571323414538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198569840089376840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9e797a7a0cae847bb056a4cacb71de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interact: {fileID: 0}
+  interactRange: 5
   camera: {fileID: 1628234433468572434}
 --- !u!20 &3703734539707904233 stripped
 Camera:
