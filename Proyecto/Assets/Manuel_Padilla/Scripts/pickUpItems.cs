@@ -87,6 +87,10 @@ public class pickUpItems : NetworkBehaviour
             heldObjectRB = gameObject.transform.GetComponent<Rigidbody>();
             heldObjectRB.isKinematic = true;
             Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), true);
+
+            if (IsOwner) return;
+            NetworkObject objectNetworkObject = GetComponent<NetworkObject>();
+            objectNetworkObject.ChangeOwnership(NetworkManager.LocalClientId);
         }
     }
 
