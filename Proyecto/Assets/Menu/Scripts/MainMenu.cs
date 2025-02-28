@@ -21,6 +21,7 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private CanvasGroup mainMenuCanvasGroup;
     [SerializeField] private CanvasGroup optionsMenuCanvasGroup;
+    [SerializeField] private CanvasGroup titleMenuCanvasGroup;
 
     private void Update()
     {
@@ -36,6 +37,7 @@ public class MainMenu : MonoBehaviour
             MainMenuCanvas();
         }
     }
+
     void OnEnable()
     {
         skipAction.action.Enable();
@@ -78,12 +80,14 @@ public class MainMenu : MonoBehaviour
     void OpenOptionsMenu()
     {
         ShowCanvasGroup(optionsMenuCanvasGroup, true);
+        ShowCanvasGroup(titleMenuCanvasGroup, false);
         ShowCanvasGroup(mainMenuCanvasGroup, false);
     }
 
     public void CloseOptionsMenu()
     {
         ShowCanvasGroup(optionsMenuCanvasGroup, false);
+        ShowCanvasGroup(titleMenuCanvasGroup, true);
         ShowCanvasGroup(mainMenuCanvasGroup, true);
     }
 
