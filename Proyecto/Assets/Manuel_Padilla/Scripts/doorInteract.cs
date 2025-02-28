@@ -1,7 +1,8 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class doorInteract : MonoBehaviour
+public class doorInteract : NetworkBehaviour
 {
     public UnityEvent doorInteraction;
 
