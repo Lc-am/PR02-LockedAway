@@ -37,7 +37,7 @@ public class pickUpItems : NetworkBehaviour
 
     private void Update()
     {
-        if (heldObject != null && IsOwner) // Solo mover el objeto si este es propiedad de este jugador
+        if (heldObject) // Solo mover el objeto si este es propiedad de este jugador
         {
             MoveObject();
         }
@@ -69,6 +69,7 @@ public class pickUpItems : NetworkBehaviour
                 if (hit.transform.CompareTag("Pickeable"))
                 {
                     PickUpObject(hit.transform.gameObject, holdPos);
+                    Debug.Log("PickUp");
                 }
             }
         }
@@ -98,40 +99,42 @@ public class pickUpItems : NetworkBehaviour
 
     private void PickUpObject(GameObject pickeableGameObject, GameObject holdGameObject)
     {
-        if(IsClient)
+        // Esto solo ocurre en el Server - Copón
+        Debug.Log("Prove if");
+        if (pickeableGameObject.transform.GetComponent<Rigidbody>())
         {
-            SendPickupToServerClientRPC();
-        }
-        else
-        {
-            // Transforma el objeto cogible para que se mueva en el holdPos
-            if (gameObject.transform.GetComponent<Rigidbody>())
-            {
-                heldObject = gameObject;
-                heldObjectRB = gameObject.transform.GetComponent<Rigidbody>();
-                heldObjectRB.isKinematic = true;
-                Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), true);
-            }
-        }
-    }
-
-    [Rpc(SendTo.Server)]
-    private void SendPickupToServerClientRPC()
-    {
-        ReceivePickUpFormClientServerRpc();
-    }
-
-    [Rpc(SendTo.Server)]
-    private void ReceivePickUpFormClientServerRpc()
-    {
-        if (gameObject.transform.GetComponent<Rigidbody>())
-        {
-            heldObject = gameObject;
-            heldObjectRB = gameObject.transform.GetComponent<Rigidbody>();
+            heldObject = pickeableGameObject;
+            heldObjectRB = heldObject.transform.GetComponent<Rigidbody>();
             heldObjectRB.isKinematic = true;
             Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), true);
+            Debug.Log("Tansform");
         }
+
+        //if(IsClient)
+        //{
+        //    SendPickupToServerClientRPC();
+        //}
     }
+
+    //[Rpc(SendTo.Server)]
+    //private void SendPickupToServerClientRPC()
+    //{
+    //    ReceivePickUpFormClientServerRpc();
+    //}
+
+    //[Rpc(SendTo.Server)]
+    //private void ReceivePickUpFormClientServerRpc()
+    //{
+    //    Debug.Log("Prove if");
+    //    if (gameObject.transform.GetComponent<Rigidbody>())
+    //    {
+    //        heldObject = gameObject;
+    //        heldObjectRB = gameObject.transform.GetComponent<Rigidbody>();
+    //        heldObjectRB.isKinematic = true;
+    //        Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), true);
+    //        Debug.Log("Tansform");
+    //    }
+    //}
 
     private void StopClipping()
     {
