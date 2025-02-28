@@ -2,6 +2,7 @@ using System;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.HighDefinition;
 
 public class pickUpItems : NetworkBehaviour
 {
@@ -50,21 +51,23 @@ public class pickUpItems : NetworkBehaviour
 
     private void OnPickUp(InputAction.CallbackContext context)
     {
+        Debug.Log("OnPickup");
         if (IsLocalPlayer)
         {
-            PickupServerRPC();
+            Debug.Log("... isLocalPlayer");
+            PickupServerRPC(camera.position, camera.TransformDirection(Vector3.forward));
         }
     }
 
     [Rpc(SendTo.Server)]
-    void PickupServerRPC()
+    void PickupServerRPC(Vector3 cameraPosition, Vector3 cameraDirection)
     {
         if (heldObject == null)
         {
             RaycastHit hit;
 
             // Cada vez que se da el click, lanza un rayo para ver si golpea con un tag de pickable para coger el objeto
-            if (Physics.Raycast(camera.position, camera.TransformDirection(Vector3.forward), out hit, pickUpRange))
+            if (Physics.Raycast(cameraPosition, cameraDirection, out hit, pickUpRange))
             {
                 if (hit.transform.CompareTag("Pickeable"))
                 {
