@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class doorSystem : MonoBehaviour
+public class doorSystem : NetworkBehaviour
 {
     [SerializeField] private float rotationTime = 5f;   // Tiempo de transición
     [SerializeField] private float doorOpened = 90f;    // Ángulo de puerta abierta

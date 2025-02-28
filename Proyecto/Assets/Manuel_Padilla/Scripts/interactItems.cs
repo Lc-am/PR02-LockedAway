@@ -1,7 +1,8 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class interactItems : MonoBehaviour
+public class interactItems : NetworkBehaviour
 {
     [SerializeField] private InputActionReference interact;
     [SerializeField] private float interactRange = 5f;
@@ -23,16 +24,19 @@ public class interactItems : MonoBehaviour
 
     private void OnInteract(InputAction.CallbackContext context)
     {
-        RaycastHit hit;
-
-        if (Physics.Raycast(camera.position, camera.TransformDirection(Vector3.forward), out hit, interactRange))
+        if(IsLocalPlayer)
         {
-            if (hit.transform.CompareTag("Door"))
+            RaycastHit hit;
+
+            if (Physics.Raycast(camera.position, camera.TransformDirection(Vector3.forward), out hit, interactRange))
             {
-                doorInteract door = hit.transform.GetComponent<doorInteract>();
-                if (door != null)
+                if (hit.transform.CompareTag("Door"))
                 {
-                    door.Interact();
+                    doorInteract door = hit.transform.GetComponent<doorInteract>();
+                    if (door != null)
+                    {
+                        door.Interact();
+                    }
                 }
             }
         }

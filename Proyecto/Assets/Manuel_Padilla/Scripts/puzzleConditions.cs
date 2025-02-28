@@ -1,7 +1,8 @@
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class puzzleConditions : MonoBehaviour
+public class puzzleConditions : NetworkBehaviour
 {
     public UnityEvent puzzlesEvent; //Añadir mas lineas si se quiere que sean diferentes
 

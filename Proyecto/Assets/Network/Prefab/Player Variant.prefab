@@ -239,7 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9e797a7a0cae847bb056a4cacb71de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interact: {fileID: 0}
+  ShowTopMostFoldoutHeaderGroup: 1
+  interact: {fileID: 1781555164194001046, guid: 35845fe01580c41289b024647b1d1c53, type: 3}
   interactRange: 5
   camera: {fileID: 1628234433468572434}
 --- !u!20 &3703734539707904233 stripped
