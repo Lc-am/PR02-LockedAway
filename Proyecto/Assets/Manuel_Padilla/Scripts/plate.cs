@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class plate : MonoBehaviour
+public class plate : NetworkBehaviour
 {
     [SerializeField] puzzleConditions puzzleConditions;
 
