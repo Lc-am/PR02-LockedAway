@@ -1,12 +1,12 @@
 using UnityEngine;
-using TMPro;  // Asegúrate de tener la referencia a TextMesh Pro
-using UnityEngine.EventSystems;  // Necesario para los eventos de interacción con el ratón
+using TMPro;  
+using UnityEngine.EventSystems;  
 
 public class Button_Color : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public TMP_Text buttonText;  // Referencia al texto del botón TextMesh Pro
+    public TMP_Text buttonText;  // Texto del botón
     public string normalColorHex = "#8C8C8C";
-    public Color normalColor;  // Color normal del texto
+    public Color normalColor;  // Color del texto
     public Color hoverColor = Color.white;  // Color cuando el ratón está encima
 
     void Start()
@@ -18,13 +18,13 @@ public class Button_Color : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     // Método cuando el ratón entra en el botón
     public void OnPointerEnter(PointerEventData eventData)
     {
-        buttonText.color = hoverColor;  // Cambia el color a hover
+        buttonText.color = hoverColor; 
     }
 
     // Método cuando el ratón sale del botón
     public void OnPointerExit(PointerEventData eventData)
     {
-        buttonText.color = normalColor;  // Vuelve al color normal
+        buttonText.color = normalColor; 
     }
 }
 
