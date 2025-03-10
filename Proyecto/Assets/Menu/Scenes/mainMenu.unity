@@ -478,55 +478,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1075143280
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1075143282}
-  - component: {fileID: 1075143281}
-  m_Layer: 0
-  m_Name: GameLogic
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1075143281
+--- !u!114 &1075143281 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1439935096541840637, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+  m_PrefabInstance: {fileID: 7344553891099268115}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075143280}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ecddf7a88b8a204bb771581206abb5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playButton: {fileID: 1411429053}
-  optionsButton: {fileID: 811411595}
-  exitButton: {fileID: 184549049}
-  mainMenuCanvasGroup: {fileID: 692145367}
-  optionsMenuCanvasGroup: {fileID: 7848131835033303320}
---- !u!4 &1075143282
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075143280}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1411429053 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7015764517900731914, guid: 4d82a2512ea8593459003d5e6a98107a, type: 3}
@@ -1243,6 +1205,83 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35f171adb41c64e45bb9e292590402b8, type: 3}
+--- !u!1001 &7344553891099268115
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1025093167330358560, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: m_Name
+      value: GameLogic
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439935096541840637, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: exitButton
+      value: 
+      objectReference: {fileID: 184549049}
+    - target: {fileID: 1439935096541840637, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: playButton
+      value: 
+      objectReference: {fileID: 1411429053}
+    - target: {fileID: 1439935096541840637, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: optionsButton
+      value: 
+      objectReference: {fileID: 811411595}
+    - target: {fileID: 1439935096541840637, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: mainMenuCanvasGroup
+      value: 
+      objectReference: {fileID: 692145367}
+    - target: {fileID: 1439935096541840637, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: optionsMenuCanvasGroup
+      value: 
+      objectReference: {fileID: 7848131835033303320}
+    - target: {fileID: 8773311853496687682, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773311853496687682, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773311853496687682, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773311853496687682, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773311853496687682, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773311853496687682, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773311853496687682, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773311853496687682, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773311853496687682, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773311853496687682, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a4fc831c58c8d104c838cb149562805f, type: 3}
 --- !u!225 &7848131835033303320 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 7432841512849827848, guid: 30c92f06be839284d8a74b7bb986af2a, type: 3}
@@ -1256,7 +1295,7 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 1745948321234790804}
   - {fileID: 445498550795620088}
-  - {fileID: 1075143282}
+  - {fileID: 7344553891099268115}
   - {fileID: 2426094291433038361}
   - {fileID: 6020008222117532434}
   - {fileID: 3469306477340536495}
