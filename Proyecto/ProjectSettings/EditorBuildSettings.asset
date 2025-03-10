@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Network/Scenes/NetWorkLab.unity
     guid: e5758d88785514142b807c6174236722
   - enabled: 1
-    path: Assets/Kenny/Scenes/SplashGame.unity
+    path: Assets/Menu/Scenes/SplashGame.unity
     guid: 648c589cba8cfc34097bd339dede7852
   - enabled: 1
     path: Assets/Luca_Acosta/DoorUnlock.unity
