@@ -8,6 +8,7 @@ TagManager:
   - DungeonPath
   - Pickeable
   - Door
+  - UnlockCursor
   layers:
   - Default
   - TransparentFX
