@@ -17,6 +17,7 @@ public class KeyPad : MonoBehaviour
         if (canInput)  
         {
             text.text += number.ToString();
+            Debug.Log(number);
         }
     }
 

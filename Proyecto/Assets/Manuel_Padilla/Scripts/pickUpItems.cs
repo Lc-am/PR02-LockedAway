@@ -51,10 +51,8 @@ public class pickUpItems : NetworkBehaviour
 
     private void OnPickUp(InputAction.CallbackContext context)
     {
-        Debug.Log("OnPickup");
         if (IsLocalPlayer)
         {
-            Debug.Log("... isLocalPlayer");
             PickupServerRPC(camera.position, camera.TransformDirection(Vector3.forward));
         }
     }
@@ -72,7 +70,6 @@ public class pickUpItems : NetworkBehaviour
                 if (hit.transform.CompareTag("Pickeable"))
                 {
                     PickUpObject(hit.transform.gameObject, holdPos);
-                    Debug.Log("PickUp");
                 }
             }
         }
@@ -103,41 +100,14 @@ public class pickUpItems : NetworkBehaviour
     private void PickUpObject(GameObject pickeableGameObject, GameObject holdGameObject)
     {
         // Esto solo ocurre en el Server - Copón
-        Debug.Log("Prove if");
         if (pickeableGameObject.transform.GetComponent<Rigidbody>())
         {
             heldObject = pickeableGameObject;
             heldObjectRB = heldObject.transform.GetComponent<Rigidbody>();
             heldObjectRB.isKinematic = true;
             Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), true);
-            Debug.Log("Tansform");
         }
-
-        //if(IsClient)
-        //{
-        //    SendPickupToServerClientRPC();
-        //}
     }
-
-    //[Rpc(SendTo.Server)]
-    //private void SendPickupToServerClientRPC()
-    //{
-    //    ReceivePickUpFormClientServerRpc();
-    //}
-
-    //[Rpc(SendTo.Server)]
-    //private void ReceivePickUpFormClientServerRpc()
-    //{
-    //    Debug.Log("Prove if");
-    //    if (gameObject.transform.GetComponent<Rigidbody>())
-    //    {
-    //        heldObject = gameObject;
-    //        heldObjectRB = gameObject.transform.GetComponent<Rigidbody>();
-    //        heldObjectRB.isKinematic = true;
-    //        Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), true);
-    //        Debug.Log("Tansform");
-    //    }
-    //}
 
     private void StopClipping()
     {
