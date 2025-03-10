@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class NetworkManager : MonoBehaviour
 {
+    public static object Singleton { get; internal set; }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
