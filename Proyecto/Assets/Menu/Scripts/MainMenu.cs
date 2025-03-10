@@ -64,7 +64,7 @@ public class MainMenu : MonoBehaviour
 
     void playLevel() 
     {
-        SceneManager.LoadScene("DoorUnlock");
+        SceneManager.LoadScene(3);
     }
 
     void exitButtonClick()
