@@ -53,7 +53,7 @@ public class pickUpItems : NetworkBehaviour
     {
         if (IsLocalPlayer)
         {
-            PickupServerRPC(camera.position, camera.TransformDirection(Vector3.forward));
+            PickupServerRPC(camera.position, camera.TransformDirection(Vector3.forward));   //Envia al servidor la orden de coger el objeto
         }
     }
 
@@ -90,7 +90,7 @@ public class pickUpItems : NetworkBehaviour
         {
             StopClipping();
 
-            Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), false);
+            Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), false); //Activa el collider
             heldObjectRB.isKinematic = false;
 
             heldObject = null;
@@ -99,13 +99,13 @@ public class pickUpItems : NetworkBehaviour
 
     private void PickUpObject(GameObject pickeableGameObject, GameObject holdGameObject)
     {
-        // Esto solo ocurre en el Server - Copón
+        // Esto solo ocurre en el Server
         if (pickeableGameObject.transform.GetComponent<Rigidbody>())
         {
             heldObject = pickeableGameObject;
             heldObjectRB = heldObject.transform.GetComponent<Rigidbody>();
             heldObjectRB.isKinematic = true;
-            Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), true);
+            Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.transform.GetComponent<Collider>(), true);  //Desactiva el collider
         }
     }
 
