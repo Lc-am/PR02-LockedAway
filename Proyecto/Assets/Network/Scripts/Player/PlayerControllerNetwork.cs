@@ -16,7 +16,7 @@ public class PlayerControllerNetwork : NetworkBehaviour
     [Header("Camera")]
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float lookSpeed = 1f;  //Sensibilidad de la camara
-    [SerializeField] private float lookXLimit = 45f;    //Limite para no oasarse por arriba o por abajo
+    [SerializeField] private float lookXLimit = 45f;    //Limite para no pasarse por arriba o por abajo
 
     [Header("Player consts")]
     [SerializeField] private float walkSpeed = 6f;
