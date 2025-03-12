@@ -9,5 +9,6 @@ public class ActivePlayer : MonoBehaviour
     {
         NetworkManager.Singleton.StartHost();
         canvas.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
