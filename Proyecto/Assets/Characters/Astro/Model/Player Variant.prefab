@@ -439,10 +439,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasCrosshair: {fileID: 3340223851888398610}
-  camera: {fileID: 5423869028890665374}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 32
 --- !u!20 &3703734539707904233 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8861391393379255456, guid: 10e05c59c1c409849b233afc61d1cc57, type: 3}
