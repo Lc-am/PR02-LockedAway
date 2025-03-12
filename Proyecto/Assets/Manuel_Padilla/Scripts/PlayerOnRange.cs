@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerOnRange : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerOnRange : MonoBehaviour
     {
         if(other.CompareTag("UnlockCursor"))
         {
+            //Si entra en el area de un objeto activa el cursor.
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             canvasCrosshair.SetActive(false);
@@ -24,6 +26,7 @@ public class PlayerOnRange : MonoBehaviour
     {
         if(other.CompareTag("UnlockCursor"))
         {
+            //Si sale del area de un objeto desactiva el cursor.
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             canvasCrosshair.SetActive(true);

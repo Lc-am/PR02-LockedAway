@@ -24,6 +24,7 @@ public class interactItems : NetworkBehaviour
 
     private void OnInteract(InputAction.CallbackContext context)
     {
+        //Funcion que lanza un raycast cada vez que se pulsa el boton de interacción para saber si puede y que puede hacer el objeto interactuado.
         if(IsLocalPlayer)
         {
             RaycastHit hit;
