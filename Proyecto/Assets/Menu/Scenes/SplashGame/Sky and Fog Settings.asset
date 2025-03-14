@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   rotation:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 130
   skyIntensityMode:
     m_OverrideState: 1
     m_Value: 1
@@ -27,10 +27,10 @@ MonoBehaviour:
     m_Value: 1
   upperHemisphereLuxValue:
     m_OverrideState: 1
-    m_Value: 0.60039455
+    m_Value: 0.01420332
   upperHemisphereLuxColor:
     m_OverrideState: 1
-    m_Value: {x: 0.37676552, y: 0.5, z: 0.33741304}
+    m_Value: {x: 0.35829335, y: 0.4373695, z: 0.5}
   desiredLuxValue:
     m_OverrideState: 1
     m_Value: 400
@@ -45,10 +45,10 @@ MonoBehaviour:
     m_Value: 0
   hdriSky:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: 8f165d77df85d83428ecb5cd00a61a6e, type: 3}
+    m_Value: {fileID: 8900000, guid: 0cfae2949a22043408ce16637a9de5b5, type: 3}
   distortionMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   flowmap:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -56,16 +56,16 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   scrollOrientation:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value:
       mode: 0
       customValue: 0
       additiveValue: 0
       multiplyValue: 1
   scrollSpeed:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value:
-      mode: 0
+      mode: 1
       customValue: 100
       additiveValue: 0
       multiplyValue: 1
@@ -73,7 +73,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: -Infinity
   lockSun:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   enableBackplate:
     m_OverrideState: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   cloudType:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   skyAmbientMode:
     m_OverrideState: 0
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953beb541740ddc499d005ee80c9ff29, type: 3}
   m_Name: Fog
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   quality:
     m_OverrideState: 0
     m_Value: 1
@@ -379,7 +379,7 @@ MonoBehaviour:
     m_Value: 50
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 400
+    m_Value: 10000
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
