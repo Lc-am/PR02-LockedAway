@@ -1,11 +1,15 @@
+using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class pipeController : MonoBehaviour
+public class pipeController : NetworkBehaviour, IInteractable
 {
     [SerializeField] private int correctState;
-    private int currentState;
+    private int currentState = 0;
+
     [SerializeField] private Vector3 starterRotation;   //poner la rotacion inicial
     [SerializeField] private Vector3 neededRotation;    //poner la suma que se quiere rotar
+
     private Quaternion rotationToAdd;
 
     private void Awake()
@@ -14,16 +18,12 @@ public class pipeController : MonoBehaviour
         rotationToAdd = Quaternion.Euler(neededRotation);
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void pipeRotate()
     {
-        transform.rotation *= rotationToAdd;
+        Debug.Log("Rotating pipe");
+        transform.rotation *= rotationToAdd;    //Añade la rotacion puesta a la rotacion actual
 
-        if(currentState <=3)
+        if (currentState <=3)   //Actualiza el estado para revisar si esta bien o no
         {
             currentState++;
         }
@@ -31,5 +31,15 @@ public class pipeController : MonoBehaviour
         {
             currentState = 0;
         }
+
+        if(currentState == correctState)
+        {
+            Debug.Log("Pipe is correct");
+        }
+    }
+
+    void IInteractable.StartInteraction()
+    {
+        pipeRotate();
     }
 }

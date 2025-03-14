@@ -1,7 +1,8 @@
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class doorSystem : NetworkBehaviour
+public class doorSystem : NetworkBehaviour, IInteractable
 {
     [SerializeField] private float rotationTime = 5f;   // Tiempo de transición
     [SerializeField] private float doorOpened = 90f;    // Ángulo de puerta abierta
@@ -17,7 +18,7 @@ public class doorSystem : NetworkBehaviour
     {
         // Inicializar las rotaciones
         initialRotation = transform.rotation;
-        finalRotation = Quaternion.Euler(0, doorOpened, 0); // Rotación cuando la puerta está abierta
+        finalRotation = Quaternion.Euler(0, doorOpened, 0); // Rotación cuando la puerta está 
     }
 
     // Función para abrir o cerrar la puerta con transición
@@ -60,5 +61,10 @@ public class doorSystem : NetworkBehaviour
                 doorState = !doorState;  // Cambia el estado de la puerta (abierta o cerrada)
             }
         }
+    }
+
+    void IInteractable.StartInteraction()
+    {
+        isAnimating = true;
     }
 }
