@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Luca_Acosta/DoorUnlock.unity
     guid: 3f43c4c93d22b22439dca563d9813e61
+  - enabled: 1
+    path: Assets/Systems/Puzzles/Pipes/Scenes/PipeTest.unity
+    guid: 83c1e89910f85ca44b0ecadccd914dd9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 35845fe01580c41289b024647b1d1c53, type: 3}
   m_UseUCBPForAssetBundles: 0
