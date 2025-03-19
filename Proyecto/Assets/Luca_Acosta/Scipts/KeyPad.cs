@@ -9,18 +9,26 @@ public class KeyPad : MonoBehaviour
     private bool canInput = true;  
     private float blockTime = 2f;   
     private float timeRemaining;
+    private int maxDigits = 6;
 
     [SerializeField] puzzleConditions puzzleConditions;
 
     public void Number(int number)
     {
-        if (canInput)  
+        if (canInput && text.text.Length < maxDigits)  // Verifica que no se hayan ingresado más de 6 dígitos
         {
             text.text += number.ToString();
             Debug.Log(number);
         }
     }
-
+    public void DeleteLastNumber()
+    {
+        if (text.text.Length > 0)  // Verifica que haya al menos un número para eliminar
+        {
+            text.text = text.text.Remove(text.text.Length - 1);
+            Debug.Log("Último número eliminado");
+        }
+    }
     public void Execute()
     {
         if (text.text == Answer)
