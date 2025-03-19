@@ -15,7 +15,7 @@ public class KeyPad : MonoBehaviour
 
     public void Number(int number)
     {
-        if (canInput && text.text.Length < maxDigits)  // Verifica que no se hayan ingresado más de 6 dígitos
+        if (canInput && text.text.Length < maxDigits)  
         {
             text.text += number.ToString();
             Debug.Log(number);
@@ -23,7 +23,7 @@ public class KeyPad : MonoBehaviour
     }
     public void DeleteLastNumber()
     {
-        if (text.text.Length > 0)  // Verifica que haya al menos un número para eliminar
+        if (text.text.Length > 0)  
         {
             text.text = text.text.Remove(text.text.Length - 1);
             Debug.Log("Último número eliminado");
