@@ -1,61 +1,56 @@
 using System.Collections;
 using UnityEngine;
 
-public class DoorController : MonoBehaviour
+public class DoorController : MonoBehaviour, IActivable
 {
     public Transform upperPart; // Parte superior de la puerta
     public Transform lowerPart; // Parte inferior de la puerta
+    public float openDistance = 5f; // Distancia que se moverán
+    public float openSpeed = 2f; // Velocidad de apertura
 
-    public Vector3 upperOpenOffset; // Distancia a mover la parte superior
-    public Vector3 lowerOpenOffset; // Distancia a mover la parte inferior
-
-    public float openSpeed = 2f;
-    private bool isOpen = false;
-
-    private Vector3 upperClosedPos;
-    private Vector3 lowerClosedPos;
+    private bool isOpening = false;
+    private Vector3 upperClosedPos, lowerClosedPos;
+    private Vector3 upperOpenPos, lowerOpenPos;
 
     void Start()
     {
+        // Guardar posiciones iniciales
         upperClosedPos = upperPart.position;
         lowerClosedPos = lowerPart.position;
+
+        // Calcular posiciones abiertas
+        upperOpenPos = upperClosedPos + Vector3.up * openDistance;
+        lowerOpenPos = lowerClosedPos + Vector3.down * openDistance;
     }
 
-    public void ToggleDoor()
+    public void Activate()
     {
-        if (!isOpen)
+        if (!isOpening)
+        {
             StartCoroutine(OpenDoor());
-        else
-            StartCoroutine(CloseDoor());
+        }
     }
 
     IEnumerator OpenDoor()
     {
-        isOpen = true;
+        isOpening = true;
         float elapsedTime = 0;
-        while (elapsedTime < openSpeed)
+
+        while (elapsedTime < 1f)
         {
-            upperPart.position = Vector3.Lerp(upperClosedPos, upperClosedPos + upperOpenOffset, elapsedTime / openSpeed);
-            lowerPart.position = Vector3.Lerp(lowerClosedPos, lowerClosedPos + lowerOpenOffset, elapsedTime / openSpeed);
+            upperPart.position = Vector3.Lerp(upperClosedPos, upperOpenPos, elapsedTime * openSpeed);
+            lowerPart.position = Vector3.Lerp(lowerClosedPos, lowerOpenPos, elapsedTime * openSpeed);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        upperPart.position = upperClosedPos + upperOpenOffset;
-        lowerPart.position = lowerClosedPos + lowerOpenOffset;
+
+        // Asegurar que lleguen a su destino exacto
+        upperPart.position = upperOpenPos;
+        lowerPart.position = lowerOpenPos;
     }
 
-    IEnumerator CloseDoor()
-    {
-        isOpen = false;
-        float elapsedTime = 0;
-        while (elapsedTime < openSpeed)
-        {
-            upperPart.position = Vector3.Lerp(upperClosedPos + upperOpenOffset, upperClosedPos, elapsedTime / openSpeed);
-            lowerPart.position = Vector3.Lerp(lowerClosedPos + lowerOpenOffset, lowerClosedPos, elapsedTime / openSpeed);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        upperPart.position = upperClosedPos;
-        lowerPart.position = lowerClosedPos;
-    }
+}
+public interface IActivable
+{
+    void Activate();
 }
