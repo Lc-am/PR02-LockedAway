@@ -1,29 +1,25 @@
 using UnityEngine;
-using System.Collections; 
 
-
-public class ButtonTrigger : MonoBehaviour
+public class ButtonClick : MonoBehaviour
 {
-    public DoorController doorController; // Referencia al script de la puerta
-    private bool isPressed = false;
+    [SerializeField] private GameObject activableObject;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnMouseDown()
     {
-        Debug.Log("Algo tocó el botón: " + other.name); // Ver en la consola
-
-        if (!isPressed && other.CompareTag("Player"))
+        if (activableObject == null)
         {
-            isPressed = true;
-            Debug.Log("¡El jugador tocó el botón!"); // Ver en la consola
-            doorController.ToggleDoor();
-            StartCoroutine(ResetButton());
+            Debug.LogError(" activableObject no está asignado en el Inspector.", this);
+            return;
         }
-    }
 
-
-    IEnumerator ResetButton()
-    {
-        yield return new WaitForSeconds(1f); // Espera 1 segundo antes de permitir otra activación
-        isPressed = false;
+        IActivable activable = activableObject.GetComponent<IActivable>();
+        if (activable != null)
+        {
+            activable.Activate();
+        }
+        else
+        {
+            Debug.LogError(" El objeto asignado no implementa IActivable.", this);
+        }
     }
 }
