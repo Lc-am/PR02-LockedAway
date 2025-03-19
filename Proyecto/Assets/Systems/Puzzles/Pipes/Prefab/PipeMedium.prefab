@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 433728041813145825}
   m_Layer: 0
   m_Name: PipeMedium
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  correctState: 0
   neededRotation: {x: 0, y: 0, z: 90}
 --- !u!114 &8233230619058912332
 MonoBehaviour:
@@ -127,7 +126,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

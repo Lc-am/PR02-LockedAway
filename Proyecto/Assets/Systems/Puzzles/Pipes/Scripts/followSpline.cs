@@ -37,7 +37,7 @@ public class followSpline : MonoBehaviour
         {
             if(other.CompareTag("Pipe"))
             {
-                splineContainer = other.gameObject.GetComponent<SplineContainer>();
+                splineContainer = other.gameObject.GetComponentInChildren<SplineContainer>();
             }
         }
 
