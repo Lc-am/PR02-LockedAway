@@ -13,9 +13,11 @@ public class PauseMenu : MonoBehaviour
     public Button mainMenuButton;
 
     public Canvas optionsMenuCanvas;
-
     public Canvas optionsPauseMenu;
-    private bool isPaused = false;
+
+    //private bool isPaused = false;
+
+    [SerializeField] PlayerControllerNetwork playerControllerNetwork;
 
     private void OnEnable()
     {
@@ -31,6 +33,12 @@ public class PauseMenu : MonoBehaviour
 
     public void Start()
     {
+
+        if (playerControllerNetwork == null)
+        {
+            Debug.LogWarning("PlayerControllerNetwork no encontrado en la escena. Asegúrate de que esté presente.");
+            return; // Si no se encuentra, no sigas ejecutando el código
+        }
         pauseAction.action.Enable();
         optionsPauseMenu = GetComponent<Canvas>();
         optionsPauseMenu.enabled = false;
@@ -43,7 +51,13 @@ public class PauseMenu : MonoBehaviour
 
     public void TogglePause(InputAction.CallbackContext context)
     {
-        if (!isPaused)
+        if (playerControllerNetwork == null)
+        {
+            Debug.LogError("PlayerControllerNetwork no está asignado correctamente.");
+            return; // Termina la función si no se encuentra el objeto
+        }
+
+        if (!playerControllerNetwork.isPaused)
         {
             OpenPauseMenu();
         }
@@ -55,23 +69,29 @@ public class PauseMenu : MonoBehaviour
 
     public void OpenPauseMenu()
     {
-        Time.timeScale = 0;
-        isPaused = true;
+        //Time.timeScale = 0;
+        playerControllerNetwork.isPaused = true;
         optionsPauseMenu.enabled= true;
+        Cursor.visible = true; 
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void ClosePauseMenu()
     {
         Time.timeScale = 1;
-        isPaused = false;
+        playerControllerNetwork.isPaused = false;
         optionsPauseMenu.enabled = false;
+        Cursor.visible = false; 
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1;
-        isPaused = false;
+        playerControllerNetwork.isPaused = false;
         optionsPauseMenu.enabled = false;
+        Cursor.visible = false; 
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void OpenOptions()
