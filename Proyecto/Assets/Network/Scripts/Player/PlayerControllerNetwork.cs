@@ -41,6 +41,8 @@ public class PlayerControllerNetwork : NetworkBehaviour
 
     [SerializeField] private GameObject cameraObject;
 
+    public bool isPaused = false;
+
     private void Start()
     {
         // Solo activar la cámara si este objeto es el jugador local
@@ -101,21 +103,24 @@ public class PlayerControllerNetwork : NetworkBehaviour
     {
         if(IsLocalPlayer)
         {
-            characterMovement();
-
-            cameraRotation();
-
-            if (characterController.isGrounded)
+            if(!isPaused)
             {
-                gravity = 0f;  // Desactiva la gravedad cuando el personaje está en el suelo
-            }
-            else
-            {
-                gravity = 10f;  // Aplica gravedad cuando no está en el suelo
-            }
+                characterMovement();
 
-            animator.SetFloat("VelX", curSpeedY);
-            animator.SetFloat("VelY", curSpeedX);
+                cameraRotation();
+
+                if (characterController.isGrounded)
+                {
+                    gravity = 0f;  // Desactiva la gravedad cuando el personaje está en el suelo
+                }
+                else
+                {
+                    gravity = 10f;  // Aplica gravedad cuando no está en el suelo
+                }
+
+                animator.SetFloat("VelX", curSpeedY);
+                animator.SetFloat("VelY", curSpeedX);
+            }
         }
     }
 
