@@ -28,7 +28,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4350158939991986322}
   m_Father: {fileID: 68673061624150022}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5025381829279294367
@@ -65,7 +66,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6287747018780060863}
-  - {fileID: 4350158939991986322}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9022780449368845937
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 783213650
+  GlobalObjectIdHash: 1360113226
   InScenePlacedSourceGlobalObjectIdHash: 3400431273
   DeferredDespawnTick: 0
   Ownership: 1
@@ -170,7 +170,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 68673061624150022}
+    m_TransformParent: {fileID: 6287747018780060863}
     m_Modifications:
     - target: {fileID: 8088715833517415497, guid: 57a3cc65367ac9143b3a4fe9bf42bb31, type: 3}
       propertyPath: GlobalObjectIdHash
