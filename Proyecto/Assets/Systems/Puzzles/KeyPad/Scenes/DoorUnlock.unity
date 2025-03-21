@@ -1646,6 +1646,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7820125614601535639, guid: ef28cf1e60ee90f45943ad3dc03591be, type: 3}
+      propertyPath: playerControllerNetwork
+      value: 
+      objectReference: {fileID: 466157297237961619, guid: a9f6efdd67755c4459882372bd34afe0, type: 3}
     - target: {fileID: 8476619902514897215, guid: ef28cf1e60ee90f45943ad3dc03591be, type: 3}
       propertyPath: m_Name
       value: PauseGroup
