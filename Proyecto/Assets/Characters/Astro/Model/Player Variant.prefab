@@ -9,9 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7982970930810305348}
-  - component: {fileID: 3042881822879331733}
-  - component: {fileID: 8182450101292673341}
-  - component: {fileID: 5065484639843133872}
   m_Layer: 0
   m_Name: Walkie
   m_TagString: Untagged
@@ -34,42 +31,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6072707475829887748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3042881822879331733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702878404214604294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7365ea3021cf0e44db8edebab41650ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8182450101292673341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702878404214604294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ae5e8c5cfa67144694ef5d53709529c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5065484639843133872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702878404214604294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e8dd41d7833a9742be7285c2a475b3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3340223851888398610
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4280169038840110684
 Transform:
   m_ObjectHideFlags: 0
@@ -561,6 +522,7 @@ MonoBehaviour:
   crouchHeight: 1
   crouchSpeed: 3
   cameraObject: {fileID: 5423869028890665374}
+  isPaused: 0
 --- !u!114 &8621369394692244475
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,8 +4,8 @@ using UnityEngine;
 public class KeyPad : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
+    [SerializeField] string Answer = "123456";
 
-    private string Answer = "123456";
     private bool canInput = true;  
     private float blockTime = 2f;   
     private float timeRemaining;
