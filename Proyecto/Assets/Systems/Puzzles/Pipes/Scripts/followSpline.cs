@@ -1,50 +1,58 @@
-using NUnit.Framework;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
-using UnityEngine.Splines;
-using Spline = UnityEngine.Rendering.PostProcessing.Spline;
-
 
 public class followSpline : MonoBehaviour
 {
-    public Spline currentSpline;  // El spline actual que el objeto sigue
-    public float speed = 5f;      // Velocidad de movimiento
-    public Spline newSpline;      // El nuevo spline al que se cambiará
-    private float t = 0f;         // Posición a lo largo del spline (0 a 1)
-    private bool isFollowing = true; // Indicador de si está siguiendo el spline o no
+    Transform[] puntosTuberia;  // Array para los puntos de paso
+    [SerializeField] private float velocidad = 5f;       // Velocidad de la esfera
+    private int puntoActual = 0;        // Índice del punto actual
+    pipeController pipecontroller;
 
-    SplineAnimate splineAnimate;
-
-    private void Awake()
+    void Update()
     {
-        splineAnimate = GetComponent<SplineAnimate>();
+        if(puntosTuberia != null)
+        {
+            // Si la esfera no ha llegado al último punto, mueve la esfera hacia el siguiente punto
+            if (puntoActual < puntosTuberia.Length)
+            {
+                MoverHaciaPunto();
+            }
+        }
     }
 
-    //private void Update()
-    //{
-    //    if (isFollowing)
-    //    {
-    //        // Mueve el objeto a lo largo del spline
-    //        t += Time.deltaTime * speed;
+    void MoverHaciaPunto()
+    {
+        // Mover la esfera hacia el punto actual
+        Transform objetivo = puntosTuberia[puntoActual];
+        float step = velocidad * Time.deltaTime;  // Calcula el paso para el movimiento
+        transform.position = Vector3.MoveTowards(transform.position, objetivo.position, step);
 
-    //        if (t > 1f) // Si el objeto llega al final del spline
-    //        {
-    //            t = 1f;
-    //            // Aquí se puede manejar lo que pasa al final del spline
-    //            Debug.Log("El objeto ha llegado al final del spline.");
-    //        }
-
-    //        // Mover el objeto a lo largo del spline
-    //        transform.position = currentSpline.GetPoint(t);
-    //    }
-    //}
+        // Cuando la esfera llega al punto, avanzamos al siguiente
+        if (transform.position == objetivo.position)
+        {
+            puntoActual++;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Pipe"))
         {
-            splineAnimate.Container = other.gameObject.GetComponentInChildren<SplineContainer>();
+            pipecontroller = other.GetComponent<pipeController>();
+
+            if (pipecontroller != null)
+            {
+                puntoActual = 0;
+
+                puntosTuberia = new Transform[pipecontroller.controlPoint.Length];
+
+                for (int i = 0; i < pipecontroller.controlPoint.Length; i++)
+                {
+                    puntosTuberia[i] = pipecontroller.controlPoint[i].transform;
+
+                }
+            }
+
         }
     }
+
 }
