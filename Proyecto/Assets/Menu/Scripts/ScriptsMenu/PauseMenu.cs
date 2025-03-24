@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour
 
     //private bool isPaused = false;
 
-    [SerializeField] PlayerControllerNetwork playerControllerNetwork;
+    [SerializeField] pauseController pausecontroller;
 
     private void OnEnable()
     {
@@ -34,7 +34,7 @@ public class PauseMenu : MonoBehaviour
     public void Start()
     {
 
-        if (playerControllerNetwork == null)
+        if (pausecontroller == null)
         {
             Debug.LogWarning("PlayerControllerNetwork no encontrado en la escena. Asegúrate de que esté presente.");
             return; // Si no se encuentra, no sigas ejecutando el código
@@ -51,13 +51,13 @@ public class PauseMenu : MonoBehaviour
 
     public void TogglePause(InputAction.CallbackContext context)
     {
-        if (playerControllerNetwork == null)
+        if (pausecontroller == null)
         {
             Debug.LogError("PlayerControllerNetwork no está asignado correctamente.");
             return; // Termina la función si no se encuentra el objeto
         }
 
-        if (!playerControllerNetwork.isPaused)
+        if (!pausecontroller.isPaused)
         {
             OpenPauseMenu();
         }
@@ -70,7 +70,7 @@ public class PauseMenu : MonoBehaviour
     public void OpenPauseMenu()
     {
         //Time.timeScale = 0;
-        playerControllerNetwork.isPaused = true;
+        pausecontroller.isPaused = true;
         optionsPauseMenu.enabled= true;
         Cursor.visible = true; 
         Cursor.lockState = CursorLockMode.None;
@@ -79,7 +79,7 @@ public class PauseMenu : MonoBehaviour
     public void ClosePauseMenu()
     {
         Time.timeScale = 1;
-        playerControllerNetwork.isPaused = false;
+        pausecontroller.isPaused = false;
         optionsPauseMenu.enabled = false;
         Cursor.visible = false; 
         Cursor.lockState = CursorLockMode.Locked;
@@ -88,7 +88,7 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1;
-        playerControllerNetwork.isPaused = false;
+        pausecontroller.isPaused = false;
         optionsPauseMenu.enabled = false;
         Cursor.visible = false; 
         Cursor.lockState = CursorLockMode.Locked;
