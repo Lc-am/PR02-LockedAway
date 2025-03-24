@@ -4,8 +4,8 @@ using UnityEngine;
 public class KeyPad : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
+    [SerializeField] string Answer = "123456";
 
-    private string Answer = "123456";
     private bool canInput = true;  
     private float blockTime = 2f;   
     private float timeRemaining;
@@ -18,7 +18,6 @@ public class KeyPad : MonoBehaviour
         if (canInput && text.text.Length < maxDigits)  
         {
             text.text += number.ToString();
-            Debug.Log(number);
         }
     }
     public void DeleteLastNumber()
@@ -26,7 +25,6 @@ public class KeyPad : MonoBehaviour
         if (text.text.Length > 0)  
         {
             text.text = text.text.Remove(text.text.Length - 1);
-            Debug.Log("Último número eliminado");
         }
     }
     public void Execute()

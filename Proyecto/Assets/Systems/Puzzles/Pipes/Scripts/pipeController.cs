@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class pipeController : NetworkBehaviour, IInteractable
 {
     [SerializeField] private Vector3 neededRotation;    //poner la suma que se quiere rotar
+    [SerializeField] public GameObject[] controlPoint;
 
     private Quaternion rotationToAdd;
 
