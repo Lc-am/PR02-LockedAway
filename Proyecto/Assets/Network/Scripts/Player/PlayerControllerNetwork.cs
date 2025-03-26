@@ -26,6 +26,7 @@ public class PlayerControllerNetwork : NetworkBehaviour
     [SerializeField] private float defaultHeight = 2f;
     [SerializeField] private float crouchHeight = 1f;
     [SerializeField] private float crouchSpeed = 3f;
+    private int playerNumber;
 
     [Header("Statics")]
     private Vector3 moveDirection = Vector3.zero;   //Input 3D de las fuerzas
@@ -41,6 +42,25 @@ public class PlayerControllerNetwork : NetworkBehaviour
 
     [SerializeField] private GameObject cameraObject;
 
+    private void Awake()
+    {
+        characterController = GetComponent<CharacterController>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        animator = GetComponentInChildren<Animator>();
+
+        if (IsHost)
+        {
+            playerNumber = 1;
+        }
+        else
+        {
+            playerNumber = 2;
+        }
+
+        Debug.Log("Player " + playerNumber + " connected");
+    }
 
     private void Start()
     {
@@ -53,15 +73,6 @@ public class PlayerControllerNetwork : NetworkBehaviour
         {
             cameraObject.SetActive(false);  // Desactivamos la cámara para los jugadores remotos
         }
-    }
-
-    private void Awake()
-    {
-        characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
-        animator = GetComponentInChildren<Animator>();
     }
 
     private void OnEnable()
