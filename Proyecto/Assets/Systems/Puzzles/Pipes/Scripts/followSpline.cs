@@ -6,9 +6,19 @@ public class followSpline : MonoBehaviour
     [SerializeField] private float velocidad = 5f;       // Velocidad de la esfera
     private int puntoActual = 0;        // Índice del punto actual
     pipeController pipecontroller;
+    [SerializeField] private Vector3 movientoNoTuberia;
+
+    private bool notInPipe = true;
+    private bool itsOver = false;
 
     void Update()
     {
+        Debug.Log(notInPipe);
+        if (notInPipe)
+        {
+            transform.position = transform.position + movientoNoTuberia * Time.deltaTime;
+        }
+
         if(puntosTuberia != null)
         {
             // Si la esfera no ha llegado al último punto, mueve la esfera hacia el siguiente punto
@@ -39,6 +49,8 @@ public class followSpline : MonoBehaviour
         {
             pipecontroller = other.GetComponent<pipeController>();
 
+            notInPipe = false;
+
             if (pipecontroller != null)
             {
                 puntoActual = 0;
@@ -48,7 +60,6 @@ public class followSpline : MonoBehaviour
                 for (int i = 0; i < pipecontroller.controlPoint.Length; i++)
                 {
                     puntosTuberia[i] = pipecontroller.controlPoint[i].transform;
-
                 }
             }
 
