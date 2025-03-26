@@ -47,6 +47,8 @@ public class followSpline : MonoBehaviour
     {
         if (other.CompareTag("Pipe"))
         {
+            Debug.Log(other.gameObject);
+
             pipecontroller = other.GetComponent<pipeController>();
 
             notInPipe = false;
