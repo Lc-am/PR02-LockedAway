@@ -50,13 +50,13 @@ public class PlayerControllerNetwork : NetworkBehaviour
 
         animator = GetComponentInChildren<Animator>();
 
-        if (IsHost)
+        if (IsClient)
         {
-            playerNumber = 1;
+            playerNumber = 2;
         }
         else
         {
-            playerNumber = 2;
+            playerNumber = 1;
         }
 
         Debug.Log("Player " + playerNumber + " connected");
