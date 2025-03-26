@@ -50,7 +50,7 @@ public class PlayerControllerNetwork : NetworkBehaviour
 
         animator = GetComponentInChildren<Animator>();
 
-        if (IsClient)
+        if (IsServer)
         {
             playerNumber = 2;
         }
