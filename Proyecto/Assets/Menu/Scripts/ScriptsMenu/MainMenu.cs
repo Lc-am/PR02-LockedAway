@@ -64,7 +64,7 @@ public class MainMenu : MonoBehaviour
 
     void playLevel() 
     {
-        SceneManager.LoadScene("MainScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
     }
 
     void exitButtonClick()

@@ -20,6 +20,6 @@ public class NextLevel : MonoBehaviour
 
     private void ChangeScene(InputAction.CallbackContext context)
     {
-            SceneManager.LoadScene("Jugable2");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Jugable2");
     }
 }

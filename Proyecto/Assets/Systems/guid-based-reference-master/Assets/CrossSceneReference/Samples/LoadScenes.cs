@@ -19,16 +19,16 @@ public class LoadScenes : MonoBehaviour
     {
 		foreach( var info in scenes )
         {
-            Scene scene = SceneManager.GetSceneByName(info.name);
+            Scene scene = UnityEngine.SceneManagement.SceneManager.GetSceneByName(info.name);
             
             if (info.shouldLoad && !scene.isLoaded)
             {
-                SceneManager.LoadScene(info.name, LoadSceneMode.Additive);
+                UnityEngine.SceneManagement.SceneManager.LoadScene(info.name, LoadSceneMode.Additive);
             }
 
             if (!info.shouldLoad && scene.isLoaded)
             {
-                SceneManager.UnloadSceneAsync(scene);
+                UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(scene);
             }
         }
 	}

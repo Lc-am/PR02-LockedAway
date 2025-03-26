@@ -43,7 +43,7 @@ public class NavigateToAfterTimeOrPress : MonoBehaviour
         if (!hasNavigated)
         {
             hasNavigated = true;
-            SceneManager.LoadScene(nextSceneName);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
         }
     }
 }

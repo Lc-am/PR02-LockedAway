@@ -36,7 +36,7 @@ public class NetWorkManagerUI : MonoBehaviour
     {
         if(host)
         {
-            SceneManager.LoadScene("mainScene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("mainScene");
         }
     }
 }

@@ -19,6 +19,6 @@ public class CompanySplashController : MonoBehaviour
     private void OnVideoEnd(VideoPlayer vp)
     {
         // Cambia a la siguiente escena al terminar el video
-        SceneManager.LoadScene(nextSceneName);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
     }
 }
