@@ -42,6 +42,25 @@ public class PlayerControllerNetwork : NetworkBehaviour
 
     [SerializeField] private GameObject cameraObject;
 
+    public void OnStartServer()
+    {
+        if (IsServer)
+        {
+            playerNumber = 1; // Asignamos el número 2 al servidor
+            Debug.Log("Server player number: " + playerNumber);
+        }
+    }
+
+    // Esto se ejecutará cuando un cliente inicie
+    public void OnStartClient()
+    {
+        if (IsClient)
+        {
+            playerNumber = 2; // Asignamos el número 1 al cliente
+            Debug.Log("Client player number: " + playerNumber);
+        }
+    }
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -49,15 +68,6 @@ public class PlayerControllerNetwork : NetworkBehaviour
         Cursor.visible = false;
 
         animator = GetComponentInChildren<Animator>();
-
-        if (IsServer)
-        {
-            playerNumber = 2;
-        }
-        else
-        {
-            playerNumber = 1;
-        }
 
         Debug.Log("Player " + playerNumber + " connected");
     }
