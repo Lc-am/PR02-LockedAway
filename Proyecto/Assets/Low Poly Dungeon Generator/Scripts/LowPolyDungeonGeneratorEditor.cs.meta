@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 2a95a914d5c3659489b5cc192502e65e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Scripts/LowPolyDungeonGeneratorEditor.cs
+  uploadId: 722373

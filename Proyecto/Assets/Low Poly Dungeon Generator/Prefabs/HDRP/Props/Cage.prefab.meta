@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b95a935b1cc5b164991273e749a669ab
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Prefabs/HDRP/Props/Cage.prefab
+  uploadId: 722373

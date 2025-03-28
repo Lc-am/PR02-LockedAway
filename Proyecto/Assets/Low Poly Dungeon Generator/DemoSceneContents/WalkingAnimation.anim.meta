@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 07854c220ae3d9e43951d7953ab8ac5a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/DemoSceneContents/WalkingAnimation.anim
+  uploadId: 722373

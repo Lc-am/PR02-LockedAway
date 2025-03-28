@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c80e0e2c9c56dc242a1c7276c39711b5
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Prefabs/SRP/Pathbuilding/StairWallLeft.prefab
+  uploadId: 722373

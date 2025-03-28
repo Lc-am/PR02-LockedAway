@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3c329991608e54f47ad6891b4dc592b3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Prefabs/SRP/Pathbuilding/TripleSplit1.prefab
+  uploadId: 722373
