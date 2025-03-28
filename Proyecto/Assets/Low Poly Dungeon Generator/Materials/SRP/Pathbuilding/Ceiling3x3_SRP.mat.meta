@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e83da6ca83c1fd440a4be6bcad5428a7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Materials/SRP/Pathbuilding/Ceiling3x3_SRP.mat
+  uploadId: 722373

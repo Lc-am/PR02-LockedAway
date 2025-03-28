@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b9cb4659d483c3649abbb801caa5af7a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Materials/HDRP/Probs/Fire_Material_HDRP.mat
+  uploadId: 722373

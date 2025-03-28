@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9e255e91ba5df9f46af411c67c7739ca
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Prefabs/SRP/Pathbuilding/Room5x4_Chamber.prefab
+  uploadId: 722373

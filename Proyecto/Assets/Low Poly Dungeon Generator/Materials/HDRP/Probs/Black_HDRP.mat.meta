@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 683a834e2efc52243b0bc0c707144718
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Materials/HDRP/Probs/Black_HDRP.mat
+  uploadId: 722373

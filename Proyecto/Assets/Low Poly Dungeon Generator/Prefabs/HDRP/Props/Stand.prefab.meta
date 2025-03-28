@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1bf72cffe01184f48bfde913d9fc08ca
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Prefabs/HDRP/Props/Stand.prefab
+  uploadId: 722373

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 098d761cc6350cb449d4ddce569c719a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Prefabs/HDRP/Pathbuilding/Room5x10_CrystalRoom.prefab
+  uploadId: 722373

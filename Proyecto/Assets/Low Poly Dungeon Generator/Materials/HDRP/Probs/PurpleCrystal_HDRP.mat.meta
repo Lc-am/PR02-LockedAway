@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 41f4a20ad61653c40b5606abc8b5db26
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Materials/HDRP/Probs/PurpleCrystal_HDRP.mat
+  uploadId: 722373

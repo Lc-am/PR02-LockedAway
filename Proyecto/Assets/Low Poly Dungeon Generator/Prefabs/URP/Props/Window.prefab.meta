@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 086e57724ebfb6944bb558664f3ec427
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Prefabs/URP/Props/Window.prefab
+  uploadId: 722373
