@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 749c2d9451f1e904a9202761ccc363d0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Prefabs/SRP/Props/Torch3.prefab
+  uploadId: 722373

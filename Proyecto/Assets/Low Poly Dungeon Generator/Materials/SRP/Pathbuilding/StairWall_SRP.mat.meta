@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4bfbec783e88c1a40ae2b9a77c2aa096
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Materials/SRP/Pathbuilding/StairWall_SRP.mat
+  uploadId: 722373

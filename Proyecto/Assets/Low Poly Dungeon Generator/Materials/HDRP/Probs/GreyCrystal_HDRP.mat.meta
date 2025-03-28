@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1d27a8182e0e1d24ea0172330a04a577
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Materials/HDRP/Probs/GreyCrystal_HDRP.mat
+  uploadId: 722373

@@ -26,8 +26,7 @@ public class PlayerControllerNetwork : NetworkBehaviour
     [SerializeField] private float defaultHeight = 2f;
     [SerializeField] private float crouchHeight = 1f;
     [SerializeField] private float crouchSpeed = 3f;
-    private int playerNumber;
-
+    
     [Header("Statics")]
     private Vector3 moveDirection = Vector3.zero;   //Input 3D de las fuerzas
     private Vector2 moveInput = Vector2.zero;   //input 2D de las fuerzas
@@ -49,17 +48,6 @@ public class PlayerControllerNetwork : NetworkBehaviour
         Cursor.visible = false;
 
         animator = GetComponentInChildren<Animator>();
-
-        if (IsServer)
-        {
-            playerNumber = 2;
-        }
-        else
-        {
-            playerNumber = 1;
-        }
-
-        Debug.Log("Player " + playerNumber + " connected");
     }
 
     private void Start()

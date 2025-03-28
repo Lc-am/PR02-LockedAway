@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 460487fdd18a48141ac4238e7060529f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Prefabs/URP/Props/FireTriangle.prefab
+  uploadId: 722373

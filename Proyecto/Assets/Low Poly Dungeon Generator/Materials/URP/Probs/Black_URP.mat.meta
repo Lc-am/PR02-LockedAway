@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: aa5483e58a28f194d84f71268c6f7e1d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Materials/URP/Probs/Black_URP.mat
+  uploadId: 722373
