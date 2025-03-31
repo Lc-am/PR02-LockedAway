@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7009976674223757800}
+  - component: {fileID: 8859924727359692051}
   m_Layer: 0
   m_Name: P2
-  m_TagString: Untagged
+  m_TagString: PipeFinalPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,6 +32,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1721765954951520298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8859924727359692051
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614350625304029124}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1, y: 0.2, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1825694176717990720
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,13 +168,11 @@ MonoBehaviour:
   neededRotation: {x: 0, y: 0, z: 90}
   controlPointCurved: []
   isStraight: 1
-  isHorizontal: 0
-  neededRotationForStraightHorizontal: {x: 0, y: 0, z: 0}
-  neededRotationForStraightVertical: {x: 0, y: 0, z: 0}
   controlPointStraight:
   - {fileID: 5366322576341159755}
   - {fileID: 1614350625304029124}
   canRotate: 1
+  controlPointPosition: []
 --- !u!65 &5834528784193491749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -215,9 +235,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 652149700455584367}
+  - component: {fileID: 2467291170493323925}
   m_Layer: 0
   m_Name: P1
-  m_TagString: Untagged
+  m_TagString: PipeFirstPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,6 +258,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1721765954951520298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2467291170493323925
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5366322576341159755}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1, y: 0.2, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5796749858768455589
 PrefabInstance:
   m_ObjectHideFlags: 0

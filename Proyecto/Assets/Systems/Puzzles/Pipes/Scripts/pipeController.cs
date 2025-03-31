@@ -13,12 +13,56 @@ public class pipeController : NetworkBehaviour, IInteractable
     [SerializeField] public GameObject[] controlPointStraight;  //puntos por los que pasara la esfera en la tuberia recta (deberian haber 2)
 
     [Header("Generics")]
+    private bool needChangePoints = false;
     private Quaternion rotationToAdd;
     public bool canRotate = true;
+    public Transform[] controlPointPosition;
 
     private void Awake()
     {
         rotationToAdd = Quaternion.Euler(neededRotation);
+
+        if (isStraight)
+        {
+            controlPointPosition[0].position = controlPointStraight[0].transform.position;
+            controlPointPosition[1].position = controlPointStraight[1].transform.position;
+        }
+        else
+        {
+            controlPointPosition[0].position = controlPointCurved[0].transform.position;
+            controlPointPosition[1].position = controlPointCurved[1].transform.position;
+            controlPointPosition[2].position = controlPointCurved[2].transform.position;
+        }
+    }
+
+    public void changeControlPointPositions()
+    {
+        needChangePoints = true;
+
+        if(needChangePoints)
+        {
+            controlPointPosition = new Transform[0];
+
+            if (isStraight)
+            {
+                controlPointPosition[0].position = controlPointStraight[1].transform.position;
+                controlPointPosition[1].position = controlPointStraight[0].transform.position;
+            }
+            else
+            {
+                controlPointPosition[0].position = controlPointCurved[2].transform.position;
+                controlPointPosition[1].position = controlPointCurved[1].transform.position;
+                controlPointPosition[2].position = controlPointCurved[0].transform.position;
+            }
+        }
+
+        needChangePoints = false;
+    }
+
+
+    public void triggerFirstPoint()
+    {
+        needChangePoints = false;
     }
 
     private void pipeRotate()

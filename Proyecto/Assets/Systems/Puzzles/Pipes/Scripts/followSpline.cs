@@ -60,25 +60,25 @@ public class followSpline : MonoBehaviour
 
                 puntoActual = 1;
 
-                if(pipecontroller.isStraight)
-                {
-                    puntosTuberia = new Transform[pipecontroller.controlPointStraight.Length];
+                puntosTuberia = new Transform[pipecontroller.controlPointPosition.Length];
 
-                    for(int i = 0; i < pipecontroller.controlPointStraight.Length; i++)
-                    {
-                        puntosTuberia[i] = pipecontroller.controlPointStraight[i].transform;
-                    }
-                }
-                else
+                for(int i = 0; i < pipecontroller.controlPointPosition.Length; i++)
                 {
-                    puntosTuberia = new Transform[pipecontroller.controlPointCurved.Length];
-
-                    for(int i = 0; i < pipecontroller.controlPointCurved.Length; i++)
-                    {
-                        puntosTuberia[i] = pipecontroller.controlPointCurved[i].transform;
-                    }
+                    puntosTuberia[i] = pipecontroller.controlPointPosition[i];
                 }
             }
+        }
+        if(other.CompareTag("PipeFinalPoint"))
+        {
+            pipecontroller = other.GetComponent<pipeController>();
+
+            pipecontroller.changeControlPointPositions();
+        }
+        if(other.CompareTag("PipeFirstpoint"))
+        {
+            pipecontroller = other.GetComponent<pipeController>();
+
+            pipecontroller.triggerFirstPoint();
         }
     }
 

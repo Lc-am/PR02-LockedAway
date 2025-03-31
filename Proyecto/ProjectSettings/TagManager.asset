@@ -9,6 +9,8 @@ TagManager:
   - Pickeable
   - UnlockCursor
   - Pipe
+  - PipeFinalPoint
+  - PipeFirstPoint
   layers:
   - Default
   - TransparentFX
