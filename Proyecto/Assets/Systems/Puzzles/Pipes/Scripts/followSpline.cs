@@ -75,7 +75,7 @@ public class followSpline : MonoBehaviour
         {
             straightpipecontroller = other.GetComponent<straightPipeController>();
 
-            curvedpipecontroller.canRotate = false;
+            straightpipecontroller.canRotate = false;
             notInPipe = false;
             straightpipecontroller.canRotate = false;
 
@@ -98,28 +98,37 @@ public class followSpline : MonoBehaviour
         {
             curvedpipecontroller = other.GetComponent<curvedPipeController>();
 
-            curvedpipecontroller.triggerFirstPoint();
+            curvedpipecontroller.triggerFirstPointCurved();
         }
         
         if (other.CompareTag("StraightFirstPoint"))
         {
             straightpipecontroller = other.GetComponent<straightPipeController>();
 
-            straightpipecontroller.triggerFirstPoint();
+            if (curvedpipecontroller != null)
+            {
+                curvedpipecontroller.canRotate = false;
+                // resto del código
+                straightpipecontroller.triggerFirstPointStraight();
+            }
+            else
+            {
+                Debug.LogError("CurvedPipeController no encontrado en " + other.name);
+            }            
         }
 
         if (other.CompareTag("CurvedLastPoint"))
         {
             curvedpipecontroller = other.GetComponent<curvedPipeController>();
 
-            curvedpipecontroller.changeControlPointPositions();
+            curvedpipecontroller.changeControlPointPositionsCurved();
         }
         
         if (other.CompareTag("StraightLastPoint"))
         {
             straightpipecontroller = other.GetComponent<straightPipeController>();
 
-            straightpipecontroller.changeControlPointPositions();
+            straightpipecontroller.changeControlPointPositionsStraight();
         }
 
     }

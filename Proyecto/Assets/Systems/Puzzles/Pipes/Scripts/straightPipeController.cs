@@ -18,7 +18,7 @@ public class straightPipeController : MonoBehaviour, IInteractable
         controlPointPosition[1].position = controlPointStraight[1].transform.position;
     }
 
-    public void changeControlPointPositions()
+    public void changeControlPointPositionsStraight()
     {
         if (needChangePoints)
         {
@@ -29,7 +29,7 @@ public class straightPipeController : MonoBehaviour, IInteractable
         needChangePoints = false;
     }
 
-    public void triggerFirstPoint()
+    public void triggerFirstPointStraight()
     {
         needChangePoints = false;
     }

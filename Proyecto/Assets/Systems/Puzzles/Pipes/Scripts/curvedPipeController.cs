@@ -19,7 +19,7 @@ public class curvedPipeController : MonoBehaviour, IInteractable
         controlPointPosition[2].position = controlPointCurved[2].transform.position;
     }
 
-    public void changeControlPointPositions()
+    public void changeControlPointPositionsCurved()
     {
         if (needChangePoints)
         {
@@ -31,7 +31,7 @@ public class curvedPipeController : MonoBehaviour, IInteractable
         needChangePoints = false;
     }
 
-    public void triggerFirstPoint()
+    public void triggerFirstPointCurved()
     {
         needChangePoints = false;
     }

@@ -413,7 +413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5025381829279294367, guid: 2469c4ecf2a4b9049b579879226803a3, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: CurvedPipe
       objectReference: {fileID: 0}
     - target: {fileID: 9022780449368845937, guid: 2469c4ecf2a4b9049b579879226803a3, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -482,7 +482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5025381829279294367, guid: 2469c4ecf2a4b9049b579879226803a3, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: CurvedPipe
       objectReference: {fileID: 0}
     - target: {fileID: 9022780449368845937, guid: 2469c4ecf2a4b9049b579879226803a3, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -551,7 +551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1825694176717990720, guid: 00c0015f255b0804b8307795f8287104, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: StraightPipe
       objectReference: {fileID: 0}
     - target: {fileID: 5897693640257728946, guid: 00c0015f255b0804b8307795f8287104, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -576,7 +576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3364309996073046032, guid: e8d613dd8e1817b4c972fc0b86e58b64, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.382
+      value: 0.29
       objectReference: {fileID: 0}
     - target: {fileID: 3364309996073046032, guid: e8d613dd8e1817b4c972fc0b86e58b64, type: 3}
       propertyPath: m_LocalPosition.y
@@ -584,7 +584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3364309996073046032, guid: e8d613dd8e1817b4c972fc0b86e58b64, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.551
+      value: 5.55
       objectReference: {fileID: 0}
     - target: {fileID: 3364309996073046032, guid: e8d613dd8e1817b4c972fc0b86e58b64, type: 3}
       propertyPath: m_LocalRotation.w
@@ -806,7 +806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1825694176717990720, guid: 00c0015f255b0804b8307795f8287104, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: StraightPipe
       objectReference: {fileID: 0}
     - target: {fileID: 5897693640257728946, guid: 00c0015f255b0804b8307795f8287104, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -835,7 +835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5671879447030817019, guid: 10d0c8a7897644e4f8da1a9477e48cac, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: StraightPipe
       objectReference: {fileID: 0}
     - target: {fileID: 8720087618624852103, guid: 10d0c8a7897644e4f8da1a9477e48cac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -936,7 +936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5025381829279294367, guid: 2469c4ecf2a4b9049b579879226803a3, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: CurvedPipe
       objectReference: {fileID: 0}
     - target: {fileID: 9022780449368845937, guid: 2469c4ecf2a4b9049b579879226803a3, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -1109,7 +1109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1825694176717990720, guid: 00c0015f255b0804b8307795f8287104, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: StraightPipe
       objectReference: {fileID: 0}
     - target: {fileID: 5897693640257728946, guid: 00c0015f255b0804b8307795f8287104, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -1178,7 +1178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1825694176717990720, guid: 00c0015f255b0804b8307795f8287104, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: StraightPipe
       objectReference: {fileID: 0}
     - target: {fileID: 5897693640257728946, guid: 00c0015f255b0804b8307795f8287104, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -1207,7 +1207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5671879447030817019, guid: 10d0c8a7897644e4f8da1a9477e48cac, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: StraightPipe
       objectReference: {fileID: 0}
     - target: {fileID: 8720087618624852103, guid: 10d0c8a7897644e4f8da1a9477e48cac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1312,7 +1312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1825694176717990720, guid: 00c0015f255b0804b8307795f8287104, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: StraightPipe
       objectReference: {fileID: 0}
     - target: {fileID: 5897693640257728946, guid: 00c0015f255b0804b8307795f8287104, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -1381,7 +1381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5025381829279294367, guid: 2469c4ecf2a4b9049b579879226803a3, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: CurvedPipe
       objectReference: {fileID: 0}
     - target: {fileID: 9022780449368845937, guid: 2469c4ecf2a4b9049b579879226803a3, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -1454,7 +1454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1825694176717990720, guid: 00c0015f255b0804b8307795f8287104, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: StraightPipe
       objectReference: {fileID: 0}
     - target: {fileID: 5897693640257728946, guid: 00c0015f255b0804b8307795f8287104, type: 3}
       propertyPath: GlobalObjectIdHash
