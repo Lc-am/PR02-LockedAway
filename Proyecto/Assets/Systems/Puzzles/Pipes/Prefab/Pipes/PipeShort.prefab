@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8859924727359692051}
   m_Layer: 0
   m_Name: P2
-  m_TagString: PipeFinalPoint
+  m_TagString: StraightLastPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,11 +64,11 @@ GameObject:
   - component: {fileID: 1721765954951520298}
   - component: {fileID: 5897693640257728946}
   - component: {fileID: 848323365220572782}
-  - component: {fileID: 1537565069251507993}
   - component: {fileID: 5834528784193491749}
+  - component: {fileID: 1460915751484488332}
   m_Layer: 0
   m_Name: PipeShort
-  m_TagString: Pipe
+  m_TagString: StraightPipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,27 +152,6 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &1537565069251507993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825694176717990720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40d3ca01b877fa44ea37d116241ce54c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  neededRotation: {x: 0, y: 0, z: 90}
-  controlPointCurved: []
-  isStraight: 1
-  controlPointStraight:
-  - {fileID: 5366322576341159755}
-  - {fileID: 1614350625304029124}
-  canRotate: 1
-  controlPointPosition: []
 --- !u!65 &5834528784193491749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -194,6 +173,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.75444615, y: 0.42970026, z: 0.46083528}
   m_Center: {x: -0.00011189282, y: 0.017690629, z: 0.0009290278}
+--- !u!114 &1460915751484488332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825694176717990720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe089abf120e1fc4cbf5276ba7950c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neededRotation: {x: 0, y: 0, z: 90}
+  controlPointStraight:
+  - {fileID: 5366322576341159755}
+  - {fileID: 1614350625304029124}
+  canRotate: 1
+  controlPointPosition:
+  - {fileID: 652149700455584367}
+  - {fileID: 7009976674223757800}
 --- !u!1 &3141370933373081184
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +237,7 @@ GameObject:
   - component: {fileID: 2467291170493323925}
   m_Layer: 0
   m_Name: P1
-  m_TagString: PipeFirstPoint
+  m_TagString: StraightFirstPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

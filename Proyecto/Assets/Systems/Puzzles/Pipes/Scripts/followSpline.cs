@@ -5,7 +5,8 @@ public class followSpline : MonoBehaviour
     Transform[] puntosTuberia;  // Array para los puntos de paso
     [SerializeField] private float velocidad = 5f;       // Velocidad de la esfera
     private int puntoActual = 0;        // Índice del punto actual
-    pipeController pipecontroller;
+    curvedPipeController curvedpipecontroller;
+    straightPipeController straightpipecontroller;
     [SerializeField] private Vector3 movientoNoTuberia; //Moivmiento para entrar en las tuberias
 
     private bool notInPipe = true;
@@ -47,46 +48,96 @@ public class followSpline : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Pipe"))
+        if(other.CompareTag("CurvedPipe"))
         {
-            pipecontroller = other.GetComponent<pipeController>();
+            curvedpipecontroller = other.GetComponent<curvedPipeController>();
 
+            curvedpipecontroller.canRotate = false;
             notInPipe = false;
-            pipecontroller.canRotate = false;
+            curvedpipecontroller.canRotate = false;
 
-            if (pipecontroller != null)
+            if (curvedpipecontroller != null)
             {
                 puntosTuberia = new Transform[0];
 
                 puntoActual = 1;
 
-                puntosTuberia = new Transform[pipecontroller.controlPointPosition.Length];
+                puntosTuberia = new Transform[curvedpipecontroller.controlPointPosition.Length];
 
-                for(int i = 0; i < pipecontroller.controlPointPosition.Length; i++)
+                for(int i = 0; i < curvedpipecontroller.controlPointPosition.Length; i++)
                 {
-                    puntosTuberia[i] = pipecontroller.controlPointPosition[i];
+                    puntosTuberia[i] = curvedpipecontroller.controlPointPosition[i];
                 }
             }
         }
-        if(other.CompareTag("PipeFinalPoint"))
+        
+        if(other.CompareTag("StraightPipe"))
         {
-            pipecontroller = other.GetComponent<pipeController>();
+            straightpipecontroller = other.GetComponent<straightPipeController>();
 
-            pipecontroller.changeControlPointPositions();
+            curvedpipecontroller.canRotate = false;
+            notInPipe = false;
+            straightpipecontroller.canRotate = false;
+
+            if (straightpipecontroller != null)
+            {
+                puntosTuberia = new Transform[0];
+
+                puntoActual = 1;
+
+                puntosTuberia = new Transform[straightpipecontroller.controlPointPosition.Length];
+
+                for (int i = 0; i < straightpipecontroller.controlPointPosition.Length; i++)
+                {
+                    puntosTuberia[i] = straightpipecontroller.controlPointPosition[i];
+                }
+            }
         }
-        if(other.CompareTag("PipeFirstpoint"))
+
+        if(other.CompareTag("CurvedFirstPoint"))
         {
-            pipecontroller = other.GetComponent<pipeController>();
+            curvedpipecontroller = other.GetComponent<curvedPipeController>();
 
-            pipecontroller.triggerFirstPoint();
+            curvedpipecontroller.triggerFirstPoint();
         }
+        
+        if (other.CompareTag("StraightFirstPoint"))
+        {
+            straightpipecontroller = other.GetComponent<straightPipeController>();
+
+            straightpipecontroller.triggerFirstPoint();
+        }
+
+        if (other.CompareTag("CurvedLastPoint"))
+        {
+            curvedpipecontroller = other.GetComponent<curvedPipeController>();
+
+            curvedpipecontroller.changeControlPointPositions();
+        }
+        
+        if (other.CompareTag("StraightLastPoint"))
+        {
+            straightpipecontroller = other.GetComponent<straightPipeController>();
+
+            straightpipecontroller.changeControlPointPositions();
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Pipe"))
+        if(other.CompareTag("CurvedPipe"))
         {
-            pipecontroller.canRotate = true;
+            curvedpipecontroller = other.GetComponent<curvedPipeController>();
+
+            curvedpipecontroller.canRotate = true;
+        }
+        
+        if(other.CompareTag("StraightPipe"))
+        {
+            straightpipecontroller = other.GetComponent<straightPipeController>();
+
+            straightpipecontroller.canRotate = true;
         }
     }
 

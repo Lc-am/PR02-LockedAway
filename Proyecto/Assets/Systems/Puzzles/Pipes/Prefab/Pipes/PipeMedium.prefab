@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1737821043500090215}
   - component: {fileID: 426591613595934745}
-  - component: {fileID: 8514299783677445781}
   - component: {fileID: 8233230619058912332}
   - component: {fileID: 433728041813145825}
+  - component: {fileID: 1259239537408296690}
   m_Layer: 0
   m_Name: PipeMedium
-  m_TagString: Pipe
+  m_TagString: StraightPipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,27 +63,6 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &8514299783677445781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 585377387442439368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40d3ca01b877fa44ea37d116241ce54c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  neededRotation: {x: 0, y: 0, z: 90}
-  controlPointCurved: []
-  isStraight: 1
-  controlPointStraight:
-  - {fileID: 1537906614260469822}
-  - {fileID: 8244196428641464332}
-  canRotate: 1
-  controlPointPosition: []
 --- !u!114 &8233230619058912332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +120,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0273819, y: 0.4791791, z: 0.48434833}
   m_Center: {x: 0.0136910975, y: 0.00014816225, z: -0.00055624545}
+--- !u!114 &1259239537408296690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585377387442439368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe089abf120e1fc4cbf5276ba7950c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neededRotation: {x: 0, y: 0, z: 90}
+  controlPointStraight:
+  - {fileID: 1537906614260469822}
+  - {fileID: 8244196428641464332}
+  canRotate: 1
+  controlPointPosition:
+  - {fileID: 4214087386328763598}
+  - {fileID: 7074184133552049048}
 --- !u!1 &1537906614260469822
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +152,7 @@ GameObject:
   - component: {fileID: 5840888251451349117}
   m_Layer: 0
   m_Name: P1
-  m_TagString: PipeFirstPoint
+  m_TagString: StraightFirstPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,7 +237,7 @@ GameObject:
   - component: {fileID: 7734129275789574086}
   m_Layer: 0
   m_Name: P2
-  m_TagString: PipeFinalPoint
+  m_TagString: StraightLastPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

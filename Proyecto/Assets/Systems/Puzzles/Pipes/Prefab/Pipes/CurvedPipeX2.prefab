@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4783513277990617653}
   m_Layer: 0
   m_Name: P1
-  m_TagString: PipeFirstPoint
+  m_TagString: CurvedFirstPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8268159736820837629}
   m_Layer: 0
   m_Name: P3
-  m_TagString: PipeFinalPoint
+  m_TagString: CurvedLastPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,12 +148,12 @@ GameObject:
   m_Component:
   - component: {fileID: 68673061624150022}
   - component: {fileID: 9022780449368845937}
-  - component: {fileID: 4766399529078987356}
   - component: {fileID: 8582280088373190719}
   - component: {fileID: 6621072376422958681}
+  - component: {fileID: 2890717997867738105}
   m_Layer: 0
   m_Name: CurvedPipeX2
-  m_TagString: Pipe
+  m_TagString: CurvedPipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,28 +202,6 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &4766399529078987356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5025381829279294367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40d3ca01b877fa44ea37d116241ce54c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  neededRotation: {x: 0, y: 0, z: 90}
-  controlPointCurved:
-  - {fileID: 4510720342855137015}
-  - {fileID: 5742700881557005668}
-  - {fileID: 4705320195813667468}
-  isStraight: 0
-  controlPointStraight: []
-  canRotate: 1
-  controlPointPosition: []
 --- !u!114 &8582280088373190719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +259,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.2147487, y: 1.2324811, z: 0.49214625}
   m_Center: {x: -0.3685376, y: -0.35626996, z: 0.0042867064}
+--- !u!114 &2890717997867738105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025381829279294367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86610694fdcb9794b819e78aa9248d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neededRotation: {x: 0, y: 0, z: 90}
+  controlPointCurved:
+  - {fileID: 4510720342855137015}
+  - {fileID: 5742700881557005668}
+  - {fileID: 4705320195813667468}
+  canRotate: 1
+  controlPointPosition:
+  - {fileID: 8814658329779200237}
+  - {fileID: 4395871239736253778}
+  - {fileID: 7731552294213898632}
 --- !u!1 &5742700881557005668
 GameObject:
   m_ObjectHideFlags: 0
