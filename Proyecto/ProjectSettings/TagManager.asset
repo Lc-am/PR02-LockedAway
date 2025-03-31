@@ -8,7 +8,12 @@ TagManager:
   - DungeonPath
   - Pickeable
   - UnlockCursor
-  - Pipe
+  - CurvedPipe
+  - StraightPipe
+  - CurvedFirstPoint
+  - CurvedLastPoint
+  - StraightFirstPoint
+  - StraightLastPoint
   layers:
   - Default
   - TransparentFX

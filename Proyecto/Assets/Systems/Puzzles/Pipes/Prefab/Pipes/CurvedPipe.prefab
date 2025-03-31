@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5268600295824393688}
+  - component: {fileID: 233488861125662748}
   m_Layer: 0
   m_Name: P1
-  m_TagString: Untagged
+  m_TagString: CurvedFirstPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,6 +32,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5751394434385903418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &233488861125662748
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803247572890997540}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1, y: 0.2, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2772403557514512166
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,12 +94,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5751394434385903418}
   - component: {fileID: 5946900347503644079}
-  - component: {fileID: 3664139814472227515}
   - component: {fileID: 6232791750265564896}
   - component: {fileID: 8739661773458855547}
+  - component: {fileID: 2437077580370354906}
   m_Layer: 0
   m_Name: CurvedPipe
-  m_TagString: Pipe
+  m_TagString: CurvedPipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,30 +148,6 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &3664139814472227515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3473159770065638539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40d3ca01b877fa44ea37d116241ce54c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowTopMostFoldoutHeaderGroup: 1
-  neededRotation: {x: 0, y: 0, z: 90}
-  controlPointCurved:
-  - {fileID: 1803247572890997540}
-  - {fileID: 2772403557514512166}
-  - {fileID: 9111460440371253049}
-  isStraight: 0
-  isHorizontal: 0
-  neededRotationForStraightHorizontal: {x: 0, y: 0, z: 0}
-  neededRotationForStraightVertical: {x: 0, y: 0, z: 0}
-  controlPointStraight: []
-  canRotate: 1
 --- !u!65 &6232791750265564896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -207,6 +205,28 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &2437077580370354906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3473159770065638539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86610694fdcb9794b819e78aa9248d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neededRotation: {x: 0, y: 0, z: 90}
+  controlPointCurved:
+  - {fileID: 1803247572890997540}
+  - {fileID: 2772403557514512166}
+  - {fileID: 9111460440371253049}
+  canRotate: 1
+  controlPointPosition:
+  - {fileID: 5268600295824393688}
+  - {fileID: 1748247302304062739}
+  - {fileID: 745795908665426978}
 --- !u!1 &4144306859011282518
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,9 +268,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 745795908665426978}
+  - component: {fileID: 4017450874026953620}
   m_Layer: 0
   m_Name: P3
-  m_TagString: Untagged
+  m_TagString: CurvedLastPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,6 +291,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5751394434385903418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4017450874026953620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9111460440371253049}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2, y: 0.1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6594459574086929151
 PrefabInstance:
   m_ObjectHideFlags: 0
