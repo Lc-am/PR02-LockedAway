@@ -140,10 +140,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   neededRotation: {x: 0, y: 0, z: 90}
-  controlPoint:
+  controlPointCurved:
   - {fileID: 1803247572890997540}
   - {fileID: 2772403557514512166}
   - {fileID: 9111460440371253049}
+  isStraight: 0
+  isHorizontal: 0
+  neededRotationForStraightHorizontal: {x: 0, y: 0, z: 0}
+  neededRotationForStraightVertical: {x: 0, y: 0, z: 0}
+  controlPointStraight: []
+  canRotate: 1
 --- !u!65 &6232791750265564896
 BoxCollider:
   m_ObjectHideFlags: 0

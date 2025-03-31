@@ -56,23 +56,26 @@ public class followSpline : MonoBehaviour
 
             if (pipecontroller != null)
             {
+                puntosTuberia = new Transform[0];
+
                 puntoActual = 1;
 
-                puntosTuberia = new Transform[pipecontroller.controlPointPositions.Length];
-
-                for (int i = 0; i < pipecontroller.controlPointPositions.Length; i++)
+                if(pipecontroller.isStraight)
                 {
-                    puntosTuberia[i] = pipecontroller.controlPointPositions[i].transform;
-                }
+                    puntosTuberia = new Transform[pipecontroller.controlPointStraight.Length];
 
-                //Intercambia los puntos para que el puto de control 1 esta en la posicion del 3 y viceversa
-                if (transform.position == puntosTuberia[2].position)
-                {
-                    pipecontroller.changeControlPositions();
-
-                    for (int i = 0; i < pipecontroller.controlPoint.Length; i++)
+                    for(int i = 0; i < pipecontroller.controlPointStraight.Length; i++)
                     {
-                        puntosTuberia[i] = pipecontroller.controlPointPositions[i];
+                        puntosTuberia[i] = pipecontroller.controlPointStraight[i].transform;
+                    }
+                }
+                else
+                {
+                    puntosTuberia = new Transform[pipecontroller.controlPointCurved.Length];
+
+                    for(int i = 0; i < pipecontroller.controlPointCurved.Length; i++)
+                    {
+                        puntosTuberia[i] = pipecontroller.controlPointCurved[i].transform;
                     }
                 }
             }

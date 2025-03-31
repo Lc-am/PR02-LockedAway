@@ -4,24 +4,21 @@ using UnityEngine.Events;
 
 public class pipeController : NetworkBehaviour, IInteractable
 {
+    [Header("If Curved")]   //Aplica a las tuberias que estan curvadas
     [SerializeField] private Vector3 neededRotation;    //poner la suma que se quiere rotar
-    [SerializeField] public GameObject[] controlPoint;
-    public Transform[] controlPointPositions;
+    [SerializeField] public GameObject[] controlPointCurved;    //puntos por los que pasara la esfera en la tuberia curva (deberian haber 3)
 
+    [Header("If straight")] //Aplicar solo si es una tuberia recta
+    [SerializeField] public bool isStraight = false;
+    [SerializeField] public GameObject[] controlPointStraight;  //puntos por los que pasara la esfera en la tuberia recta (deberian haber 2)
+
+    [Header("Generics")]
     private Quaternion rotationToAdd;
     public bool canRotate = true;
 
     private void Awake()
     {
         rotationToAdd = Quaternion.Euler(neededRotation);
-    }
-
-    //Cambia las posiciones de los puntos de control para que punto de control 1 esta en la posicion del 3 y viceversa
-    public void changeControlPositions()
-    {
-        controlPointPositions[0].position = controlPoint[2].transform.position;
-        controlPointPositions[1].position = controlPoint[1].transform.position;
-        controlPointPositions[2].position = controlPoint[0].transform.position;
     }
 
     private void pipeRotate()

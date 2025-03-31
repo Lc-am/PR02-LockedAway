@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7009976674223757800}
   m_Layer: 0
-  m_Name: P3
+  m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,11 +144,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   neededRotation: {x: 0, y: 0, z: 90}
-  controlPoint:
+  controlPointCurved: []
+  isStraight: 1
+  isHorizontal: 0
+  neededRotationForStraightHorizontal: {x: 0, y: 0, z: 0}
+  neededRotationForStraightVertical: {x: 0, y: 0, z: 0}
+  controlPointStraight:
   - {fileID: 5366322576341159755}
-  - {fileID: 0}
   - {fileID: 1614350625304029124}
-  controlPointPositions: []
   canRotate: 1
 --- !u!65 &5834528784193491749
 BoxCollider:
