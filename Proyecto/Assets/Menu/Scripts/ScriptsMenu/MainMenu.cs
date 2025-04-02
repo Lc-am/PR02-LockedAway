@@ -23,8 +23,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private CanvasGroup optionsMenuCanvasGroup;
     [SerializeField] private CanvasGroup titleMenuCanvasGroup;
 
-    [SerializeField] private Canvas canvasFade;
-
     private void Update()
     {
         if (skipAction.action.triggered)
