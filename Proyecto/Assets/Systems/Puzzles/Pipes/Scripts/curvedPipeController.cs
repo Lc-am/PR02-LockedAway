@@ -1,39 +1,17 @@
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class curvedPipeController : MonoBehaviour, IInteractable
 {
     [SerializeField] private Vector3 neededRotation;    //poner la suma que se quiere rotar
-    [SerializeField] private GameObject[] controlPointCurved;    //puntos por los que pasara la esfera en la tuberia curva (deberian haber 3)
+    [SerializeField] public SplineContainer splineContainerCurved;
 
-    private bool needChangePoints = true;   //Este solo es para reordenar los puntos de control
     private Quaternion rotationToAdd;
     public bool canRotate = true;
-    public Transform[] controlPointPosition;    //La posicion de los puntos de control que coge la esfera
 
     private void Awake()
     {
         rotationToAdd = Quaternion.Euler(neededRotation);
-
-        controlPointPosition[0].position = controlPointCurved[0].transform.position;
-        controlPointPosition[1].position = controlPointCurved[1].transform.position;
-        controlPointPosition[2].position = controlPointCurved[2].transform.position;
-    }
-
-    public void changeControlPointPositionsCurved()
-    {
-        if (needChangePoints)
-        {
-            controlPointPosition[0].position = controlPointCurved[2].transform.position;
-            controlPointPosition[1].position = controlPointCurved[1].transform.position;
-            controlPointPosition[2].position = controlPointCurved[0].transform.position;
-        }
-
-        needChangePoints = false;
-    }
-
-    public void triggerFirstPointCurved()
-    {
-        needChangePoints = false;
     }
 
     private void pipeRotate()

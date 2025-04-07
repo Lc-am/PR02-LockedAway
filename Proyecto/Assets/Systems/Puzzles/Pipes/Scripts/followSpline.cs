@@ -1,152 +1,73 @@
+using System.Drawing.Text;
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class followSpline : MonoBehaviour
 {
-    Transform[] puntosTuberia;  // Array para los puntos de paso
-    [SerializeField] private float velocidad = 5f;       // Velocidad de la esfera
-    private int puntoActual = 0;        // Índice del punto actual
-    curvedPipeController curvedpipecontroller;
-    straightPipeController straightpipecontroller;
-    [SerializeField] private Vector3 movientoNoTuberia; //Moivmiento para entrar en las tuberias
+    private SplineContainer ruta;
+    [SerializeField] float velocidad = 5f;
 
-    private bool notInPipe = true;
-    private Vector3 lastPointPosition;
+    [SerializeField] float umbralLlegada = 1f;
 
-    void Update()
+    float distanciaEntrePuntos = 5f;
+
+    Vector3[] pathPointsCache;
+    Vector3 siguientePosicion;
+    int indiceSiguientePosicion = 1;
+
+    private void UpdatePoints()
     {
-        if (notInPipe)
+        float longitudRuta = ruta.CalculateLength();
+        int cantidadPuntos = Mathf.CeilToInt(longitudRuta / distanciaEntrePuntos) + 1;
+
+        pathPointsCache = new Vector3[cantidadPuntos];
+
+        for (int i = 0; i < cantidadPuntos; i++)
         {
-            transform.position = transform.position + movientoNoTuberia * Time.deltaTime;
+            float t = (float)i / (float)cantidadPuntos;
+            pathPointsCache[i] = ruta.EvaluatePosition(t);
         }
 
-        if(puntosTuberia != null)
-        {
-            // Si la esfera no ha llegado al último punto, mueve la esfera hacia el siguiente punto
-            if (puntoActual < puntosTuberia.Length)
-            {
-                MoverHaciaPunto();
-            }
-        }
+        transform.position = pathPointsCache[0];
+        siguientePosicion = pathPointsCache[indiceSiguientePosicion];
     }
 
-    void MoverHaciaPunto()
+    private void Update()
     {
+        Vector3 direccion = siguientePosicion - transform.position;
+        Vector3 velocidadMovimiento = direccion.normalized * velocidad;
+        transform.position += velocidadMovimiento * Time.deltaTime;
 
-        // Mover la esfera hacia el punto actual
-        Transform objetivo = puntosTuberia[puntoActual];
-        float step = velocidad * Time.deltaTime;  // Calcula el paso para el movimiento
-        transform.position = Vector3.MoveTowards(transform.position, objetivo.position, step);
-        Debug.Log("Objetivo actual: " + puntoActual + "Posicion: " + objetivo.transform.position);
-
-        // Cuando la esfera llega al punto, avanzamos al siguiente
-        if (transform.position == objetivo.position)
+        if (Vector3.Distance(siguientePosicion, transform.position) < umbralLlegada)
         {
-            puntoActual++;
-            lastPointPosition = transform.position;
+            indiceSiguientePosicion++;
+            if (indiceSiguientePosicion == pathPointsCache.Length)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                siguientePosicion = pathPointsCache[indiceSiguientePosicion];
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("CurvedPipe"))
-        {
-            curvedpipecontroller = other.GetComponent<curvedPipeController>();
-
-            curvedpipecontroller.canRotate = false;
-            notInPipe = false;
-            curvedpipecontroller.canRotate = false;
-
-            if (curvedpipecontroller != null)
-            {
-                puntosTuberia = new Transform[0];
-
-                puntoActual = 1;
-
-                puntosTuberia = new Transform[curvedpipecontroller.controlPointPosition.Length];
-
-                for(int i = 0; i < curvedpipecontroller.controlPointPosition.Length; i++)
-                {
-                    puntosTuberia[i] = curvedpipecontroller.controlPointPosition[i];
-                }
-            }
-        }
-        
         if(other.CompareTag("StraightPipe"))
         {
-            straightpipecontroller = other.GetComponent<straightPipeController>();
+            straightPipeController straightpipecontroller = other.gameObject.GetComponent<straightPipeController>();
+            ruta = straightpipecontroller.splineContainerStraight;
 
-            straightpipecontroller.canRotate = false;
-            notInPipe = false;
-            straightpipecontroller.canRotate = false;
-
-            if (straightpipecontroller != null)
-            {
-                puntosTuberia = new Transform[0];
-
-                puntoActual = 1;
-
-                puntosTuberia = new Transform[straightpipecontroller.controlPointPosition.Length];
-
-                for (int i = 0; i < straightpipecontroller.controlPointPosition.Length; i++)
-                {
-                    puntosTuberia[i] = straightpipecontroller.controlPointPosition[i];
-                }
-            }
+            UpdatePoints();
         }
 
-        if(other.CompareTag("CurvedFirstPoint"))
+        if (other.CompareTag("CurvedPipe"))
         {
-            curvedpipecontroller = other.GetComponent<curvedPipeController>();
+            curvedPipeController curvedpipecontroller = other.gameObject.GetComponent<curvedPipeController>();
+            ruta = curvedpipecontroller.splineContainerCurved;
 
-            curvedpipecontroller.triggerFirstPointCurved();
-        }
-        
-        if (other.CompareTag("StraightFirstPoint"))
-        {
-            straightpipecontroller = other.GetComponent<straightPipeController>();
-
-            if (curvedpipecontroller != null)
-            {
-                curvedpipecontroller.canRotate = false;
-                // resto del código
-                straightpipecontroller.triggerFirstPointStraight();
-            }
-            else
-            {
-                Debug.LogError("CurvedPipeController no encontrado en " + other.name);
-            }            
-        }
-
-        if (other.CompareTag("CurvedLastPoint"))
-        {
-            curvedpipecontroller = other.GetComponent<curvedPipeController>();
-
-            curvedpipecontroller.changeControlPointPositionsCurved();
-        }
-        
-        if (other.CompareTag("StraightLastPoint"))
-        {
-            straightpipecontroller = other.GetComponent<straightPipeController>();
-
-            straightpipecontroller.changeControlPointPositionsStraight();
-        }
-
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.CompareTag("CurvedPipe"))
-        {
-            curvedpipecontroller = other.GetComponent<curvedPipeController>();
-
-            curvedpipecontroller.canRotate = true;
-        }
-        
-        if(other.CompareTag("StraightPipe"))
-        {
-            straightpipecontroller = other.GetComponent<straightPipeController>();
-
-            straightpipecontroller.canRotate = true;
+            UpdatePoints();
         }
     }
 
