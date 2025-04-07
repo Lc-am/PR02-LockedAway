@@ -195,6 +195,42 @@ public class PlayerControllerNetwork : NetworkBehaviour
             crouched = !crouched;
         }
     }
+
+    //añadido para probar save/load
+
+    public float GetRotationX()
+    {
+        return rotationX;
+    }
+
+    public bool IsCrouched()
+    {
+        return crouched;
+    }
+
+    public void SetRotationX(float value)
+    {
+        rotationX = value;
+        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+    }
+
+    public void SetCrouchState(bool isCrouched)
+    {
+        crouched = isCrouched;
+
+        if (crouched)
+        {
+            characterController.height = crouchHeight;
+            walkSpeed = crouchSpeed;
+            runSpeed = crouchSpeed;
+        }
+        else
+        {
+            characterController.height = defaultHeight;
+            walkSpeed = 6f;
+            runSpeed = 12f;
+        }
+    }
 }
 
 

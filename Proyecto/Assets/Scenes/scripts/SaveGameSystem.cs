@@ -1,11 +1,13 @@
 using System.Collections.Generic;
+using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEditor;
 using System;
 
-public class SaveGameSystem : MonoBehaviour
+public static class SaveGameSystem
 {
-    class Data
+    [System.Serializable]
+    public class Data
     {
         public enum DataType
         {
@@ -26,17 +28,15 @@ public class SaveGameSystem : MonoBehaviour
     static Dictionary<string, Data> savedData = new();
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-
-    static void OnRunTimeMethodLoad()
+    static void OnRuntimeMethodLoad()
     {
         Load();
     }
-    
-    
+
     public static int GetInt(string key, int defaultValue = 0)
     {
         int retVal = defaultValue;
-        if(savedData.ContainsKey(key))
+        if (savedData.ContainsKey(key))
         {
             // CheckDataIsInt();
             retVal = savedData[key].intData;
@@ -50,10 +50,11 @@ public class SaveGameSystem : MonoBehaviour
         if (savedData.ContainsKey(key))
         {
             // CheckDataIsInt();
-            retVal = savedData[key].floatData; 
+            retVal = savedData[key].floatData;
         }
         return retVal;
     }
+
     public static string GetString(string key, string defaultValue = "")
     {
         string retVal = defaultValue;
@@ -64,6 +65,7 @@ public class SaveGameSystem : MonoBehaviour
         }
         return retVal;
     }
+
     public static bool GetBool(string key, bool defaultValue = false)
     {
         bool retVal = defaultValue;
@@ -74,6 +76,8 @@ public class SaveGameSystem : MonoBehaviour
         }
         return retVal;
     }
+
+
 
     public static void SetInt(string key, int value)
     {
@@ -129,14 +133,13 @@ public class SaveGameSystem : MonoBehaviour
         data.boolData = value;
     }
 
-
     [System.Serializable] class SerializableData
     {
         public List<string> keys = new();
         public List<Data> data = new();
     }
 
-    public static void Save()
+    public static void Save(string saveGameName = "SaveGame")
     {
         SerializableData serializableData = new();
 
@@ -145,29 +148,30 @@ public class SaveGameSystem : MonoBehaviour
             serializableData.keys.Add(item.Key);
             serializableData.data.Add(item.Value);
         }
-        
-        string stringToSave = JsonUtility.ToJson(serializableData);
 
-        PlayerPrefs.SetString("SavedGame", stringToSave);
-        PlayerPrefs.Save(); 
+        string stringToSave = JsonUtility.ToJson(serializableData);
+        Debug.Log(stringToSave);
+
+        PlayerPrefs.SetString(saveGameName, stringToSave);
+        PlayerPrefs.Save();
     }
 
-    public static void Load()
+    public static void Load(string saveGameName = "SaveGame")
     {
-        string stringToLoad = PlayerPrefs.GetString("SaveGame");
+        string stringToLoad = PlayerPrefs.GetString(saveGameName);
 
         SerializableData serializableData = new();
         JsonUtility.FromJsonOverwrite(stringToLoad, serializableData);
 
         savedData = new();
-        for(int i = 0; i < serializableData.keys.Count; i++)
+        for (int i = 0; i < serializableData.keys.Count; i++)
         {
             savedData.Add(
                 serializableData.keys[i],
-                serializableData.data[i]);
+                serializableData.data[i]
+                );
         }
     }
-
 
 #if UNITY_EDITOR
 
@@ -177,31 +181,30 @@ public class SaveGameSystem : MonoBehaviour
         SaveGameSystem.Save();
     }
 
-    [MenuItem("SaveGameSystem/load")]
-    public static void loadToPlayerPrefs()
+    [MenuItem("SaveGameSystem/Load")]
+    public static void LoadFromPlayerPrefs()
     {
-        SaveGameSystem.Save();
+        SaveGameSystem.Load();
     }
 
-
     static string testKey = "RandomInt";
-    [MenuItem("SaveGameSystem/Save into to 5")]
-    public static void SaveIntoTo5()
+    [MenuItem("SaveGameSystem/Save int to 5")]
+    public static void SaveIntTo5()
     {
         SaveGameSystem.SetInt(testKey, 5);
     }
 
-    [MenuItem("SaveGameSystem/Save into to 7")]
-    public static void SaveIntoTo7()
+    [MenuItem("SaveGameSystem/Save int to 7")]
+    public static void SaveIntTo7()
     {
         SaveGameSystem.SetInt(testKey, 7);
     }
 
-    [MenuItem("SaveGameSystem/Save log int")]
-    public static void SaveLogInt()
+    [MenuItem("SaveGameSystem/Debug log int")]
+    public static void DebugLogInt()
     {
-        SaveGameSystem.GetInt(testKey);
+        Debug.Log(SaveGameSystem.GetInt(testKey));
     }
-
 #endif
+
 }
