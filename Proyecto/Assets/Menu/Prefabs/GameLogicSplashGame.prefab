@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 414959326241280536}
-  - component: {fileID: 8991784482275569704}
   - component: {fileID: 1075226131619230639}
   m_Layer: 0
   m_Name: GameLogicSplashGame
@@ -33,21 +32,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8991784482275569704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7157177878932970402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11c4f7cedcccbf245bbbbb8997338223, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonsPanel: {fileID: 0}
-  continueText: {fileID: 0}
-  continueAction: {fileID: -1015557463825398110, guid: 297d3fe717cfb3b48a0184b64c6b2a0d, type: 3}
 --- !u!114 &1075226131619230639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,3 +53,4 @@ MonoBehaviour:
   exitButton: {fileID: 0}
   mainMenuCanvasGroup: {fileID: 0}
   optionsMenuCanvasGroup: {fileID: 0}
+  titleMenuCanvasGroup: {fileID: 0}

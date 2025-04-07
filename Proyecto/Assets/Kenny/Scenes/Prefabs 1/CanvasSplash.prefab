@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 6185576871254470436}
   - component: {fileID: 6716635384580945292}
   - component: {fileID: 3373728993582709204}
+  - component: {fileID: 7908020718035737707}
   m_Layer: 5
   m_Name: CanvasSplash
   m_TagString: Untagged
@@ -130,7 +131,7 @@ RectTransform:
   m_GameObject: {fileID: 1101130002842962283}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.45729166, y: 0.45729166, z: 0.45729166}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4516695033657682027}
@@ -206,6 +207,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &7908020718035737707
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101130002842962283}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3890902442336964770
 GameObject:
   m_ObjectHideFlags: 0
