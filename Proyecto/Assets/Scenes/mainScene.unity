@@ -2343,6 +2343,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &924980517 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1492667875197979925, guid: 10d0c8a7897644e4f8da1a9477e48cac, type: 3}
+  m_PrefabInstance: {fileID: 193195560}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab5c7d4c32e743048dfca98e2d5914f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1013505265
 GameObject:
   m_ObjectHideFlags: 0
@@ -3636,6 +3647,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -3.19
       objectReference: {fileID: 0}
+    - target: {fileID: 4694170275156103861, guid: 339073effd044f44ca675e211ee7495c, type: 3}
+      propertyPath: firstPipe
+      value: 
+      objectReference: {fileID: 924980517}
     - target: {fileID: 5332419471477947894, guid: 339073effd044f44ca675e211ee7495c, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 1772762065

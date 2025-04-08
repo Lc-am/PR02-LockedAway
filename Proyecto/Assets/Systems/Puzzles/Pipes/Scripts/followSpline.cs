@@ -1,5 +1,6 @@
 using System.Drawing.Text;
 using UnityEngine;
+using UnityEngine.ProBuilder.Shapes;
 using UnityEngine.Splines;
 
 public class followSpline : MonoBehaviour
@@ -14,6 +15,17 @@ public class followSpline : MonoBehaviour
     Vector3[] pathPointsCache;
     Vector3 siguientePosicion;
     int indiceSiguientePosicion = 1;
+
+    private bool inPipe = false;
+
+    SphereCreator creator;
+
+    private void Awake()
+    {
+        creator = GetComponent<SphereCreator>();
+
+        ruta = creator.firstPipe;
+    }
 
     private void UpdatePoints()
     {
@@ -60,6 +72,8 @@ public class followSpline : MonoBehaviour
             ruta = straightpipecontroller.splineContainerStraight;
 
             UpdatePoints();
+
+            inPipe = true;
         }
 
         if (other.CompareTag("CurvedPipe"))
@@ -68,6 +82,8 @@ public class followSpline : MonoBehaviour
             ruta = curvedpipecontroller.splineContainerCurved;
 
             UpdatePoints();
+
+            inPipe = true;
         }
     }
 
