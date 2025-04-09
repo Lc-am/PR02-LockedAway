@@ -63,11 +63,6 @@
 //    }
 //}
 
-
-
-
-
-
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -89,7 +84,6 @@ public class Resolution : MonoBehaviour
     {
         resolutionDropdown.ClearOptions();
 
-        // Usamos un diccionario para evitar duplicados de resolución (sin tener en cuenta Hz)
         Dictionary<string, UnityEngine.Resolution> uniqueResolutions = new Dictionary<string, UnityEngine.Resolution>();
 
         UnityEngine.Resolution[] resolutions = Screen.resolutions;
@@ -98,20 +92,20 @@ public class Resolution : MonoBehaviour
 
         for (int i = 0; i < resolutions.Length; i++)
         {
-            // Usamos solo el ancho y alto de la resolución para la clave
-            string resolutionKey = resolutions[i].width + " x " + resolutions[i].height;
-
-            // Si no está en el diccionario, lo añadimos
-            if (!uniqueResolutions.ContainsKey(resolutionKey))
+            if (resolutions[i].width >= 1280 && resolutions[i].height >= 720)
             {
-                uniqueResolutions.Add(resolutionKey, resolutions[i]);
-                options.Add(resolutionKey);
-            }
+                string resolutionKey = resolutions[i].width + " x " + resolutions[i].height;
 
-            // Comprobamos si es la resolución actual para seleccionarla por defecto
-            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
-            {
-                currentResolutionIndex = options.Count - 1;
+                if (!uniqueResolutions.ContainsKey(resolutionKey))
+                {
+                    uniqueResolutions.Add(resolutionKey, resolutions[i]);
+                    options.Add(resolutionKey);
+                }
+
+                if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+                {
+                    currentResolutionIndex = options.Count - 1;
+                }
             }
         }
 
@@ -122,7 +116,6 @@ public class Resolution : MonoBehaviour
 
     private void LoadSavedResolution()
     {
-        // Carga la resolución guardada de PlayerPrefs
         int savedIndex = PlayerPrefs.GetInt("ScreenResolutionIndex", resolutionDropdown.value);
         resolutionDropdown.value = savedIndex;
         resolutionDropdown.RefreshShownValue();
@@ -134,24 +127,25 @@ public class Resolution : MonoBehaviour
         UnityEngine.Resolution[] resolutions = Screen.resolutions;
         Dictionary<string, UnityEngine.Resolution> uniqueResolutions = new Dictionary<string, UnityEngine.Resolution>();
 
-        // Llenamos el diccionario de resoluciones únicas
         for (int i = 0; i < resolutions.Length; i++)
         {
-            string resolutionKey = resolutions[i].width + " x " + resolutions[i].height;
-            if (!uniqueResolutions.ContainsKey(resolutionKey))
+            if (resolutions[i].width >= 1280 && resolutions[i].height >= 720)
             {
-                uniqueResolutions.Add(resolutionKey, resolutions[i]);
+                string resolutionKey = resolutions[i].width + " x " + resolutions[i].height;
+                if (!uniqueResolutions.ContainsKey(resolutionKey))
+                {
+                    uniqueResolutions.Add(resolutionKey, resolutions[i]);
+                }
             }
         }
 
-        // Obtenemos la resolución seleccionada sin duplicados
         string selectedResolutionKey = resolutionDropdown.options[index].text;
         UnityEngine.Resolution selectedResolution = uniqueResolutions[selectedResolutionKey];
         Screen.SetResolution(selectedResolution.width, selectedResolution.height, Screen.fullScreen);
 
-        // Guardamos la resolución seleccionada
         PlayerPrefs.SetInt("ScreenResolutionIndex", index);
         PlayerPrefs.Save();
     }
 }
+
 
