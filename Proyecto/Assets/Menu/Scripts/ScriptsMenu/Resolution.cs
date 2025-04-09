@@ -72,6 +72,17 @@ public class Resolution : MonoBehaviour
 {
     [SerializeField] private TMP_Dropdown resolutionDropdown;
 
+    private readonly List<Vector2Int> commonResolutions = new List<Vector2Int>
+    {
+        new Vector2Int(1920, 1080),  
+        new Vector2Int(2560, 1440),  
+        new Vector2Int(3840, 2160),  
+        new Vector2Int(1280, 720),   
+        new Vector2Int(1600, 900),   
+        new Vector2Int(1366, 768),   
+        new Vector2Int(1024, 768)    
+    };
+
     private void Awake()
     {
         PopulateDropdown();
@@ -92,7 +103,8 @@ public class Resolution : MonoBehaviour
 
         for (int i = 0; i < resolutions.Length; i++)
         {
-            if (resolutions[i].width >= 1280 && resolutions[i].height >= 720)
+            Vector2Int resolution = new Vector2Int(resolutions[i].width, resolutions[i].height);
+            if (commonResolutions.Contains(resolution))
             {
                 string resolutionKey = resolutions[i].width + " x " + resolutions[i].height;
 
@@ -129,7 +141,8 @@ public class Resolution : MonoBehaviour
 
         for (int i = 0; i < resolutions.Length; i++)
         {
-            if (resolutions[i].width >= 1280 && resolutions[i].height >= 720)
+            Vector2Int resolution = new Vector2Int(resolutions[i].width, resolutions[i].height);
+            if (commonResolutions.Contains(resolution))
             {
                 string resolutionKey = resolutions[i].width + " x " + resolutions[i].height;
                 if (!uniqueResolutions.ContainsKey(resolutionKey))
@@ -147,5 +160,6 @@ public class Resolution : MonoBehaviour
         PlayerPrefs.Save();
     }
 }
+
 
 
