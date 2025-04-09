@@ -1190,7 +1190,7 @@ RectTransform:
   m_Father: {fileID: 1681414337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1383,7 +1383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &552817339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2243,7 +2243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2668674451506599317, guid: e6130783c358d724d88e25c14c49c4b4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2668674451506599317, guid: e6130783c358d724d88e25c14c49c4b4, type: 3}
       propertyPath: m_LocalScale.x
@@ -2259,7 +2259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2668674451506599317, guid: e6130783c358d724d88e25c14c49c4b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 2668674451506599317, guid: e6130783c358d724d88e25c14c49c4b4, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -8269,7 +8269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1541950997359181331, guid: 36fe21bd9ffc87c43a2234281b0fbce9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1541950997359181331, guid: 36fe21bd9ffc87c43a2234281b0fbce9, type: 3}
       propertyPath: m_LocalScale.x
@@ -8285,7 +8285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1541950997359181331, guid: 36fe21bd9ffc87c43a2234281b0fbce9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -79.99997
       objectReference: {fileID: 0}
     - target: {fileID: 1541950997359181331, guid: 36fe21bd9ffc87c43a2234281b0fbce9, type: 3}
       propertyPath: m_ConstrainProportionsScale
