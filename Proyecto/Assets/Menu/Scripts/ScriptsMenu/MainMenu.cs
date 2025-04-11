@@ -23,6 +23,14 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private CanvasGroup optionsMenuCanvasGroup;
     [SerializeField] private CanvasGroup titleMenuCanvasGroup;
 
+    [SerializeField] private Button optionsAudio;
+    [SerializeField] private Button optionsGame;
+    [SerializeField] private Button optionsGraphics;
+
+    [SerializeField] private CanvasGroup optionsMenuAudio;
+    [SerializeField] private CanvasGroup optionsMenuGame;
+    [SerializeField] private CanvasGroup optionsMenuGraphics;
+
     private void Update()
     {
         if (skipAction.action.triggered)
@@ -45,6 +53,11 @@ public class MainMenu : MonoBehaviour
         playButton.onClick.AddListener(playLevel);
         optionsButton.onClick.AddListener(OpenOptionsMenu);
         exitButton.onClick.AddListener(exitButtonClick);
+
+
+        optionsAudio.onClick.AddListener(OpenAudio);
+        optionsGame.onClick.AddListener(OpenGame);
+        optionsGraphics.onClick.AddListener(OpenGraphics);
     }
 
     void OnDisable()
@@ -54,17 +67,20 @@ public class MainMenu : MonoBehaviour
         playButton.onClick.RemoveListener(playLevel);
         optionsButton.onClick.RemoveListener(OpenOptionsMenu);
         exitButton.onClick.RemoveListener(exitButtonClick);
+
+        optionsAudio.onClick.RemoveListener(OpenAudio);
+        optionsGame.onClick.RemoveListener(OpenGame);
+        optionsGraphics.onClick.RemoveListener(OpenGraphics);
     }
 
     void MainMenuCanvas()
     {
-        
         ShowCanvasGroup(mainMenuCanvasGroup, true);
     }
 
     void playLevel() 
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene"); // REVISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
     }
 
     void exitButtonClick()
@@ -79,16 +95,53 @@ public class MainMenu : MonoBehaviour
 
     void OpenOptionsMenu()
     {
+
         ShowCanvasGroup(optionsMenuCanvasGroup, true);
         ShowCanvasGroup(titleMenuCanvasGroup, false);
         ShowCanvasGroup(mainMenuCanvasGroup, false);
     }
 
-    public void CloseOptionsMenu()
+    public void CloseOptions()
+    {
+        if(optionsMenuCanvasGroup.alpha == 1)
+        {
+            ShowCanvasGroup(optionsMenuCanvasGroup, false);
+            ShowCanvasGroup(titleMenuCanvasGroup, true);
+            ShowCanvasGroup(mainMenuCanvasGroup, true);
+        }
+        else if (optionsMenuAudio.alpha == 1)
+        {
+            ShowCanvasGroup(optionsMenuAudio, false);
+            ShowCanvasGroup(optionsMenuCanvasGroup, true);
+        }
+        else if (optionsMenuGraphics.alpha == 1)
+        {
+            ShowCanvasGroup(optionsMenuGraphics, false);
+            ShowCanvasGroup(optionsMenuCanvasGroup, true);
+        }
+        else // optionsMenuGame
+        {
+            ShowCanvasGroup(optionsMenuGame, false);
+            ShowCanvasGroup(optionsMenuCanvasGroup, true);
+        }
+    }
+
+    public void OpenAudio()
     {
         ShowCanvasGroup(optionsMenuCanvasGroup, false);
-        ShowCanvasGroup(titleMenuCanvasGroup, true);
-        ShowCanvasGroup(mainMenuCanvasGroup, true);
+        ShowCanvasGroup(optionsMenuAudio, true);
+    }
+
+    public void OpenGame()
+    {
+        ShowCanvasGroup(optionsMenuCanvasGroup, false);
+        ShowCanvasGroup(optionsMenuGame, true);
+    }
+
+    public void OpenGraphics()
+    {
+        ShowCanvasGroup(optionsMenuCanvasGroup, false);
+        ShowCanvasGroup(optionsMenuGraphics, true);
     }
 
     void ShowCanvasGroup(CanvasGroup canvasGroup, bool show)
@@ -97,4 +150,10 @@ public class MainMenu : MonoBehaviour
         canvasGroup.interactable = show;
         canvasGroup.blocksRaycasts = show;
     }
+
+
+
 }
+
+// Revisar que el interact sigue con el check puesto pero de momento no es ningun problema
+// pero hay que corregirlo
