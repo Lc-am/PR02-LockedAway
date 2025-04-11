@@ -365,8 +365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61227eca5056e2e4dbdca1c03908a247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ruta: {fileID: 0}
   velocidad: 1
-  movientoNoTuberia: {x: 1, y: 0, z: 0}
+  umbralLlegada: 0.1
 --- !u!114 &3439313003420839700
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -132,10 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neededRotation: {x: 0, y: 0, z: 90}
-  controlPointCurved:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  splineContainerCurved: {fileID: 8268785328585372831}
   canRotate: 1
 --- !u!1 &4144306859011282518
 GameObject:

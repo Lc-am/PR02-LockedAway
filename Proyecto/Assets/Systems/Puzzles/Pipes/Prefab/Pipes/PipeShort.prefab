@@ -132,9 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neededRotation: {x: 0, y: 0, z: 90}
-  controlPointStraight:
-  - {fileID: 0}
-  - {fileID: 0}
+  splineContainerStraight: {fileID: 1054147611215166627}
   canRotate: 1
 --- !u!1 &3141370933373081184
 GameObject:

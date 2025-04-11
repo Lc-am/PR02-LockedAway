@@ -5,26 +5,21 @@ using UnityEngine.Splines;
 
 public class followSpline : MonoBehaviour
 {
-    private SplineContainer ruta;
+    public SplineContainer ruta;
     [SerializeField] float velocidad = 5f;
 
     [SerializeField] float umbralLlegada = 1f;
 
-    float distanciaEntrePuntos = 5f;
+    float distanciaEntrePuntos = 0.05f;
 
     Vector3[] pathPointsCache;
+    Vector3[] pathLocalPointsCache;
     Vector3 siguientePosicion;
-    int indiceSiguientePosicion = 1;
-
-    private bool inPipe = false;
-
-    SphereCreator creator;
+    int indiceSiguientePosicion = 0;
 
     private void Awake()
     {
-        creator = GetComponent<SphereCreator>();
-
-        ruta = creator.firstPipe;
+        UpdatePoints();
     }
 
     private void UpdatePoints()
@@ -33,15 +28,19 @@ public class followSpline : MonoBehaviour
         int cantidadPuntos = Mathf.CeilToInt(longitudRuta / distanciaEntrePuntos) + 1;
 
         pathPointsCache = new Vector3[cantidadPuntos];
+        pathLocalPointsCache = new Vector3[cantidadPuntos];
 
         for (int i = 0; i < cantidadPuntos; i++)
         {
-            float t = (float)i / (float)cantidadPuntos;
+            float t = (float)i / (float) (cantidadPuntos - 1);
             pathPointsCache[i] = ruta.EvaluatePosition(t);
+            pathLocalPointsCache[i] = ruta.transform.InverseTransformPoint(pathPointsCache[i]);
         }
 
-        transform.position = pathPointsCache[0];
-        siguientePosicion = pathPointsCache[indiceSiguientePosicion];
+        //transform.position = pathPointsCache[0];
+        //siguientePosicion = pathPointsCache[indiceSiguientePosicion];
+        transform.position = ruta.transform.TransformPoint(pathLocalPointsCache[0]);
+        siguientePosicion = ruta.transform.TransformPoint(pathLocalPointsCache[indiceSiguientePosicion]);
     }
 
     private void Update()
@@ -53,27 +52,28 @@ public class followSpline : MonoBehaviour
         if (Vector3.Distance(siguientePosicion, transform.position) < umbralLlegada)
         {
             indiceSiguientePosicion++;
-            if (indiceSiguientePosicion == pathPointsCache.Length)
+            if (indiceSiguientePosicion >= pathLocalPointsCache.Length)
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
             else
             {
-                siguientePosicion = pathPointsCache[indiceSiguientePosicion];
+                //siguientePosicion = pathPointsCache[indiceSiguientePosicion];
+                siguientePosicion = ruta.transform.TransformPoint(pathLocalPointsCache[indiceSiguientePosicion]);
+                
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("StraightPipe"))
+        if (other.CompareTag("StraightPipe"))
         {
             straightPipeController straightpipecontroller = other.gameObject.GetComponent<straightPipeController>();
             ruta = straightpipecontroller.splineContainerStraight;
 
+            indiceSiguientePosicion = 0;
             UpdatePoints();
-
-            inPipe = true;
         }
 
         if (other.CompareTag("CurvedPipe"))
@@ -81,10 +81,13 @@ public class followSpline : MonoBehaviour
             curvedPipeController curvedpipecontroller = other.gameObject.GetComponent<curvedPipeController>();
             ruta = curvedpipecontroller.splineContainerCurved;
 
+            indiceSiguientePosicion = 0;
             UpdatePoints();
+        }
 
-            inPipe = true;
+        if(other.CompareTag("ObjectDestroyer"))
+        {
+            Destroy(gameObject);
         }
     }
-
 }

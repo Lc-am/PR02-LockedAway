@@ -5,6 +5,9 @@ public class straightPipeController : MonoBehaviour, IInteractable
 {
     [SerializeField] private Vector3 neededRotation;    //poner la suma que se quiere rotar
     [SerializeField] public SplineContainer splineContainerStraight;
+    [SerializeField] Vector3 pipeRotation1;
+    [SerializeField] Vector3 pipeRotation2;
+    private bool rotated = false;
 
     private Quaternion rotationToAdd;
     public bool canRotate = true;
@@ -15,7 +18,16 @@ public class straightPipeController : MonoBehaviour, IInteractable
 
     private void pipeRotate()
     {
-        transform.rotation *= rotationToAdd;    //Añade la rotacion puesta a la rotacion actual
+        if(rotated)
+        {
+            transform.rotation = Quaternion.Euler(pipeRotation2);
+            rotated = false;
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(pipeRotation1);
+            rotated = true;
+        }
     }
 
     void IInteractable.StartInteraction()
