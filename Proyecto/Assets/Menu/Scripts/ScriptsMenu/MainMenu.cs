@@ -31,6 +31,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private CanvasGroup optionsMenuGame;
     [SerializeField] private CanvasGroup optionsMenuGraphics;
 
+    [SerializeField] private CanvasGroup Lobby;
+
     private void Update()
     {
         if (skipAction.action.triggered)
@@ -41,7 +43,6 @@ public class MainMenu : MonoBehaviour
                 if (continueText != null) continueText.SetActive(false); // Oculta el texto
                 buttonsShown = true;
             }
-
             MainMenuCanvas();
         }
     }
@@ -80,7 +81,17 @@ public class MainMenu : MonoBehaviour
 
     void playLevel() 
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene"); // REVISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
+        /*UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");*/ // REVISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
+        ShowCanvasGroup(Lobby, true);
+        ShowCanvasGroup(mainMenuCanvasGroup, false);
+        ShowCanvasGroup(titleMenuCanvasGroup, false);
+    }
+
+    public void CloseLobby()
+    {
+        ShowCanvasGroup(Lobby, false);
+        ShowCanvasGroup(titleMenuCanvasGroup, true);
+        ShowCanvasGroup(mainMenuCanvasGroup, true);
     }
 
     void exitButtonClick()
@@ -154,6 +165,3 @@ public class MainMenu : MonoBehaviour
 
 
 }
-
-// Revisar que el interact sigue con el check puesto pero de momento no es ningun problema
-// pero hay que corregirlo
