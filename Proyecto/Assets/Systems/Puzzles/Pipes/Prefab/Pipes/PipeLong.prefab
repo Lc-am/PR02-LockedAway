@@ -276,9 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neededRotation: {x: 0, y: 0, z: 90}
-  controlPointStraight:
-  - {fileID: 0}
-  - {fileID: 0}
+  splineContainerStraight: {fileID: 1492667875197979925}
   canRotate: 1
 --- !u!1001 &7238428980319958062
 PrefabInstance:
