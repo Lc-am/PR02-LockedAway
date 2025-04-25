@@ -4,15 +4,24 @@ using UnityEngine.UI;
 public class AutoSavedSlider : MonoBehaviour
 {
     [SerializeField] private string prefKey;     
-    [SerializeField] private float defaultValue = 0.5f; 
-
+    [SerializeField] private float defaultValue = 0.5f;
+    
+    float savedValue;
     private Slider slider; 
 
     protected virtual void Awake()
     {
         slider = GetComponent<Slider>();
-        float savedValue = PlayerPrefs.GetFloat(prefKey, defaultValue);
-        slider.value = savedValue; 
+        if(PlayerPrefs.GetFloat(prefKey, defaultValue) != null)
+        {
+            savedValue = PlayerPrefs.GetFloat(prefKey, defaultValue);
+        }
+        else
+        {
+            savedValue= defaultValue;
+        }
+        
+        slider.value = savedValue;
         slider.onValueChanged.AddListener(OnSliderValueChanged); 
     }
 

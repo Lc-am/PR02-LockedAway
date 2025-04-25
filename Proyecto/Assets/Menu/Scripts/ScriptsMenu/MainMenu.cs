@@ -15,9 +15,9 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private Canvas Canvas;
     
-    [SerializeField]  private Button playButton;
-    [SerializeField]  private Button optionsButton;
-    [SerializeField]  private Button exitButton;
+    [SerializeField] private Button playButton;
+    [SerializeField] private Button optionsButton;
+    [SerializeField] private Button exitButton;
 
     [SerializeField] private CanvasGroup mainMenuCanvasGroup;
     [SerializeField] private CanvasGroup optionsMenuCanvasGroup;
