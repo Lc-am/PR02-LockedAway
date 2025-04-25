@@ -2663,6 +2663,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0227ce3729408e445b955089aea3c5af, type: 3}
   m_PrefabInstance: {fileID: 1300595602}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &1116269678 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 6185576871254470436, guid: 1e5ae6f4554186a4c82a64bdfbcf8421, type: 3}
+  m_PrefabInstance: {fileID: 1927762262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1116701355
 GameObject:
   m_ObjectHideFlags: 0
@@ -8267,6 +8272,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
+      propertyPath: Lobby
+      value: 
+      objectReference: {fileID: 902854645}
+    - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 1116269678}
+    - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
       propertyPath: exitButton
       value: 
       objectReference: {fileID: 2127516777}
@@ -8278,6 +8291,18 @@ PrefabInstance:
       propertyPath: optionsGame
       value: 
       objectReference: {fileID: 895736224}
+    - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
+      propertyPath: buttonsPanel
+      value: 
+      objectReference: {fileID: 1454982911}
+    - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
+      propertyPath: continueText
+      value: 
+      objectReference: {fileID: 1653945874}
+    - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
+      propertyPath: escapeAction
+      value: 
+      objectReference: {fileID: -2067499496408176606, guid: 6e46bbb5980fab1438eaaf4e70f76e70, type: 3}
     - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
       propertyPath: optionsAudio
       value: 
@@ -8309,7 +8334,7 @@ PrefabInstance:
     - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
       propertyPath: titleMenuCanvasGroup
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1471536520}
     - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
       propertyPath: optionsMenuCanvasGroup
       value: 
@@ -8323,6 +8348,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
+--- !u!1 &1454982911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4987035825860568382, guid: d990b486116f388498124842b418a210, type: 3}
+  m_PrefabInstance: {fileID: 1017158691}
+  m_PrefabAsset: {fileID: 0}
 --- !u!225 &1454982912 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 7503769287866460350, guid: d990b486116f388498124842b418a210, type: 3}
@@ -8332,6 +8362,11 @@ CanvasGroup:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 914548423001643002, guid: d990b486116f388498124842b418a210, type: 3}
   m_PrefabInstance: {fileID: 1017158691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1471536520 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 7908020718035737707, guid: 1e5ae6f4554186a4c82a64bdfbcf8421, type: 3}
+  m_PrefabInstance: {fileID: 1927762262}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1524315247
 GameObject:
@@ -13445,6 +13480,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1116701356}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1653945874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3890902442336964770, guid: 1e5ae6f4554186a4c82a64bdfbcf8421, type: 3}
+  m_PrefabInstance: {fileID: 1927762262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1663171197
 PrefabInstance:
   m_ObjectHideFlags: 0

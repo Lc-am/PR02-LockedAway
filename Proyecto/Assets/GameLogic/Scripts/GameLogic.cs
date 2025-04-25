@@ -30,15 +30,15 @@ public class GameLogic : NetworkBehaviour
 
     private void Start()
     {
-        if (IsServer)
-        {
-            Debug.Log($"IsServer: {IsServer}");
-            NextStage();
-        }
-        else
-        {
-            allStages[currentStageIndex.Value].NotifyActivatedOnClient();
-        }
+        //if (IsServer)
+        //{
+        //    Debug.Log($"IsServer: {IsServer}");
+        //    NextStage();
+        //}
+        //else
+        //{
+        //    allStages[currentStageIndex.Value].NotifyActivatedOnClient();
+        //}
     }
 
     public void NextStage()

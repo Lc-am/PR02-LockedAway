@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
+using System;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private InputActionReference skipAction;
+    [SerializeField] private InputActionReference escapeAction;
+
     [SerializeField] private GameObject buttonsPanel;
     [SerializeField] private GameObject continueText;
     private bool buttonsShown = false;
@@ -33,6 +36,8 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private CanvasGroup Lobby;
 
+    private int inScreen;       //1 = Play | 2 = Options | 3 = OptionsAudio | 4 = OptionsGame | 5 = OptionsGraphics | 0 = MainMenu
+
     private void Update()
     {
         if (skipAction.action.triggered)
@@ -50,6 +55,9 @@ public class MainMenu : MonoBehaviour
     void OnEnable()
     {
         skipAction.action.Enable();
+        escapeAction.action.Enable();
+
+        escapeAction.action.performed += goBack;
 
         playButton.onClick.AddListener(playLevel);
         optionsButton.onClick.AddListener(OpenOptionsMenu);
@@ -64,6 +72,9 @@ public class MainMenu : MonoBehaviour
     void OnDisable()
     {
         skipAction.action.Disable();
+        escapeAction.action.Disable();
+
+        escapeAction.action.performed -= goBack;
 
         playButton.onClick.RemoveListener(playLevel);
         optionsButton.onClick.RemoveListener(OpenOptionsMenu);
@@ -85,14 +96,15 @@ public class MainMenu : MonoBehaviour
         ShowCanvasGroup(Lobby, true);
         ShowCanvasGroup(mainMenuCanvasGroup, false);
         ShowCanvasGroup(titleMenuCanvasGroup, false);
+        inScreen = 1;
     }
 
-    public void CloseLobby()
-    {
-        ShowCanvasGroup(Lobby, false);
-        ShowCanvasGroup(titleMenuCanvasGroup, true);
-        ShowCanvasGroup(mainMenuCanvasGroup, true);
-    }
+    //public void CloseLobby()
+    //{
+    //    ShowCanvasGroup(Lobby, false);
+    //    ShowCanvasGroup(titleMenuCanvasGroup, true);
+    //    ShowCanvasGroup(mainMenuCanvasGroup, true);
+    //}
 
     void exitButtonClick()
     {
@@ -110,49 +122,57 @@ public class MainMenu : MonoBehaviour
         ShowCanvasGroup(optionsMenuCanvasGroup, true);
         ShowCanvasGroup(titleMenuCanvasGroup, false);
         ShowCanvasGroup(mainMenuCanvasGroup, false);
+
+        inScreen = 2;
     }
 
-    public void CloseOptions()
-    {
-        if(optionsMenuCanvasGroup.alpha == 1)
-        {
-            ShowCanvasGroup(optionsMenuCanvasGroup, false);
-            ShowCanvasGroup(titleMenuCanvasGroup, true);
-            ShowCanvasGroup(mainMenuCanvasGroup, true);
-        }
-        else if (optionsMenuAudio.alpha == 1)
-        {
-            ShowCanvasGroup(optionsMenuAudio, false);
-            ShowCanvasGroup(optionsMenuCanvasGroup, true);
-        }
-        else if (optionsMenuGraphics.alpha == 1)
-        {
-            ShowCanvasGroup(optionsMenuGraphics, false);
-            ShowCanvasGroup(optionsMenuCanvasGroup, true);
-        }
-        else // optionsMenuGame
-        {
-            ShowCanvasGroup(optionsMenuGame, false);
-            ShowCanvasGroup(optionsMenuCanvasGroup, true);
-        }
-    }
+    //public void CloseOptions()
+    //{
+    //    if(optionsMenuCanvasGroup.alpha == 1)
+    //    {
+    //        ShowCanvasGroup(optionsMenuCanvasGroup, false);
+    //        ShowCanvasGroup(titleMenuCanvasGroup, true);
+    //        ShowCanvasGroup(mainMenuCanvasGroup, true);
+    //    }
+    //    else if (optionsMenuAudio.alpha == 1)
+    //    {
+    //        ShowCanvasGroup(optionsMenuAudio, false);
+    //        ShowCanvasGroup(optionsMenuCanvasGroup, true);
+    //    }
+    //    else if (optionsMenuGraphics.alpha == 1)
+    //    {
+    //        ShowCanvasGroup(optionsMenuGraphics, false);
+    //        ShowCanvasGroup(optionsMenuCanvasGroup, true);
+    //    }
+    //    else // optionsMenuGame
+    //    {
+    //        ShowCanvasGroup(optionsMenuGame, false);
+    //        ShowCanvasGroup(optionsMenuCanvasGroup, true);
+    //    }
+    //}
 
     public void OpenAudio()
     {
         ShowCanvasGroup(optionsMenuCanvasGroup, false);
         ShowCanvasGroup(optionsMenuAudio, true);
+
+        inScreen = 3;
     }
 
     public void OpenGame()
     {
         ShowCanvasGroup(optionsMenuCanvasGroup, false);
         ShowCanvasGroup(optionsMenuGame, true);
+
+        inScreen = 4;
     }
 
     public void OpenGraphics()
     {
         ShowCanvasGroup(optionsMenuCanvasGroup, false);
         ShowCanvasGroup(optionsMenuGraphics, true);
+
+        inScreen = 5;
     }
 
     void ShowCanvasGroup(CanvasGroup canvasGroup, bool show)
@@ -162,6 +182,37 @@ public class MainMenu : MonoBehaviour
         canvasGroup.blocksRaycasts = show;
     }
 
-
-
+    private void goBack(InputAction.CallbackContext context)
+    {
+        switch(inScreen)
+        {
+            case 1:
+                ShowCanvasGroup(Lobby, false);
+                ShowCanvasGroup(mainMenuCanvasGroup, true);
+                ShowCanvasGroup(titleMenuCanvasGroup, true);
+                inScreen = 0;
+                break;
+            case 2:
+                ShowCanvasGroup(optionsMenuCanvasGroup, false);
+                ShowCanvasGroup(titleMenuCanvasGroup, true);
+                ShowCanvasGroup(mainMenuCanvasGroup, true);
+                inScreen = 0;
+                break;
+            case 3:
+                ShowCanvasGroup(optionsMenuCanvasGroup, true);
+                ShowCanvasGroup(optionsMenuAudio, false);
+                inScreen = 2;
+                break;
+            case 4:
+                ShowCanvasGroup(optionsMenuCanvasGroup, true);
+                ShowCanvasGroup(optionsMenuGame, false);
+                inScreen = 2;
+                break;
+            case 5:
+                ShowCanvasGroup(optionsMenuCanvasGroup, true);
+                ShowCanvasGroup(optionsMenuGraphics, false);
+                inScreen = 2;
+                break;
+        }
+    }
 }
