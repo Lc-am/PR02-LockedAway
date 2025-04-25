@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f35c1a494ec1f414faa4a7bbd5813847
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Prefabs/SRP/Pathbuilding/DeadEndPrefab.prefab
+  uploadId: 722373

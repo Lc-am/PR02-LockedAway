@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3b40f5dc18b4b484a8fdbf023a02d3e2
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Prefabs/URP/Pathbuilding/Left2.prefab
+  uploadId: 722373

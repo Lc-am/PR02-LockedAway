@@ -556,7 +556,6 @@ MonoBehaviour:
   crouchHeight: 1
   crouchSpeed: 3
   cameraObject: {fileID: 5423869028890665374}
-  isPaused: 0
 --- !u!114 &8621369394692244475
 MonoBehaviour:
   m_ObjectHideFlags: 0

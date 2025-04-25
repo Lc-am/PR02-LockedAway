@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e8945f8553102ad46a87aafd6ddc9814
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Materials/HDRP/Pathbuilding/Wall1_HDRP.mat
+  uploadId: 722373

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e2c8e5244c4be2f42bb0ac371954b552
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4300000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 305321
+  packageName: Low Poly Dungeon Generator
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Dungeon Generator/Models/Probs/CrystalMesh3.asset
+  uploadId: 722373
