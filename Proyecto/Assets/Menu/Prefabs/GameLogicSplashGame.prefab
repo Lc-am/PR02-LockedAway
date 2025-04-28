@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skipAction: {fileID: -4640253721891472349, guid: 6e46bbb5980fab1438eaaf4e70f76e70, type: 3}
+  escapeAction: {fileID: -2067499496408176606, guid: 6e46bbb5980fab1438eaaf4e70f76e70, type: 3}
   buttonsPanel: {fileID: 0}
   continueText: {fileID: 0}
   Canvas: {fileID: 0}
@@ -54,3 +55,10 @@ MonoBehaviour:
   mainMenuCanvasGroup: {fileID: 0}
   optionsMenuCanvasGroup: {fileID: 0}
   titleMenuCanvasGroup: {fileID: 0}
+  optionsAudio: {fileID: 0}
+  optionsGame: {fileID: 0}
+  optionsGraphics: {fileID: 0}
+  optionsMenuAudio: {fileID: 0}
+  optionsMenuGame: {fileID: 0}
+  optionsMenuGraphics: {fileID: 0}
+  Lobby: {fileID: 0}

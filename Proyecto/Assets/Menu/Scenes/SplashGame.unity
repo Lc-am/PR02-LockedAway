@@ -8300,10 +8300,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1653945874}
     - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
-      propertyPath: escapeAction
-      value: 
-      objectReference: {fileID: -2067499496408176606, guid: 6e46bbb5980fab1438eaaf4e70f76e70, type: 3}
-    - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
       propertyPath: optionsAudio
       value: 
       objectReference: {fileID: 1988089770}
