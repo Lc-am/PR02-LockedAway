@@ -30,15 +30,15 @@ public class GameLogic : NetworkBehaviour
 
     private void Start()
     {
-        //if (IsServer)
-        //{
-        //    Debug.Log($"IsServer: {IsServer}");
-        //    NextStage();
-        //}
-        //else
-        //{
-        //    allStages[currentStageIndex.Value].NotifyActivatedOnClient();
-        //}
+        if (IsServer)
+        {
+            Debug.Log($"IsServer: {IsServer}");
+            NextStage();
+        }
+        else
+        {
+            allStages[currentStageIndex.Value].NotifyActivatedOnClient();
+        }
     }
 
     public void NextStage()
@@ -48,8 +48,8 @@ public class GameLogic : NetworkBehaviour
         NotifyStageDeactivated_ClientRPC(currentStageIndex.Value);
 
         currentStageIndex.Value++;
-        if (currentStageIndex.Value >= allStages.Length) 
-            { currentStageIndex.Value = 0; }
+        if (currentStageIndex.Value >= allStages.Length)
+        { currentStageIndex.Value = 0; }
 
         allStages[currentStageIndex.Value].NotifyActivatedFromPreviousStageOnServer();
 
@@ -66,13 +66,13 @@ public class GameLogic : NetworkBehaviour
         NotifyStageDeactivated_ClientRPC(currentStageIndex.Value);
 
         currentStageIndex.Value--;
-        if (currentStageIndex.Value < 0) 
-        { 
+        if (currentStageIndex.Value < 0)
+        {
             // Salir del juego
         }
 
         if (currentStageIndex.Value >= 0)
-            { allStages[currentStageIndex.Value].NotifyActivatedFromNextStageOnServer(); }
+        { allStages[currentStageIndex.Value].NotifyActivatedFromNextStageOnServer(); }
 
         Debug.Log($"... {currentStageIndex.Value}");
         InvokeStageActivationEvents();
@@ -83,9 +83,9 @@ public class GameLogic : NetworkBehaviour
     void InvokeStageActivationEvents()
     {
         if (allStages[currentStageIndex.Value].ShouldPlayerBeActive())
-            { onActivateBecauseGameLogicStage.Invoke(); }
+        { onActivateBecauseGameLogicStage.Invoke(); }
         else
-            { onDeactivateBecauseGameLogicStage.Invoke(); }
+        { onDeactivateBecauseGameLogicStage.Invoke(); }
     }
 
     private void DeactivateCurrentStage()

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
 using System;
+using Unity.Netcode;
 
 public class MainMenu : MonoBehaviour
 {
@@ -17,11 +18,20 @@ public class MainMenu : MonoBehaviour
     private bool buttonsShown = false;
 
     [SerializeField] private Canvas Canvas;
-    
-    [SerializeField] private Button playButton;
-    [SerializeField] private Button optionsButton;
-    [SerializeField] private Button exitButton;
 
+    [Header("Play")]
+    [SerializeField] private Button playButton;
+
+    [SerializeField] private CanvasGroup playSelectHostOrClient;
+
+    [SerializeField] private Button playSelectHost;
+    [SerializeField] private Button playSelectClient;
+
+    [SerializeField] private CanvasGroup createLobbyCanvasGroup;
+    [SerializeField] private CanvasGroup joinLobbyCanvasGroup;
+
+    [Header("Options")]
+    [SerializeField] private Button optionsButton;
     [SerializeField] private CanvasGroup mainMenuCanvasGroup;
     [SerializeField] private CanvasGroup optionsMenuCanvasGroup;
     [SerializeField] private CanvasGroup titleMenuCanvasGroup;
@@ -34,9 +44,14 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private CanvasGroup optionsMenuGame;
     [SerializeField] private CanvasGroup optionsMenuGraphics;
 
-    [SerializeField] private CanvasGroup Lobby;
+    [Header("Others")]
+    [SerializeField] private Button exitButton;
 
-    private int inScreen;       //1 = Play | 2 = Options | 3 = OptionsAudio | 4 = OptionsGame | 5 = OptionsGraphics | 0 = MainMenu
+    [SerializeField] GameObject networkManager;
+
+    private int inScreen;       //1 = Play | 2 = Play - Host | 3 = Play - Client | 4 = Options | 5 = OptionsAudio | 6 = OptionsGame | 7 = OptionsGraphics | 0 = MainMenu
+    private bool selectedHost;
+
 
     private void Update()
     {
@@ -60,13 +75,17 @@ public class MainMenu : MonoBehaviour
         escapeAction.action.performed += goBack;
 
         playButton.onClick.AddListener(playLevel);
-        optionsButton.onClick.AddListener(OpenOptionsMenu);
-        exitButton.onClick.AddListener(exitButtonClick);
 
+        playSelectHost.onClick.AddListener(OpenCreateLobby);
+        playSelectClient.onClick.AddListener(OpenJoinLobby);
+
+        optionsButton.onClick.AddListener(OpenOptionsMenu);
 
         optionsAudio.onClick.AddListener(OpenAudio);
         optionsGame.onClick.AddListener(OpenGame);
         optionsGraphics.onClick.AddListener(OpenGraphics);
+
+        exitButton.onClick.AddListener(exitButtonClick);
     }
 
     void OnDisable()
@@ -77,12 +96,17 @@ public class MainMenu : MonoBehaviour
         escapeAction.action.performed -= goBack;
 
         playButton.onClick.RemoveListener(playLevel);
+
+        playSelectHost.onClick.RemoveListener(OpenCreateLobby);
+        playSelectClient.onClick.RemoveListener(OpenJoinLobby);
+
         optionsButton.onClick.RemoveListener(OpenOptionsMenu);
-        exitButton.onClick.RemoveListener(exitButtonClick);
 
         optionsAudio.onClick.RemoveListener(OpenAudio);
         optionsGame.onClick.RemoveListener(OpenGame);
         optionsGraphics.onClick.RemoveListener(OpenGraphics);
+
+        exitButton.onClick.RemoveListener(exitButtonClick);
     }
 
     void MainMenuCanvas()
@@ -93,18 +117,29 @@ public class MainMenu : MonoBehaviour
     void playLevel() 
     {
         /*UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");*/ // REVISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
-        ShowCanvasGroup(Lobby, true);
+        ShowCanvasGroup(playSelectHostOrClient, true);
         ShowCanvasGroup(mainMenuCanvasGroup, false);
         ShowCanvasGroup(titleMenuCanvasGroup, false);
         inScreen = 1;
     }
 
-    //public void CloseLobby()
-    //{
-    //    ShowCanvasGroup(Lobby, false);
-    //    ShowCanvasGroup(titleMenuCanvasGroup, true);
-    //    ShowCanvasGroup(mainMenuCanvasGroup, true);
-    //}
+    void OpenCreateLobby()
+    {
+        NetworkManager.Singleton.StartHost();
+        selectedHost = true;
+        ShowCanvasGroup(createLobbyCanvasGroup, true);
+        ShowCanvasGroup(playSelectHostOrClient, false);
+        inScreen = 2;
+    }
+
+    void OpenJoinLobby()
+    {
+        NetworkManager.Singleton.StartClient();
+        selectedHost = false;
+        ShowCanvasGroup(joinLobbyCanvasGroup, true);
+        ShowCanvasGroup(playSelectHostOrClient, false);
+        inScreen = 3;
+    }
 
     void exitButtonClick()
     {
@@ -123,40 +158,15 @@ public class MainMenu : MonoBehaviour
         ShowCanvasGroup(titleMenuCanvasGroup, false);
         ShowCanvasGroup(mainMenuCanvasGroup, false);
 
-        inScreen = 2;
+        inScreen = 4;
     }
-
-    //public void CloseOptions()
-    //{
-    //    if(optionsMenuCanvasGroup.alpha == 1)
-    //    {
-    //        ShowCanvasGroup(optionsMenuCanvasGroup, false);
-    //        ShowCanvasGroup(titleMenuCanvasGroup, true);
-    //        ShowCanvasGroup(mainMenuCanvasGroup, true);
-    //    }
-    //    else if (optionsMenuAudio.alpha == 1)
-    //    {
-    //        ShowCanvasGroup(optionsMenuAudio, false);
-    //        ShowCanvasGroup(optionsMenuCanvasGroup, true);
-    //    }
-    //    else if (optionsMenuGraphics.alpha == 1)
-    //    {
-    //        ShowCanvasGroup(optionsMenuGraphics, false);
-    //        ShowCanvasGroup(optionsMenuCanvasGroup, true);
-    //    }
-    //    else // optionsMenuGame
-    //    {
-    //        ShowCanvasGroup(optionsMenuGame, false);
-    //        ShowCanvasGroup(optionsMenuCanvasGroup, true);
-    //    }
-    //}
 
     public void OpenAudio()
     {
         ShowCanvasGroup(optionsMenuCanvasGroup, false);
         ShowCanvasGroup(optionsMenuAudio, true);
 
-        inScreen = 3;
+        inScreen = 5;
     }
 
     public void OpenGame()
@@ -164,7 +174,7 @@ public class MainMenu : MonoBehaviour
         ShowCanvasGroup(optionsMenuCanvasGroup, false);
         ShowCanvasGroup(optionsMenuGame, true);
 
-        inScreen = 4;
+        inScreen = 6;
     }
 
     public void OpenGraphics()
@@ -172,7 +182,7 @@ public class MainMenu : MonoBehaviour
         ShowCanvasGroup(optionsMenuCanvasGroup, false);
         ShowCanvasGroup(optionsMenuGraphics, true);
 
-        inScreen = 5;
+        inScreen = 7;
     }
 
     void ShowCanvasGroup(CanvasGroup canvasGroup, bool show)
@@ -187,31 +197,43 @@ public class MainMenu : MonoBehaviour
         switch(inScreen)
         {
             case 1:
-                ShowCanvasGroup(Lobby, false);
+                ShowCanvasGroup(playSelectHostOrClient, false);
                 ShowCanvasGroup(mainMenuCanvasGroup, true);
                 ShowCanvasGroup(titleMenuCanvasGroup, true);
                 inScreen = 0;
                 break;
             case 2:
+                ShowCanvasGroup(createLobbyCanvasGroup, false);
+                ShowCanvasGroup(playSelectHostOrClient, true);
+                NetworkManager.Singleton.Shutdown(true);
+                inScreen = 1;
+                break;
+            case 3:
+                ShowCanvasGroup(joinLobbyCanvasGroup, false);
+                ShowCanvasGroup(playSelectHostOrClient, true);
+                NetworkManager.Singleton.Shutdown(true);
+                inScreen = 1;
+                break;
+            case 4:
                 ShowCanvasGroup(optionsMenuCanvasGroup, false);
                 ShowCanvasGroup(titleMenuCanvasGroup, true);
                 ShowCanvasGroup(mainMenuCanvasGroup, true);
                 inScreen = 0;
                 break;
-            case 3:
-                ShowCanvasGroup(optionsMenuCanvasGroup, true);
-                ShowCanvasGroup(optionsMenuAudio, false);
-                inScreen = 2;
-                break;
-            case 4:
-                ShowCanvasGroup(optionsMenuCanvasGroup, true);
-                ShowCanvasGroup(optionsMenuGame, false);
-                inScreen = 2;
-                break;
             case 5:
                 ShowCanvasGroup(optionsMenuCanvasGroup, true);
+                ShowCanvasGroup(optionsMenuAudio, false);
+                inScreen = 4;
+                break;
+            case 6:
+                ShowCanvasGroup(optionsMenuCanvasGroup, true);
+                ShowCanvasGroup(optionsMenuGame, false);
+                inScreen = 4;
+                break;
+            case 7:
+                ShowCanvasGroup(optionsMenuCanvasGroup, true);
                 ShowCanvasGroup(optionsMenuGraphics, false);
-                inScreen = 2;
+                inScreen = 4;
                 break;
         }
     }
