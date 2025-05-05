@@ -151,8 +151,8 @@ public class MainMenu : MonoBehaviour
     void OpenGameLobby()
     {
         ShowCanvasGroup(GameLobbyCanvas, true);
-        ShowCanvasGroup(createLobbyCanvasGroup, true);
-        ShowCanvasGroup(joinLobbyCanvasGroup, true);
+        ShowCanvasGroup(createLobbyCanvasGroup, false);
+        ShowCanvasGroup(joinLobbyCanvasGroup, false);
         inScreen = 4;
     }
 
