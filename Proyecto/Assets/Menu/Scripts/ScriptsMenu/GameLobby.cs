@@ -35,12 +35,6 @@ public class LobbyManager : NetworkBehaviour
             playerList += $"- Jugador {client.ClientId}\n";
         }
 
-        UpdatePlayerListTextClientRpc(playerList);
-    }
-
-    [ClientRpc]
-    void UpdatePlayerListTextClientRpc(string playerList)
-    {
         playersListText.text = playerList;
     }
 

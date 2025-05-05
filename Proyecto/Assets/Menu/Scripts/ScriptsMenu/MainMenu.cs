@@ -228,7 +228,7 @@ public class MainMenu : MonoBehaviour
                 inScreen = 1;
                 break;
             case 4:
-                ShowCanvasGroup(GameLobbyCanvas, true);
+                ShowCanvasGroup(GameLobbyCanvas, false);
                 ShowCanvasGroup(mainMenuCanvasGroup, true);
                 ShowCanvasGroup(titleMenuCanvasGroup, true);
                 inScreen = 0;
