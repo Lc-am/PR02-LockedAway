@@ -30,6 +30,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private CanvasGroup createLobbyCanvasGroup;
     [SerializeField] private CanvasGroup joinLobbyCanvasGroup;
 
+    [SerializeField] private Button createLobbyButton;
+    [SerializeField] private Button joinLobbyButton;
+
+    [SerializeField] private CanvasGroup GameLobbyCanvas;
+
     [Header("Options")]
     [SerializeField] private Button optionsButton;
     [SerializeField] private CanvasGroup mainMenuCanvasGroup;
@@ -49,7 +54,7 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] GameObject networkManager;
 
-    private int inScreen;       //1 = Play | 2 = Play - Host | 3 = Play - Client | 4 = Options | 5 = OptionsAudio | 6 = OptionsGame | 7 = OptionsGraphics | 0 = MainMenu
+    private int inScreen;       //1 = Play | 2 = Play - Host | 3 = Play - Client | 4 - Lobby | 5 = Options | 6 = OptionsAudio | 7 = OptionsGame | 8 = OptionsGraphics | 0 = MainMenu
     private bool selectedHost;
 
 
@@ -79,6 +84,9 @@ public class MainMenu : MonoBehaviour
         playSelectHost.onClick.AddListener(OpenCreateLobby);
         playSelectClient.onClick.AddListener(OpenJoinLobby);
 
+        createLobbyButton.onClick.AddListener(OpenGameLobby);
+        joinLobbyButton.onClick.AddListener(OpenGameLobby);
+
         optionsButton.onClick.AddListener(OpenOptionsMenu);
 
         optionsAudio.onClick.AddListener(OpenAudio);
@@ -99,6 +107,9 @@ public class MainMenu : MonoBehaviour
 
         playSelectHost.onClick.RemoveListener(OpenCreateLobby);
         playSelectClient.onClick.RemoveListener(OpenJoinLobby);
+
+        createLobbyButton.onClick.RemoveListener(OpenGameLobby);
+        joinLobbyButton.onClick.RemoveListener(OpenGameLobby);
 
         optionsButton.onClick.RemoveListener(OpenOptionsMenu);
 
@@ -125,8 +136,6 @@ public class MainMenu : MonoBehaviour
 
     void OpenCreateLobby()
     {
-        NetworkManager.Singleton.StartHost();
-        selectedHost = true;
         ShowCanvasGroup(createLobbyCanvasGroup, true);
         ShowCanvasGroup(playSelectHostOrClient, false);
         inScreen = 2;
@@ -134,11 +143,17 @@ public class MainMenu : MonoBehaviour
 
     void OpenJoinLobby()
     {
-        NetworkManager.Singleton.StartClient();
-        selectedHost = false;
         ShowCanvasGroup(joinLobbyCanvasGroup, true);
         ShowCanvasGroup(playSelectHostOrClient, false);
         inScreen = 3;
+    }
+
+    void OpenGameLobby()
+    {
+        ShowCanvasGroup(GameLobbyCanvas, true);
+        ShowCanvasGroup(createLobbyCanvasGroup, true);
+        ShowCanvasGroup(joinLobbyCanvasGroup, true);
+        inScreen = 4;
     }
 
     void exitButtonClick()
@@ -205,35 +220,40 @@ public class MainMenu : MonoBehaviour
             case 2:
                 ShowCanvasGroup(createLobbyCanvasGroup, false);
                 ShowCanvasGroup(playSelectHostOrClient, true);
-                NetworkManager.Singleton.Shutdown(true);
                 inScreen = 1;
                 break;
             case 3:
                 ShowCanvasGroup(joinLobbyCanvasGroup, false);
                 ShowCanvasGroup(playSelectHostOrClient, true);
-                NetworkManager.Singleton.Shutdown(true);
                 inScreen = 1;
                 break;
             case 4:
+                ShowCanvasGroup(GameLobbyCanvas, true);
+                ShowCanvasGroup(mainMenuCanvasGroup, true);
+                ShowCanvasGroup(titleMenuCanvasGroup, true);
+                inScreen = 0;
+                NetworkManager.Singleton.Shutdown();
+                break;
+            case 5:
                 ShowCanvasGroup(optionsMenuCanvasGroup, false);
                 ShowCanvasGroup(titleMenuCanvasGroup, true);
                 ShowCanvasGroup(mainMenuCanvasGroup, true);
                 inScreen = 0;
                 break;
-            case 5:
-                ShowCanvasGroup(optionsMenuCanvasGroup, true);
-                ShowCanvasGroup(optionsMenuAudio, false);
-                inScreen = 4;
-                break;
             case 6:
                 ShowCanvasGroup(optionsMenuCanvasGroup, true);
-                ShowCanvasGroup(optionsMenuGame, false);
-                inScreen = 4;
+                ShowCanvasGroup(optionsMenuAudio, false);
+                inScreen = 5;
                 break;
             case 7:
                 ShowCanvasGroup(optionsMenuCanvasGroup, true);
+                ShowCanvasGroup(optionsMenuGame, false);
+                inScreen = 5;
+                break;
+            case 8:
+                ShowCanvasGroup(optionsMenuCanvasGroup, true);
                 ShowCanvasGroup(optionsMenuGraphics, false);
-                inScreen = 4;
+                inScreen = 5;
                 break;
         }
     }

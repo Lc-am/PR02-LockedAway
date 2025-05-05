@@ -41,6 +41,8 @@ public class FFA_StagePreMatch : GameLogicStageWithCanvas
                 lastPlayerListingTime = Time.time;
 
                 SetPlayerListText_ClientRPC(playerListText);
+
+                startButton.interactable = (NetworkManager.Singleton.ConnectedClients.Count == 2);
             }
         }
     }
