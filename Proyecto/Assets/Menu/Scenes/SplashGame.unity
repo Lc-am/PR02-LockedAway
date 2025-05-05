@@ -2453,7 +2453,7 @@ GameObject:
   - component: {fileID: 802763069}
   - component: {fileID: 802763068}
   m_Layer: 5
-  m_Name: Conect_Button
+  m_Name: Create_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4279,7 +4279,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   playersListText: {fileID: 701208826}
   startGameButton: {fileID: 778076484}
-  GameScene: 
+  GameScene: MainScene
 --- !u!1 &1210105679
 GameObject:
   m_ObjectHideFlags: 0
@@ -10567,6 +10567,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1293969296}
     - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
+      propertyPath: GameLobbyCanvas
+      value: 
+      objectReference: {fileID: 1841073420}
+    - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
+      propertyPath: joinLobbyButton
+      value: 
+      objectReference: {fileID: 48466136}
+    - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
       propertyPath: optionsGraphics
       value: 
       objectReference: {fileID: 320749811}
@@ -10582,6 +10590,10 @@ PrefabInstance:
       propertyPath: playSelectClient
       value: 
       objectReference: {fileID: 60574755}
+    - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
+      propertyPath: createLobbyButton
+      value: 
+      objectReference: {fileID: 802763068}
     - target: {fileID: 1075226131619230639, guid: ff76a1e0a94747042aeac8f3a845f92c, type: 3}
       propertyPath: mainMenuCanvasGroup
       value: 
