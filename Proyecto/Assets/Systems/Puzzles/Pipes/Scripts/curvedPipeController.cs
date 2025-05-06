@@ -4,7 +4,6 @@ using UnityEngine.UIElements;
 
 public class curvedPipeController : MonoBehaviour, IInteractable
 {
-    [SerializeField] private Vector3 neededRotation;    //poner la suma que se quiere rotar
     [SerializeField] public SplineContainer splineContainerCurved;
     [SerializeField] Vector3 pipeRotation1;
     [SerializeField] Vector3 pipeRotation2;
@@ -12,11 +11,6 @@ public class curvedPipeController : MonoBehaviour, IInteractable
 
     private Quaternion rotationToAdd;
     public bool canRotate = true;
-
-    private void Awake()
-    {
-        rotationToAdd = Quaternion.Euler(neededRotation);
-    }
 
     private void pipeRotate()
     {
