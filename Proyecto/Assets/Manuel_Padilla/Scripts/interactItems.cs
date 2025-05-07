@@ -26,17 +26,23 @@ public class interactItems : NetworkBehaviour
 
     private void OnInteract(InputAction.CallbackContext context)
     {
-        //Funcion que lanza un raycast cada vez que se pulsa el boton de interacción para saber si puede y que puede hacer el objeto interactuado.
-        if (IsLocalPlayer)
+        if(IsLocalPlayer)
         {
-            RaycastHit hit;
+            InteractServerRPC(camera.position, camera.TransformDirection(Vector3.forward));
+        }
+    }
 
-            if (Physics.Raycast(camera.position, camera.TransformDirection(Vector3.forward), out hit, interactRange))
-            {
-                IInteractable interactable = hit.transform.GetComponent<IInteractable>();
-                if (interactable != null)
-                    { interactable.StartInteraction(); }
-            }
+    [Rpc(SendTo.Server)]
+    private void InteractServerRPC(Vector3 cameraPosition, Vector3 cameraDirection)
+    {
+        //Funcion que lanza un raycast cada vez que se pulsa el boton de interacción para saber si puede y que puede hacer el objeto interactuado.
+        RaycastHit hit;
+
+        if (Physics.Raycast(cameraPosition, cameraDirection, out hit, interactRange))
+        {
+            IInteractable interactable = hit.transform.GetComponent<IInteractable>();
+            if (interactable != null)
+            { interactable.StartInteraction(); }
         }
     }
 }

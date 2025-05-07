@@ -11,6 +11,7 @@ TagManager:
   - CurvedPipe
   - StraightPipe
   - ObjectDestroyer
+  - WinCondition
   layers:
   - Default
   - TransparentFX

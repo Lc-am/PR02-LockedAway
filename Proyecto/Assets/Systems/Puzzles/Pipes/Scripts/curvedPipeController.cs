@@ -18,11 +18,13 @@ public class curvedPipeController : MonoBehaviour, IInteractable
         {
             transform.rotation = Quaternion.Euler(pipeRotation2);
             rotated = false;
+            Debug.Log("rotated");
         }
         else
         {
             transform.rotation = Quaternion.Euler(pipeRotation1);
             rotated = true;
+            Debug.Log(" not rotated");
         }
     }
 
