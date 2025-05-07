@@ -10,10 +10,7 @@ TagManager:
   - UnlockCursor
   - CurvedPipe
   - StraightPipe
-  - CurvedFirstPoint
-  - CurvedLastPoint
-  - StraightFirstPoint
-  - StraightLastPoint
+  - ObjectDestroyer
   layers:
   - Default
   - TransparentFX

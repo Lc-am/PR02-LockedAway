@@ -9,6 +9,7 @@ public class SphereCreator : MonoBehaviour, IInteractable
     followSpline followspline;
     private void CreateSphere()
     {
+        Debug.Log("pulsado");
         Instantiate(spherePipePuzzlePrefab, transform.position, Quaternion.identity);
         followspline = spherePipePuzzlePrefab.GetComponent<followSpline>();
         followspline.ruta = firstPipe;

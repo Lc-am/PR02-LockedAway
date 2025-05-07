@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4188877953
+  GlobalObjectIdHash: 1131234972
   InScenePlacedSourceGlobalObjectIdHash: 3871345604
   DeferredDespawnTick: 0
   Ownership: 1
@@ -131,8 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86610694fdcb9794b819e78aa9248d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neededRotation: {x: 0, y: 0, z: 90}
   splineContainerCurved: {fileID: 8268785328585372831}
+  pipeRotation1: {x: 0, y: 0, z: 0}
+  pipeRotation2: {x: 0, y: 0, z: 0}
   canRotate: 1
 --- !u!1 &4144306859011282518
 GameObject:
@@ -159,7 +160,7 @@ Transform:
   m_GameObject: {fileID: 4144306859011282518}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.021, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
