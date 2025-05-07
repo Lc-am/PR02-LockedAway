@@ -42,8 +42,13 @@ EditorBuildSettings:
     path: Assets/BrokenVector/LowPolyDungeon/Demo Scenes/Dungeon_Demo.unity
     guid: b94ee59f12f411f488e6df197429e012
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/Scenes/Escenarios/Dungeon_Assets 2.unity
     guid: 21b65859fa867de41b126b4e3b6082e8
+=======
+    path: Assets/Scenes/Escenarios/Dungeon_Assets.unity
+    guid: a11c2048ef453a741b86bee49b46e6c6
+>>>>>>> Stashed changes
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 35845fe01580c41289b024647b1d1c53, type: 3}
   m_UseUCBPForAssetBundles: 0
