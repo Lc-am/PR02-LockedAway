@@ -14,6 +14,7 @@ public class curvedPipeController : MonoBehaviour, IInteractable
 
     private void pipeRotate()
     {
+        Debug.Log("rotate");
         if (rotated)
         {
             transform.rotation = Quaternion.Euler(pipeRotation2);
