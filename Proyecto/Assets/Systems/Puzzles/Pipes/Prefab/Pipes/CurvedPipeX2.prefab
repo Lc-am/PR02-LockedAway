@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 8582280088373190719}
   - component: {fileID: 6621072376422958681}
   - component: {fileID: 2890717997867738105}
+  - component: {fileID: 7962555586230883804}
   m_Layer: 0
   m_Name: CurvedPipeX2
   m_TagString: CurvedPipe
@@ -149,8 +150,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2147487, y: 1.2324811, z: 0.49214625}
-  m_Center: {x: -0.3685376, y: -0.35626996, z: 0.0042867064}
+  m_Size: {x: 1.1787679, y: 0.46851593, z: 0.49214625}
+  m_Center: {x: -0.38652804, y: 0.02571264, z: 0.0042867064}
 --- !u!114 &2890717997867738105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,9 +164,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86610694fdcb9794b819e78aa9248d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neededRotation: {x: 0, y: 0, z: 90}
   splineContainerCurved: {fileID: 7849118928139934563}
+  pipeRotation1: {x: 0, y: 0, z: 0}
+  pipeRotation2: {x: 0, y: 0, z: 0}
   canRotate: 1
+--- !u!65 &7962555586230883804
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025381829279294367}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.39336532, y: 1.235286, z: 0.4921463}
+  m_Center: {x: 0.009107359, y: -0.35767287, z: 0.0042867064}
 --- !u!1 &8519606886973892389
 GameObject:
   m_ObjectHideFlags: 0

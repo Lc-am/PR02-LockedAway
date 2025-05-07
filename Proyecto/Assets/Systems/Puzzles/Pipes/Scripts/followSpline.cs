@@ -89,5 +89,14 @@ public class followSpline : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if(other.CompareTag("WinCondition"))
+        {
+            puzzleConditions puzzleConditions = other.gameObject.GetComponent<puzzleConditions>();
+            if(puzzleConditions != null)
+            {
+                puzzleConditions.openTheDoor();
+            }
+        }
     }
 }

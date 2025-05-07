@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6232791750265564896}
   - component: {fileID: 8739661773458855547}
   - component: {fileID: 2437077580370354906}
+  - component: {fileID: 1152875904042234535}
   m_Layer: 0
   m_Name: CurvedPipe
   m_TagString: CurvedPipe
@@ -49,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1131234972
+  GlobalObjectIdHash: 4188877953
   InScenePlacedSourceGlobalObjectIdHash: 3871345604
   DeferredDespawnTick: 0
   Ownership: 1
@@ -81,8 +82,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.7655852, y: 0.78870714, z: 0.47855282}
-  m_Center: {x: -0.13928282, y: -0.13654464, z: 0.0023665428}
+  m_Size: {x: 0.67360044, y: 0.36045396, z: 0.47855282}
+  m_Center: {x: -0.1852752, y: -0.0061783195, z: 0.0023665428}
 --- !u!114 &8739661773458855547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +136,27 @@ MonoBehaviour:
   pipeRotation1: {x: 0, y: 0, z: 0}
   pipeRotation2: {x: 0, y: 0, z: 0}
   canRotate: 1
+--- !u!65 &1152875904042234535
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3473159770065638539}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.34422493, y: 0.72460675, z: 0.4785528}
+  m_Center: {x: -0.020587444, y: -0.18806362, z: 0.0023665428}
 --- !u!1 &4144306859011282518
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,35 +274,35 @@ MonoBehaviour:
       TangentIn:
         x: -0
         y: -0
-        z: -0.12682563
+        z: -0.13170974
       TangentOut:
         x: 0
         y: 0
-        z: 0.12038715
+        z: 0.13682841
       Rotation:
         value:
-          x: 0.22050357
-          y: 0.67184687
-          z: -0.31567633
-          w: 0.632731
+          x: 0.22357704
+          y: 0.6708303
+          z: -0.31857455
+          w: 0.63127667
     - Position:
         x: 0.55
-        y: -0.5
+        y: -0.59
         z: 0
       TangentIn:
         x: -0
         y: -0
-        z: -0.045276925
+        z: -0.054230984
       TangentOut:
         x: 0
         y: 0
-        z: 0.045276925
+        z: 0.054230984
       Rotation:
         value:
-          x: -0.027343636
-          y: 0.70657796
-          z: -0.7052759
-          w: 0.050852105
+          x: -0.020870173
+          y: 0.7067987
+          z: -0.70571244
+          w: 0.04438432
     m_MetaData:
     - Mode: 0
       Tension: 0.5
