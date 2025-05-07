@@ -1,9 +1,10 @@
 using System.Drawing.Text;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.ProBuilder.Shapes;
 using UnityEngine.Splines;
 
-public class followSpline : MonoBehaviour
+public class followSpline : NetworkBehaviour
 {
     public SplineContainer ruta;
     [SerializeField] float velocidad = 5f;
