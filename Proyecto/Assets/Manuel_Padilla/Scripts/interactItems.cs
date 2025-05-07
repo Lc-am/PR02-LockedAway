@@ -26,6 +26,12 @@ public class interactItems : NetworkBehaviour
 
     private void OnInteract(InputAction.CallbackContext context)
     {
+        InteractServerRPC();
+    }
+
+    [Rpc(SendTo.Server)]
+    private void InteractServerRPC()
+    {
         //Funcion que lanza un raycast cada vez que se pulsa el boton de interacción para saber si puede y que puede hacer el objeto interactuado.
         if (IsLocalPlayer)
         {
@@ -35,7 +41,7 @@ public class interactItems : NetworkBehaviour
             {
                 IInteractable interactable = hit.transform.GetComponent<IInteractable>();
                 if (interactable != null)
-                    { interactable.StartInteraction(); }
+                { interactable.StartInteraction(); }
             }
         }
     }
