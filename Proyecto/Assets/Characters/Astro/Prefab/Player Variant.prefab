@@ -350,14 +350,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 6847464720111589211, guid: 10e05c59c1c409849b233afc61d1cc57, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.502
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847464720111589211, guid: 10e05c59c1c409849b233afc61d1cc57, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.149
-      objectReference: {fileID: 0}
     - target: {fileID: 7723099896004707423, guid: 10e05c59c1c409849b233afc61d1cc57, type: 3}
       propertyPath: m_Center.x
       value: 0
@@ -456,6 +448,7 @@ MonoBehaviour:
   playerCamera: {fileID: 3703734539707904233}
   lookSpeed: 0.3
   lookXLimit: 45
+  netScenarioManager: {fileID: 0}
   walkSpeed: 6
   runSpeed: 12
   jumpPower: 4
