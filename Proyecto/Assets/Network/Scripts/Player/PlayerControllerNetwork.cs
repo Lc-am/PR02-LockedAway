@@ -44,13 +44,14 @@ public class PlayerControllerNetwork : NetworkBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        
 
         animator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
     {
-        gameObject.SetActive(false);
+        cameraObject.gameObject.SetActive(false);
 
         // Solo activar la cámara si este objeto es el jugador local
         if (IsLocalPlayer)

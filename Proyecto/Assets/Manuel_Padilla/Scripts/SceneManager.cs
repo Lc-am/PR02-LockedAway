@@ -7,8 +7,8 @@ public class SceneManager : NetworkBehaviour
 {
     [Header("Scenarios")]
     [SerializeField] private GameObject splashGameScenarioPrefab;
-    [SerializeField] private GameObject spaceShipScenarioPrefab;
-    [SerializeField] private GameObject castleScenarioPrefab;
+    //[SerializeField] private GameObject spaceShipScenarioPrefab;
+    //[SerializeField] private GameObject castleScenarioPrefab;
     [SerializeField] private GameObject insideCastleScenarioPrefab;
 
     [Space]
@@ -37,32 +37,32 @@ public class SceneManager : NetworkBehaviour
     public void StartSplashGameScenario()
     {
         splashGameScenarioPrefab.SetActive(true);
-        spaceShipScenarioPrefab.SetActive(false);
-        castleScenarioPrefab.SetActive(false);
+        //spaceShipScenarioPrefab.SetActive(false);
+        //castleScenarioPrefab.SetActive(false);
         insideCastleScenarioPrefab.SetActive(false);
     }
 
     public void StartSpaceShipScenario()
     {
         splashGameScenarioPrefab.SetActive(false);
-        spaceShipScenarioPrefab.SetActive(true);
-        castleScenarioPrefab.SetActive(false);
+        //spaceShipScenarioPrefab.SetActive(true);
+        //castleScenarioPrefab.SetActive(false);
         insideCastleScenarioPrefab.SetActive(false);
     }
 
     public void StartCastleScenario()
     {
         splashGameScenarioPrefab.SetActive(false);
-        spaceShipScenarioPrefab.SetActive(false);
-        castleScenarioPrefab.SetActive(true);
+        //spaceShipScenarioPrefab.SetActive(false);
+        //castleScenarioPrefab.SetActive(true);
         insideCastleScenarioPrefab.SetActive(false);
     }
 
     public void StartInsideCastleScenario()
     {
         splashGameScenarioPrefab.SetActive(false);
-        spaceShipScenarioPrefab.SetActive(false);
-        castleScenarioPrefab.SetActive(false);
+        //spaceShipScenarioPrefab.SetActive(false);
+        //castleScenarioPrefab.SetActive(false);
         insideCastleScenarioPrefab.SetActive(true);
         spawnPlayers();
     }

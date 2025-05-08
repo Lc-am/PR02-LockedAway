@@ -9,6 +9,7 @@ public class LobbyManager : NetworkBehaviour
     [SerializeField] private TMP_Text playersListText;
     [SerializeField] private Button startGameButton;
     [SerializeField] private string GameScene;
+    [SerializeField] private SceneManager sceneManager;
 
     private void Start()
     {
@@ -45,7 +46,7 @@ public class LobbyManager : NetworkBehaviour
     {
         if (NetworkManager.Singleton.ConnectedClients.Count == 2)
         {
-            NetworkManager.Singleton.SceneManager.LoadScene(GameScene, LoadSceneMode.Single);
+            sceneManager.StartInsideCastleScenario();
         }
     }
 }
