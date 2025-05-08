@@ -13,7 +13,7 @@ public class pickUpItems : NetworkBehaviour
 
     [SerializeField] private float pickUpRange = 5f;
 
-    [SerializeField] private Transform camera;
+    [SerializeField] private new Transform camera;
 
     private GameObject heldObject;  // Variable para saber qué gameObject hemos cogido
     private Rigidbody heldObjectRB; // Su Rigidbody

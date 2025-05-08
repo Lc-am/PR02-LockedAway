@@ -52,8 +52,6 @@ public class MainMenu : MonoBehaviour
     [Header("Others")]
     [SerializeField] private Button exitButton;
 
-    [SerializeField] GameObject networkManager;
-
     private int inScreen;       //1 = Play | 2 = Play - Host | 3 = Play - Client | 4 - Lobby | 5 = Options | 6 = OptionsAudio | 7 = OptionsGame | 8 = OptionsGraphics | 0 = MainMenu
     private bool selectedHost;
 
@@ -173,7 +171,7 @@ public class MainMenu : MonoBehaviour
         ShowCanvasGroup(titleMenuCanvasGroup, false);
         ShowCanvasGroup(mainMenuCanvasGroup, false);
 
-        inScreen = 4;
+        inScreen = 5;
     }
 
     public void OpenAudio()
@@ -181,7 +179,7 @@ public class MainMenu : MonoBehaviour
         ShowCanvasGroup(optionsMenuCanvasGroup, false);
         ShowCanvasGroup(optionsMenuAudio, true);
 
-        inScreen = 5;
+        inScreen = 6;
     }
 
     public void OpenGame()
@@ -189,7 +187,7 @@ public class MainMenu : MonoBehaviour
         ShowCanvasGroup(optionsMenuCanvasGroup, false);
         ShowCanvasGroup(optionsMenuGame, true);
 
-        inScreen = 6;
+        inScreen = 7;
     }
 
     public void OpenGraphics()
@@ -197,7 +195,7 @@ public class MainMenu : MonoBehaviour
         ShowCanvasGroup(optionsMenuCanvasGroup, false);
         ShowCanvasGroup(optionsMenuGraphics, true);
 
-        inScreen = 7;
+        inScreen = 8;
     }
 
     void ShowCanvasGroup(CanvasGroup canvasGroup, bool show)

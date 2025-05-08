@@ -44,14 +44,14 @@ public class PlayerControllerNetwork : NetworkBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
 
         animator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
     {
+        gameObject.SetActive(false);
+
         // Solo activar la cámara si este objeto es el jugador local
         if (IsLocalPlayer)
         {
@@ -231,21 +231,14 @@ public class PlayerControllerNetwork : NetworkBehaviour
             runSpeed = 12f;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.name == "SpawnPoint")
+        {
+            gameObject.SetActive(true);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

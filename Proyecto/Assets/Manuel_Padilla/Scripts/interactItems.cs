@@ -8,7 +8,7 @@ public class interactItems : NetworkBehaviour
     [Header("Interactions")]
     [SerializeField] private InputActionReference interact;
     [SerializeField] private float interactRange = 5f;
-    [SerializeField] private Transform camera;
+    [SerializeField] private new Transform camera;
 
     private void OnEnable()
     {

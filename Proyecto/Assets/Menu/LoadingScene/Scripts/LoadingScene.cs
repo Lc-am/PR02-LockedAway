@@ -30,7 +30,7 @@
 //        {
 //            wasLoadedOnPlayModeStateChange = false;
 
-//            if (SceneManager.GetSceneAt(0).name != "LoadingScene")
+//            if (SceneManager. = "LoadingScene")
 //            {
 //                SceneManager.LoadScene("LoadingScene", LoadSceneMode.Additive);
 //                wasLoadedOnPlayModeStateChange = true;
