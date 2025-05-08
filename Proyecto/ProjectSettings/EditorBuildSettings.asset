@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Escenarios/Dungeon_Assets 2.unity
+    path: Assets/Scenes/PrefabScenaries/Dungeon_Assets 2.unity
     guid: 21b65859fa867de41b126b4e3b6082e8
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
