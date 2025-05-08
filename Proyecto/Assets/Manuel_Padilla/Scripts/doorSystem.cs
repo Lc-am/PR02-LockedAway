@@ -7,7 +7,7 @@ public class doorSystem : NetworkBehaviour, IInteractable
     [SerializeField] private float rotationTime = 5f;   // Tiempo de transición
     [SerializeField] private float doorOpened = 90f;    // Ángulo de puerta abierta
     [SerializeField] private float doorClosed = 0f;     // Ángulo de puerta cerrada
-    [SerializeField] private bool canInteract;  //Para saber si es parte de un puzzle o una puerta interactuable
+    [SerializeField] public bool canInteract;  //Para saber si es parte de un puzzle o una puerta interactuable
 
     private Quaternion initialRotation;   // Rotación inicial (cerrada)
     private Quaternion finalRotation;     // Rotación final (abierta)
