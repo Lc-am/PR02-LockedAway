@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 7a1dfe42d10f3c84c9abb4038ef37dcc, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 4d8b2f052699da14e9a02d7e313a330b, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 6a33774e87ed5b64dbea66bd9d60a0f7, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -3363,6 +3363,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gif: {fileID: 11400000, guid: 87f5b47dedbe20e43aa274e2c961cf50, type: 2}
+  _index: 0
+  _flip: 0.040000003
+  _setGif: {fileID: 11400000, guid: 87f5b47dedbe20e43aa274e2c961cf50, type: 2}
 --- !u!212 &397833140
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3415,7 +3418,7 @@ SpriteRenderer:
   m_Size: {x: 15, y: 8.4375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &399273027 stripped
@@ -4159,6 +4162,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gif: {fileID: 11400000, guid: 87f5b47dedbe20e43aa274e2c961cf50, type: 2}
+  _index: 0
+  _flip: 0
+  _setGif: {fileID: 0}
 --- !u!212 &537680752
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4211,7 +4217,7 @@ SpriteRenderer:
   m_Size: {x: 15, y: 8.4375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &541427270 stripped
@@ -4655,7 +4661,7 @@ SpriteRenderer:
   m_Size: {x: 15.625, y: 8.78125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &623072022
@@ -4671,6 +4677,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gif: {fileID: 11400000, guid: 083aed9317ec6744b8bb69507e82410f, type: 2}
+  _index: 0
+  _flip: 0.1
+  _setGif: {fileID: 11400000, guid: 083aed9317ec6744b8bb69507e82410f, type: 2}
 --- !u!1001 &626654716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13933,6 +13942,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gif: {fileID: 11400000, guid: bf2617e77c71e03479e4e6ff918cb02e, type: 2}
+  _index: 0
+  _flip: 0.1
+  _setGif: {fileID: 11400000, guid: bf2617e77c71e03479e4e6ff918cb02e, type: 2}
 --- !u!212 &1311443107
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13985,7 +13997,7 @@ SpriteRenderer:
   m_Size: {x: 12.5, y: 8.3125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1314602620 stripped
@@ -18854,7 +18866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &2105782832
 Light:
   m_ObjectHideFlags: 0
@@ -19285,6 +19297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3202383705491753320}
   - component: {fileID: 3202383705491753321}
+  - component: {fileID: 3202383705491753322}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -19301,8 +19314,8 @@ Transform:
   m_GameObject: {fileID: 2826844051329094610}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.09, y: 2.698, z: -0.111}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 12.09, y: 2.605, z: -0.111}
+  m_LocalScale: {x: 0.93813, y: 0.93813, z: 0.93813}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6096170086008513972}
@@ -19354,6 +19367,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3202383705491753322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2826844051329094610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6f087851c778240a2018d646a40e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAxis: {x: 0, y: 1, z: 0}
+  rotationSpeed: 10
 --- !u!33 &5380187483655060866
 MeshFilter:
   m_ObjectHideFlags: 0
