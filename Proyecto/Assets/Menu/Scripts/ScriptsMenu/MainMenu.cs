@@ -255,4 +255,14 @@ public class MainMenu : MonoBehaviour
                 break;
         }
     }
+
+    public void BackToOptionsMenu()
+    {
+        ShowCanvasGroup(optionsMenuAudio, false);
+        ShowCanvasGroup(optionsMenuGame, false);
+        ShowCanvasGroup(optionsMenuGraphics, false);
+
+        ShowCanvasGroup(optionsMenuCanvasGroup, true);
+        inScreen = 5;
+    }
 }
