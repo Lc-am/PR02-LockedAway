@@ -39,7 +39,9 @@ MonoBehaviour:
   cellDescs:
     m_Keys: 
     m_Values: []
-  m_SerializedPerSceneCellList: []
+  m_SerializedPerSceneCellList:
+  - sceneGUID: e8cf1d29775c7e24f9dd35148a6437c0
+    cellList: 
   cellSharedDataAsset:
     m_AssetGUID: 
     m_StreamableAssetPath: 
