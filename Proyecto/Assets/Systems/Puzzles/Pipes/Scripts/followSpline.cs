@@ -88,6 +88,7 @@ public class followSpline : NetworkBehaviour
 
         if(other.CompareTag("ObjectDestroyer"))
         {
+            Debug.Log("Destruir");
             Destroy(gameObject);
         }
 
@@ -96,6 +97,7 @@ public class followSpline : NetworkBehaviour
             puzzleConditions puzzleConditions = other.gameObject.GetComponent<puzzleConditions>();
             if(puzzleConditions != null)
             {
+                Debug.Log("Ganar");
                 puzzleConditions.openTheDoor();
             }
         }
