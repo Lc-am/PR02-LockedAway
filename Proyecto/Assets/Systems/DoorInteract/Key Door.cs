@@ -9,5 +9,6 @@ public class KeyDoor : NetworkBehaviour, IInteractable
     {
         Destroy(gameObject);
         keyManager.nowCanOpenDoor();
+        
     }
 }

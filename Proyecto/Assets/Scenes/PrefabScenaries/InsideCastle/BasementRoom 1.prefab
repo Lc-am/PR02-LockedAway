@@ -3126,8 +3126,8 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   rotationTime: 5
   doorOpened: 45
-  doorClosed: 0
   canInteract: 0
+  doorOpenClip: {fileID: 8300000, guid: 9973a203e90ca34459c3013d8786008a, type: 3}
 --- !u!114 &1369838073679190701
 MonoBehaviour:
   m_ObjectHideFlags: 0

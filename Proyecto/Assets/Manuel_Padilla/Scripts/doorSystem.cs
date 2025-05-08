@@ -8,6 +8,8 @@ public class doorSystem : NetworkBehaviour, IInteractable
     [SerializeField] private float doorOpened = 90f;    // Ángulo de puerta abierta
     [SerializeField] public bool canInteract;  //Para saber si es parte de un puzzle o una puerta interactuable
 
+    [SerializeField] private AudioClip doorOpenClip;
+
     private Quaternion initialRotation;   // Rotación inicial (cerrada)
     private Quaternion finalRotation;     // Rotación final (abierta)
     private float elapsedTime = 0f;       // Tiempo transcurrido durante la transición
@@ -29,6 +31,11 @@ public class doorSystem : NetworkBehaviour, IInteractable
         {
             isAnimating = true;  // Iniciar animación
             elapsedTime = 0f;    // Reiniciar el tiempo transcurrido
+
+            if (doorOpenClip != null)
+            {
+                AudioSource.PlayClipAtPoint(doorOpenClip, transform.position);
+            }
         }
     }
 
