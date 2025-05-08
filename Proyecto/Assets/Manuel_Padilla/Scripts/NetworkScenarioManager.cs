@@ -3,7 +3,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneManager : NetworkBehaviour
+public class NetworkScenarioManager : NetworkBehaviour
 {
     [Header("Scenarios")]
     [SerializeField] private GameObject splashGameScenarioPrefab;
@@ -15,24 +15,7 @@ public class SceneManager : NetworkBehaviour
     [SerializeField] private GameObject spawnPoint;
 
     private GameObject[] players;
-
-    private void Awake()
-    {
-        GameObject[] foundPlayers = GameObject.FindGameObjectsWithTag("Player");
-
-        for (int i = 0; i < foundPlayers.Length; i++)
-        {
-            players[i] = foundPlayers[i];
-        }
-    }
-
-    void spawnPlayers()
-    {
-        for (int i = 0; i < players.Length; i++)
-        {
-            players[i].transform.position = spawnPoint.transform.position;
-        }
-    }
+    public bool inGame = false;
 
     public void StartSplashGameScenario()
     {
@@ -40,6 +23,8 @@ public class SceneManager : NetworkBehaviour
         //spaceShipScenarioPrefab.SetActive(false);
         //castleScenarioPrefab.SetActive(false);
         insideCastleScenarioPrefab.SetActive(false);
+        SetScenarioStateClientRpc(0);
+        inGame = false;
     }
 
     public void StartSpaceShipScenario()
@@ -48,6 +33,7 @@ public class SceneManager : NetworkBehaviour
         //spaceShipScenarioPrefab.SetActive(true);
         //castleScenarioPrefab.SetActive(false);
         insideCastleScenarioPrefab.SetActive(false);
+        inGame = true;
     }
 
     public void StartCastleScenario()
@@ -56,6 +42,7 @@ public class SceneManager : NetworkBehaviour
         //spaceShipScenarioPrefab.SetActive(false);
         //castleScenarioPrefab.SetActive(true);
         insideCastleScenarioPrefab.SetActive(false);
+        inGame = true;
     }
 
     public void StartInsideCastleScenario()
@@ -64,6 +51,32 @@ public class SceneManager : NetworkBehaviour
         //spaceShipScenarioPrefab.SetActive(false);
         //castleScenarioPrefab.SetActive(false);
         insideCastleScenarioPrefab.SetActive(true);
-        spawnPlayers();
+        SetScenarioStateClientRpc(3);
+        inGame = true;
+    }
+
+    [ClientRpc]
+    private void SetScenarioStateClientRpc(int scenarioIndex)
+    {
+        splashGameScenarioPrefab.SetActive(false);
+        //spaceShipScenarioPrefab.SetActive(false);
+        //castleScenarioPrefab.SetActive(false);
+        insideCastleScenarioPrefab.SetActive(false);
+
+        switch (scenarioIndex)
+        {
+            case 0:
+                splashGameScenarioPrefab.SetActive(true);
+                break;
+            case 1:
+                //spaceShipScenarioPrefab.SetActive(true);
+                break;
+            case 2:
+                //castleScenarioPrefab.SetActive(true);
+                break;
+            case 3:
+                insideCastleScenarioPrefab.SetActive(true);
+                break;
+        }
     }
 }

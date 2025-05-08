@@ -17,6 +17,7 @@ public class PlayerControllerNetwork : NetworkBehaviour
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float lookSpeed = 1f;  //Sensibilidad de la camara
     [SerializeField] private float lookXLimit = 45f;    //Limite para no pasarse por arriba o por abajo
+    [SerializeField] NetworkScenarioManager netScenarioManager;
 
     [Header("Player consts")]
     [SerializeField] private float walkSpeed = 6f;
@@ -44,7 +45,6 @@ public class PlayerControllerNetwork : NetworkBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
-        
 
         animator = GetComponentInChildren<Animator>();
     }
@@ -233,11 +233,10 @@ public class PlayerControllerNetwork : NetworkBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void lockCursor()
     {
-        if(other.name == "SpawnPoint")
+        if(netScenarioManager.inGame)
         {
-            gameObject.SetActive(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
