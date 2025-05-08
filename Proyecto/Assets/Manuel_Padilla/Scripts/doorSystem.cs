@@ -25,6 +25,7 @@ public class doorSystem : NetworkBehaviour, IInteractable
     // Función para abrir o cerrar la puerta con transición
     public void iOpenTheDoor()
     {
+        Debug.Log("opening");
         // Si la puerta no está animándose, entonces comenzamos una animación
         if (!isAnimating)
         {
@@ -66,6 +67,7 @@ public class doorSystem : NetworkBehaviour, IInteractable
 
     void IInteractable.StartInteraction()
     {
+        Debug.Log("interacted");
         if(canInteract)
         {
             isAnimating = true;
