@@ -17,20 +17,23 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/PermanentScene.unity
     guid: 971f9e6e97d2e594683ec40ee9ee0c96
-  - enabled: 1
+  - enabled: 0
     path: Assets/Menu/Scenes/SplashGame.unity
     guid: 648c589cba8cfc34097bd339dede7852
-  - enabled: 0
-    path: Assets/Scenes/CastleInside.unity
-    guid: 1ad75aa24cedd3440ba98776fa4ebebc
+  - enabled: 1
+    path: Assets/Menu/Scenes/Splash Company.unity
+    guid: 34eae82b6e1f74345a025e7528b6c026
   - enabled: 1
     path: Assets/Scenes/mainScene.unity
     guid: 2ec9d5e9aa181a342a5a3e41af2f8734
-  - enabled: 1
+  - enabled: 0
     path: Assets/Network/Scenes/NetWorkLab.unity
     guid: e5758d88785514142b807c6174236722
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorial.unity
     guid: e8cf1d29775c7e24f9dd35148a6437c0
+  - enabled: 0
+    path: Assets/Scenes/CastleInside.unity
+    guid: 1ad75aa24cedd3440ba98776fa4ebebc
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

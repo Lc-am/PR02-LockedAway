@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 110500360}
-  nextSceneName: SplashGame
+  nextSceneName: mainScene
 --- !u!1 &1982675825
 GameObject:
   m_ObjectHideFlags: 0
