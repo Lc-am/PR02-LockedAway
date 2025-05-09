@@ -151,6 +151,14 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 3264103556
       objectReference: {fileID: 0}
+    - target: {fileID: 559160155661285871, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
+      propertyPath: doorOpened
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 559160155661285871, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
+      propertyPath: doorOpenClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9973a203e90ca34459c3013d8786008a, type: 3}
     - target: {fileID: 562726264988920174, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 2091226640
@@ -309,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3221123905933219420, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.8
+      value: 12.02
       objectReference: {fileID: 0}
     - target: {fileID: 3221123905933219420, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
       propertyPath: m_LocalPosition.y
@@ -317,23 +325,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3221123905933219420, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12
+      value: 32.00002
       objectReference: {fileID: 0}
     - target: {fileID: 3221123905933219420, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071071
       objectReference: {fileID: 0}
     - target: {fileID: 3221123905933219420, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3221123905933219420, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071065
       objectReference: {fileID: 0}
     - target: {fileID: 3221123905933219420, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3221123905933219420, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -341,7 +349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3221123905933219420, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 3221123905933219420, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -375,6 +383,14 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 2702453804
       objectReference: {fileID: 0}
+    - target: {fileID: 3929974242353033186, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
+      propertyPath: doorOpened
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3929974242353033186, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
+      propertyPath: doorOpenClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9973a203e90ca34459c3013d8786008a, type: 3}
     - target: {fileID: 3945655372877112760, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 2209644266
@@ -391,6 +407,14 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 40170727
       objectReference: {fileID: 0}
+    - target: {fileID: 4223003273796460107, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
+      propertyPath: doorOpened
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223003273796460107, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
+      propertyPath: doorOpenClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9973a203e90ca34459c3013d8786008a, type: 3}
     - target: {fileID: 4224855766374044701, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 2299091999
@@ -399,6 +423,14 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 1901166655
       objectReference: {fileID: 0}
+    - target: {fileID: 4341792092411605238, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
+      propertyPath: doorOpened
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341792092411605238, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
+      propertyPath: doorOpenClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9973a203e90ca34459c3013d8786008a, type: 3}
     - target: {fileID: 4416988776245022205, guid: 20582173aa1e79a4fae9656bc868b7da, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 2020541397
@@ -1216,7 +1248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 1
-  size: {x: 92.170006, y: 5.4769235, z: 30.512365}
+  size: {x: 33.50231, y: 8.466924, z: 95.16}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -1256,7 +1288,7 @@ Transform:
   m_GameObject: {fileID: 986826826}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.00147, y: 2.8217337, z: 12.917015}
+  m_LocalPosition: {x: -12.897027, y: 2.821734, z: 35.201504}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
