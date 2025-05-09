@@ -8,6 +8,15 @@ public class SphereCreator : NetworkBehaviour, IInteractable
     [SerializeField] public SplineContainer firstPipe;
 
     followSpline followspline;
+
+    [ClientRpc]
+    private void CreateSphereClientRpc()
+    {
+        Instantiate(spherePipePuzzlePrefab, transform.position, Quaternion.identity);
+        followspline = spherePipePuzzlePrefab.GetComponent<followSpline>();
+        followspline.ruta = firstPipe;
+    }
+
     private void CreateSphere()
     {
         Debug.Log("pulsado");
