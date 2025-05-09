@@ -1680,7 +1680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2022701528785813443, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
       propertyPath: m_VerticalAlignment
-      value: 512
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 2022701528785813443, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
       propertyPath: m_HorizontalAlignment
@@ -2274,6 +2274,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 4901787291753010021, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901787291753010021, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4938638913829364740, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.96443754
