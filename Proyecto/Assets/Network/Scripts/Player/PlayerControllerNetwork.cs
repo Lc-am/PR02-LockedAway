@@ -44,6 +44,8 @@ public class PlayerControllerNetwork : NetworkBehaviour
 
     private void Awake()
     {
+        netScenarioManager = FindFirstObjectByType<NetworkScenarioManager>();
+
         characterController = GetComponent<CharacterController>();
 
         animator = GetComponentInChildren<Animator>();
@@ -102,6 +104,11 @@ public class PlayerControllerNetwork : NetworkBehaviour
     {
         if(IsLocalPlayer)
         {
+            if(netScenarioManager.inGame)
+            {
+                lockCursor();
+            }
+
             characterMovement();
 
             cameraRotation();
@@ -235,10 +242,7 @@ public class PlayerControllerNetwork : NetworkBehaviour
 
     public void lockCursor()
     {
-        if(netScenarioManager.inGame)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
