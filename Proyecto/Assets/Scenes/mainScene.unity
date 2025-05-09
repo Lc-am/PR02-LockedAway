@@ -1521,13 +1521,33 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2022701528785813443, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
+      propertyPath: m_margin.x
+      value: 17.164719
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022701528785813443, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: b34b2798932003a4d8cc3dd7cda3014f, type: 2}
     - target: {fileID: 2022701528785813443, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022701528785813443, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022701528785813443, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2022701528785813443, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 3963743958688325826, guid: b34b2798932003a4d8cc3dd7cda3014f, type: 2}
+    - target: {fileID: 2022701528785813443, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2022701528785813443, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -2913,9 +2933,25 @@ PrefabInstance:
       value: CONNECT
       objectReference: {fileID: 0}
     - target: {fileID: 8102296728478941886, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
+      propertyPath: m_fontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102296728478941886, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
+      propertyPath: m_margin.x
+      value: 6.832409
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102296728478941886, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
+      propertyPath: m_margin.z
+      value: 4.0294914
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102296728478941886, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: b34b2798932003a4d8cc3dd7cda3014f, type: 2}
+    - target: {fileID: 8102296728478941886, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 8102296728478941886, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
       propertyPath: m_sharedMaterial
       value: 
