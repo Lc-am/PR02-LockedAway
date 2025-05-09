@@ -1692,11 +1692,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157808899411787120, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
       propertyPath: m_Alpha
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2157808899411787120, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
       propertyPath: m_Interactable
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2157808899411787120, guid: c5a8db008766f60498c4f7f3aefcf4c4, type: 3}
       propertyPath: m_BlocksRaycasts
