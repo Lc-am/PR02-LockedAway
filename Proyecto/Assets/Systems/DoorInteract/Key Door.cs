@@ -5,20 +5,15 @@ public class KeyDoor : NetworkBehaviour, IInteractable
 {
     [SerializeField] KeyManager keyManager;
 
-    private void KeyInteracted()
+    [ClientRpc]
+    private void KeyInteractedClientRPC()
     {
         Destroy(gameObject);
         keyManager.nowCanOpenDoor();
     }
 
-    [ClientRpc]
-    private void KeyInteractedClientRpc()
-    {
-        KeyInteracted();
-    }
-
     public void StartInteraction()
     {
-        KeyInteracted();
+        KeyInteractedClientRPC();
     }
 }
