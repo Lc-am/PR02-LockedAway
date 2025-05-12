@@ -17,7 +17,7 @@ public class PlayerControllerNetwork : NetworkBehaviour
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float lookSpeed = 1f;  //Sensibilidad de la camara
     [SerializeField] private float lookXLimit = 45f;    //Limite para no pasarse por arriba o por abajo
-    [SerializeField] NetworkScenarioManager netScenarioManager;
+    [SerializeField] NetworkScenarioManager netScenarioManager; //Conectar para saber si estan en juego o menus
 
     [Header("Player consts")]
     [SerializeField] private float walkSpeed = 6f;
@@ -104,7 +104,7 @@ public class PlayerControllerNetwork : NetworkBehaviour
     {
         if(IsLocalPlayer)
         {
-            if(netScenarioManager.inGame)
+            if (netScenarioManager.inGame)
             {
                 lockCursor();
             }
@@ -122,9 +122,29 @@ public class PlayerControllerNetwork : NetworkBehaviour
                 gravity = 10f;  // Aplica gravedad cuando no está en el suelo
             }
 
-            animator.SetFloat("VelX", curSpeedY);
-            animator.SetFloat("VelY", curSpeedX);
+            if(IsHost)
+            {
+                SetAnimationsClientRPC();
+            }
+            else
+            {
+                SetAnimationsServerRPC();
+            }
         }
+    }
+
+    [ClientRpc]
+    private void SetAnimationsClientRPC()
+    {
+        animator.SetFloat("VelX", curSpeedY);
+        animator.SetFloat("VelY", curSpeedX);
+    }
+
+    [ServerRpc]
+    private void SetAnimationsServerRPC()
+    {
+        animator.SetFloat("VelX", curSpeedY);
+        animator.SetFloat("VelY", curSpeedX);
     }
 
     private void FixedUpdate()
