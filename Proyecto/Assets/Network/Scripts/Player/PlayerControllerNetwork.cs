@@ -102,7 +102,7 @@ public class PlayerControllerNetwork : NetworkBehaviour
 
     private void Update()
     {
-        if(IsLocalPlayer)
+        if (IsLocalPlayer)
         {
             if (netScenarioManager.inGame)
             {
@@ -121,30 +121,9 @@ public class PlayerControllerNetwork : NetworkBehaviour
             {
                 gravity = 10f;  // Aplica gravedad cuando no está en el suelo
             }
-
-            if(IsHost)
-            {
-                SetAnimationsClientRPC();
-            }
-            else
-            {
-                SetAnimationsServerRPC();
-            }
+            animator.SetFloat("VelX", curSpeedY);
+            animator.SetFloat("VelY", curSpeedX);
         }
-    }
-
-    [ClientRpc]
-    private void SetAnimationsClientRPC()
-    {
-        animator.SetFloat("VelX", curSpeedY);
-        animator.SetFloat("VelY", curSpeedX);
-    }
-
-    [ServerRpc]
-    private void SetAnimationsServerRPC()
-    {
-        animator.SetFloat("VelX", curSpeedY);
-        animator.SetFloat("VelY", curSpeedX);
     }
 
     private void FixedUpdate()
@@ -200,7 +179,6 @@ public class PlayerControllerNetwork : NetworkBehaviour
                 moveDirection.y = jumpPower;
             }
         }
-         
     }
 
     private void onCrouch(InputAction.CallbackContext context)

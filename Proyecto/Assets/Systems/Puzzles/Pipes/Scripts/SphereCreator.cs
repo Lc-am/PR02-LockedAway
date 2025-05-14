@@ -17,16 +17,8 @@ public class SphereCreator : NetworkBehaviour, IInteractable
         followspline.ruta = firstPipe;
     }
 
-    private void CreateSphere()
-    {
-        Debug.Log("pulsado");
-        Instantiate(spherePipePuzzlePrefab, transform.position, Quaternion.identity);
-        followspline = spherePipePuzzlePrefab.GetComponent<followSpline>();
-        followspline.ruta = firstPipe;
-    }
-
     void IInteractable.StartInteraction()
     {
-        CreateSphere();
+        CreateSphereClientRpc();
     }
 }
