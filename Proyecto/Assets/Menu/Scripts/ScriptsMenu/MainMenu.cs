@@ -49,6 +49,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private CanvasGroup optionsMenuGame;
     [SerializeField] private CanvasGroup optionsMenuGraphics;
 
+    [Header("Credits")]
+    [SerializeField] private CanvasGroup creditsCanvasGroup;
+    [SerializeField] private Button creditsButton;
+    
+
     [Header("Others")]
     [SerializeField] private Button exitButton;
 
@@ -92,6 +97,10 @@ public class MainMenu : MonoBehaviour
         optionsGraphics.onClick.AddListener(OpenGraphics);
 
         exitButton.onClick.AddListener(exitButtonClick);
+
+        creditsButton.onClick.AddListener(OpenCredits);
+        
+
     }
 
     void OnDisable()
@@ -116,6 +125,10 @@ public class MainMenu : MonoBehaviour
         optionsGraphics.onClick.RemoveListener(OpenGraphics);
 
         exitButton.onClick.RemoveListener(exitButtonClick);
+
+        creditsButton.onClick.RemoveListener(OpenCredits);
+        
+
     }
 
     void MainMenuCanvas()
@@ -205,6 +218,23 @@ public class MainMenu : MonoBehaviour
         canvasGroup.blocksRaycasts = show;
     }
 
+    void OpenCredits()
+    {
+        ShowCanvasGroup(creditsCanvasGroup, true);
+        ShowCanvasGroup(mainMenuCanvasGroup, false);
+        ShowCanvasGroup(titleMenuCanvasGroup, false);
+        inScreen = 9; 
+    }
+
+    void CloseCredits()
+    {
+        ShowCanvasGroup(creditsCanvasGroup, false);
+        ShowCanvasGroup(mainMenuCanvasGroup, true);
+        ShowCanvasGroup(titleMenuCanvasGroup, true);
+        inScreen = 0;
+    }
+
+
     private void goBack(InputAction.CallbackContext context)
     {
         switch(inScreen)
@@ -253,6 +283,10 @@ public class MainMenu : MonoBehaviour
                 ShowCanvasGroup(optionsMenuGraphics, false);
                 inScreen = 5;
                 break;
+            case 9: 
+                CloseCredits();
+                break;
+
         }
     }
 

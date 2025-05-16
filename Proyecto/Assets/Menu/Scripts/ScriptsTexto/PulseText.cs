@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro; 
+using TMPro;
 using DG.Tweening;
 
 public class PulseTextFade : MonoBehaviour
